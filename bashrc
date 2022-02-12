@@ -137,3 +137,6 @@ ex ()
 }
 
 . /opt/asdf-vm/asdf.sh
+. "$HOME/.cargo/env"
+# Setup rustup, cargo path
+[[ -f /home/hiroya/.rustrc ]] && source /home/hiroya/.rustrc
