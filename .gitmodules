@@ -1,0 +1,3 @@
+[submodule "config/rofi_themes/rofi"]
+	path = config/rofi_themes/rofi
+	url = git@github.com:adi1090x/rofi.git
