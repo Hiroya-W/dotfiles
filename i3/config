@@ -48,8 +48,6 @@ exec_always --no-startup-id fix_xcursor
 exec --no-startup-id pulseaudio
 exec --no-startup-id pa-applet
 
-bindsym $mod+Ctrl+m exec pavucontrol
-
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
@@ -73,6 +71,9 @@ bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+
+## sound
+bindsym $mod+Ctrl+m exec pavucontrol
 
 # focus_follows_mouse no
 
