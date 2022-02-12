@@ -28,7 +28,7 @@ floating_modifier $mod
 
 # Autostart applications
 exec --no-startup-id fcitx
-exec --no-startup-id eww daemon
+#exec --no-startup-id eww daemon
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
