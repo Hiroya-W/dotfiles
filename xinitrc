@@ -5,7 +5,7 @@
 # Executed by startx (run your window manager from here)
 
 userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+usermodmap=$HOME/.Xmodmap_Eucalyn
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
