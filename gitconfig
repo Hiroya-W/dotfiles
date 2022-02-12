@@ -1,0 +1,7 @@
+[user]
+	email = hyuyukun@gmail.com
+	name = Hiroya-W
+[include]
+	path = /home/hiroya/.config/git/gitconfig_shared
+[ghq]
+	root = /home/hiroya/Repositories
