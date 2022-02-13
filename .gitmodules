@@ -1,3 +1,6 @@
 [submodule "config/rofi_themes/rofi"]
 	path = config/rofi_themes/rofi
 	url = git@github.com:Hiroya-W/rofi.git
+[submodule "config/polybar_themes/polybar-adapta-theme"]
+	path = config/polybar_themes/polybar-adapta-theme
+	url = git@github.com:Hiroya-W/polybar-adapta-theme.git
