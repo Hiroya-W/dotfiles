@@ -64,7 +64,7 @@ bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 
 ## screenshot
-bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-startup-id $HOME/.config/rofi/bin/applet_screenshot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 
