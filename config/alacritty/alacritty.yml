@@ -17,24 +17,32 @@ window:
     x: 0
     y: 0
 
-# Colors (One Dark - https://github.com/atom/atom/tree/master/packages/one-dark-syntax)
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
+# Colors (Material Theme)
 colors:
+  # Default colors
   primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
-  cursor:
-    text:       CellBackground
-    cursor:     '#528bff' # syntax-cursor-color
-  selection:
-    text:       CellForeground
-    background: '#3e4451' # syntax-selection-color
+    background: '#263238'
+    foreground: '#eeffff'
+
+  # Normal colors
   normal:
-    black:      '#5c6370' # mono-3
-    red:        '#e06c75' # red 1
-    green:      '#98c379'
-    yellow:     '#e5c07b' # orange 2
-    blue:       '#61afef'
-    magenta:    '#c678dd'
-    cyan:       '#56b6c2'
-    white:      '#828997' # mono-2
+    black:   '#000000'  # Arbitrary
+    red:     '#e53935'
+    green:   '#91b859'
+    yellow:  '#ffb62c'
+    blue:    '#6182b8'
+    magenta: '#ff5370'  # Dark pink of the original material theme
+    cyan:    '#39adb5'
+    white:   '#a0a0a0'  # Arbitrary
+
+  # Bright colors
+  bright:
+    black:   '#4e4e4e'  # Arbitrary
+    red:     '#ff5370'
+    green:   '#c3e88d'
+    yellow:  '#ffcb6b'
+    blue:    '#82aaff'
+    magenta: '#f07178'  # Pink of the original material theme
+    cyan:    '#89ddff'
+    white:   '#ffffff'  # Arbitrary
