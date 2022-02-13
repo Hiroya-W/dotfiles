@@ -1,7 +1,6 @@
 shell:
   program: /usr/bin/fish
 
-# font設定
 font:
   size: 11
   normal:
@@ -11,7 +10,6 @@ font:
   italic:
     family: HackGenNerd Console
 
-# 余白
 window:
   padding:
     x: 0
