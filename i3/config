@@ -56,7 +56,7 @@ bindsym $mod+Return exec alacritty
 ## start program launcher
 bindsym $mod+d exec --no-startup-id $HOME/.config/rofi/bin/launcher_ribbon
 ## launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
+bindsym $mod+z exec --no-startup-id $HOME/.config/rofi/bin/menu_apps
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 
 ## switch picom
