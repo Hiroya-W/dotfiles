@@ -27,6 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # Autostart applications
+exec --no-startup-id autorandr --change
 exec --no-startup-id fcitx
 #exec --no-startup-id eww daemon
 exec_always --no-startup-id LC_ALL=C bash ~/.config/polybar/launch.sh &
