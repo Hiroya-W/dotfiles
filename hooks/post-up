@@ -1,3 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 
+## nitrogen
+### Download background image
+BACKGROUNDS_DIR="$HOME/Pictures/backgrounds"
+BACKGROUND_IMG="wp8679761.jpg"
+BACKGROUND_IMG_URL="https://wallpapercave.com/wp/wp8679761.jpg"
+
+if [ ! -d "$BACKGROUNDS_DIR" ]; then
+    mkdir -p "$BACKGROUNDS_DIR"
+fi
+
+if [ ! -f "$BACKGROUNDS_DIR/$BACKGROUND_IMG" ]; then
+    wget -O "$BACKGROUNDS_DIR/$BACKGROUND_IMG" "$BACKGROUND_IMG_URL"
+fi
+
+## i3wm
 i3-msg reload
