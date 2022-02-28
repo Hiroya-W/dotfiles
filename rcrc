@@ -1,2 +1,2 @@
-EXCLUDES="README*.md LICENSE screenshots"
+EXCLUDES="README*.md LICENSE screenshots polybar_themes rofi_themes"
 DOTFILES_DIRS="$HOME/dotfiles"
