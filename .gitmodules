@@ -4,3 +4,6 @@
 [submodule "config/polybar_themes/polybar-adapta-theme"]
 	path = config/polybar_themes/polybar-adapta-theme
 	url = git@github.com:Hiroya-W/polybar-adapta-theme.git
+[submodule "xremap-my-eucalyn"]
+	path = xremap-my-eucalyn
+	url = git@github.com:Hiroya-W/xremap-my-eucalyn.git
