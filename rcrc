@@ -1,2 +1,2 @@
-EXCLUDES="README*.md LICENSE screenshots polybar_themes rofi_themes"
+EXCLUDES="README*.md LICENSE screenshots polybar_themes rofi_themes xremap-my-eucalyn"
 DOTFILES_DIRS="$HOME/dotfiles"
