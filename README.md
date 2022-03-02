@@ -23,7 +23,7 @@
 Clone onto your pc:
 
 ```bash
-git clone https://github.com/Hiroya-W/dotfiles.git ~/dotfiles
+git clone https://github.com/Hiroya-W/dotfiles.git --recursive ~/dotfiles
 ```
 
 Install rcm:
