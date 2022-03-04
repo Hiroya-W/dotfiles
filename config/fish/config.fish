@@ -39,4 +39,27 @@ function cd
     return $status
 end
 
+# peco + ghq
+function peco_ghq
+    set -l query (commandline)
+
+    if test -n $query
+        set peco_flags --query "$query"
+    end
+
+    ghq list --full-path | peco $peco_flags | read recent
+    if [ $recent ]
+        cd $recent
+        commandline -r ''
+        commandline -f repaint
+    end
+end
+
+function fish_user_key_bindings
+    bind \c] peco_ghq
+end
+
+# fish & pacman
+source /opt/asdf-vm/asdf.fish
+
 eval (starship init fish)
