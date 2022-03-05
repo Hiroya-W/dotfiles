@@ -22,3 +22,27 @@ if &runtimepath !~# '/dein.vim'
   execute 'set runtimepath^=' . substitute(
         \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
 endif
+
+
+"---------------------------------------------------------------------------
+" dein configurations.
+
+" In Windows, auto_recache is disabled.  It is too slow.
+let g:dein#auto_recache = !has('win32')
+
+let g:dein#lazy_rplugins = v:true
+let g:dein#install_progress_type = 'floating'
+let g:dein#install_check_diff = v:true
+let g:dein#enable_notification = v:true
+let g:dein#install_check_remote_threshold = 24 * 60 * 60
+
+let s:path = $CACHE . '/dein'
+if dein#min#load_state(s:path)
+  let s:base_dir = fnamemodify(expand('<sfile>'), ':h') . '/'
+  call dein#begin(s:path)
+  call dein#end()
+  call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
