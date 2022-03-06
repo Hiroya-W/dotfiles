@@ -3,3 +3,6 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
