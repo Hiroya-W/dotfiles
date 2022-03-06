@@ -6,3 +6,20 @@ repo = 'vim-jp/autofmt'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'folke/tokyonight.nvim'
+hook_add = '''
+  let g:tokyonight_style = "night"
+  colorscheme tokyonight
+'''
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+depends = ['nvim-web-devicons', 'tokyonight.nvim']
+hook_add = '''
+  let g:lightline = {'colorscheme': 'tokyonight'}
+'''
