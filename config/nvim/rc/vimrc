@@ -39,7 +39,7 @@ let g:dein#install_check_remote_threshold = 24 * 60 * 60
 let s:path = $CACHE . '/dein'
 if dein#min#load_state(s:path)
   let s:base_dir = fnamemodify(expand('<sfile>'), ':h') . '/'
-
+  let g:dein#inline_vimrcs = ['options.rc.vim', 'mappings.rc.vim']
   let s:dein_toml = s:base_dir . 'dein.toml'
   let s:dein_lazy_toml = s:base_dir . 'dein_lazy.toml'
 
@@ -49,6 +49,7 @@ if dein#min#load_state(s:path)
 
   call dein#load_toml(s:dein_toml, {'lazy': 0})
   call dein#load_toml(s:dein_lazy_toml, {'lazy' : 1})
+  call map(g:dein#inline_vimrcs, { _, val -> s:base_dir . val })
 
   call dein#end()
   call dein#save_state()
