@@ -32,7 +32,7 @@ exec --no-startup-id fcitx
 exec_always --no-startup-id LC_ALL=C bash ~/.config/polybar/launch.sh &
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
@@ -66,7 +66,7 @@ bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 
 ## switch picom
 bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+bindsym $mod+Ctrl+t exec --no-startup-id picom --experimental-backends -b
 
 ## screenshot
 bindsym Print exec --no-startup-id $HOME/.config/rofi/bin/applet_screenshot
