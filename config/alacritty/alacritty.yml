@@ -14,6 +14,7 @@ window:
   padding:
     x: 0
     y: 0
+  dynamic_padding: true
 
 # https://github.com/alacritty/alacritty/wiki/Color-schemes
 # Colors (Material Theme)
