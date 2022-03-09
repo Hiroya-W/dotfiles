@@ -16,7 +16,8 @@
   - Theme: [Material Theme](https://github.com/eendroroy/alacritty-theme)
   - Terminal Font: [HackGen](https://github.com/yuru7/HackGen)
 
-![](screenshots/all.png)
+![](screenshots/desktop.png)
+![](screenshots/launcher.png)
 
 ## Install
 
