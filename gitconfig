@@ -5,3 +5,5 @@
 	path = /home/hiroya/.config/git/gitconfig_shared
 [ghq]
 	root = /home/hiroya/Repositories
+[core]
+	editor = /usr/bin/nvim
