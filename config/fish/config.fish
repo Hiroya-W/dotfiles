@@ -62,4 +62,4 @@ end
 # fish & pacman
 source /opt/asdf-vm/asdf.fish
 
-eval (starship init fish)
+#eval (starship init fish)
