@@ -59,6 +59,9 @@ function fish_user_key_bindings
     bind \c] peco_ghq
 end
 
+alias exa "exa --icons"
+alias ls "exa"
+
 # fish & pacman
 source /opt/asdf-vm/asdf.fish
 
