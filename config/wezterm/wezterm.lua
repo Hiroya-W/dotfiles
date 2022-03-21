@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
+    default_prog = {"/usr/bin/fish"},
     font = wezterm.font("HackGenNerd Console"),
     use_ime = true,
     font_size = 11.0;
