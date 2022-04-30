@@ -33,7 +33,7 @@ let g:dein#auto_recache = !has('win32')
 let g:dein#lazy_rplugins = v:true
 let g:dein#install_progress_type = 'echo'
 let g:dein#install_check_diff = v:true
-let g:dein#enable_notification = v:false " experimental
+let g:dein#enable_notification = v:true " experimental
 let g:dein#install_check_remote_threshold = 24 * 60 * 60
 
 let s:path = $CACHE . '/dein'
