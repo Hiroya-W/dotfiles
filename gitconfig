@@ -7,3 +7,5 @@
 	root = /home/hiroya/Repositories
 [core]
 	editor = /usr/bin/nvim
+[init]
+	defaultBranch = main
