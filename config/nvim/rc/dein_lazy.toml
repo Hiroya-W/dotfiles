@@ -4,3 +4,22 @@ on_lua = 'notify'
 on_source = '''
 lua vim.notify = require('notify')
 '''
+
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+if = 'has("nvim") && !has("win32")'
+on_event = 'BufRead'
+hook_post_update = 'TSUpdate'
+hook_source = '''
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = 'all',
+    additional_vim_regex_highlighting = false,
+    highlight = {
+        enable = true,
+        disable = {},
+    },
+}
+
+EOF
+'''
