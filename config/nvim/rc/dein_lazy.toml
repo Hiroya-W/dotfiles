@@ -30,3 +30,7 @@ hook_add = """
   nnoremap <silent><C-t> :<C-u>Deol -split=floating<CR>
   tnoremap <ESC>   <C-\><C-n>
 """
+
+[[plugins]]
+repo = "rust-lang/rust.vim"
+on_ft = "rust"
