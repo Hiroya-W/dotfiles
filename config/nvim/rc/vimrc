@@ -10,6 +10,8 @@ endif
 " Use English interface.
 language message C
 
+set sh=fish
+
 " Load dein.
 if &runtimepath !~# '/dein.vim'
   let s:dein_dir = fnamemodify('dein.vim', ':p')
