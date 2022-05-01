@@ -22,8 +22,6 @@ repo = 'nvim-lualine/lualine.nvim'
 depends = ['nvim-web-devicons', 'tokyonight.nvim']
 hook_add = '''
   let g:lightline = {'colorscheme': 'tokyonight'}
-'''
-hook_source = '''
 lua << END
 require('lualine').setup {
   options = {
@@ -52,18 +50,15 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-    lualine_a = {'buffers'},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {'tabs'}
   },
   extensions = {}
 }
 
 END
 '''
+
+[[plugins]]
+repo = "akinsho/bufferline.nvim"
 
 [[plugins]]
 repo='neoclide/coc.nvim'

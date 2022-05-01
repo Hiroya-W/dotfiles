@@ -60,4 +60,5 @@ syntax enable
 
 lua << END
 require('lualine').setup()
+require('bufferline').setup()
 END
