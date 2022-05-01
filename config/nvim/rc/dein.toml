@@ -23,3 +23,11 @@ depends = ['nvim-web-devicons', 'tokyonight.nvim']
 hook_add = '''
   let g:lightline = {'colorscheme': 'tokyonight'}
 '''
+
+[[plugins]]
+repo='neoclide/coc.nvim'
+merged=0
+rev='release'
+hook_add = '''
+  source ~/.config/nvim/plugins/coc.vim
+'''

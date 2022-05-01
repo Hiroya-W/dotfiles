@@ -1,3 +1,4 @@
+let mapleader = "\<space>"
 " F3で相対、絶対表示の切り替え
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 " ESCキー2度押しでハイライトの切り替え
