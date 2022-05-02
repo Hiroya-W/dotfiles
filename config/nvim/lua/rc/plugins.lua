@@ -46,6 +46,11 @@ require("packer").startup(function()
             require("rc/pluginconfig/bufferline")
         end,
     }
+    --------------------------------------------------------------
+    -- LSP
+    use {
+        "hrsh7th/nvim-cmp"
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
