@@ -17,13 +17,33 @@ require("packer").startup(function()
         "rcarriga/nvim-notify", 
         event = "VimEnter"
     }
-
+    --------------------------------------------------------------
     -- Colorscheme
+    local colorscheme = "tokyonight.nvim"
     use {
         'folke/tokyonight.nvim',
         config = function()
             vim.g.tokyonight_style = "night"
             vim.cmd[[colorscheme tokyonight]]
+        end,
+    }
+    --------------------------------------------------------------
+    -- Statusline / Bufferline
+    use {
+        "nvim-lualine/lualine.nvim",
+        after = colorscheme,
+        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        config = function()
+            require("rc/pluginconfig/lualine")
+        end,
+    }
+
+    use {
+        "akinsho/bufferline.nvim",
+        after = colorscheme,
+        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        config = function()
+            require("rc/pluginconfig/bufferline")
         end,
     }
 
