@@ -7,6 +7,8 @@ end
 vim.cmd[[packadd packer.nvim]]
 
 require("packer").startup(function()
+    -- Packer can manage itself as an optional plugin
+    use {'wbthomason/packer.nvim', opt = true}
     -- Library
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
