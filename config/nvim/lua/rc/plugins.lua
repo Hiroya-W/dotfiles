@@ -51,6 +51,13 @@ require("packer").startup(function()
     use {
         "hrsh7th/nvim-cmp"
     }
+    use {
+        "onsails/lspkind-nvim",
+        event = "VimEnter",
+        config = function()
+            require("rc/pluginconfig/lspkind-nvim")
+        end,
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
