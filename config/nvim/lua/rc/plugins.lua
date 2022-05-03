@@ -108,6 +108,12 @@ require("packer").startup(function()
             require("rc/lsp")
         end
     }
+    use {
+        "j-hui/fidget.nvim", -- UI for nvim-lsp progress
+        config = function ()
+            require("fidget").setup()
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
