@@ -20,10 +20,10 @@ require("nvim-lsp-installer").setup({
 })
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 for _, server in ipairs(servers) do
     local opts = {
-        capabilities = capabilities
+        on_attach = require("rc/lsp/handlers").on_attach,
+        capabilities = require("rc/lsp/handlers").capabilities
     }
 
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
@@ -42,3 +42,4 @@ for _, server in ipairs(servers) do
 
     require('lspconfig')[server].setup(opts)
 end
+
