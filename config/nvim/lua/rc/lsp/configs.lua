@@ -26,20 +26,10 @@ for _, server in ipairs(servers) do
         capabilities = require("rc/lsp/handlers").capabilities
     }
 
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua
-    if server == "sumneko_lua" then
-        local custom_opts = {
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = {"vim"} -- For Undefined global 'vim'
-                    }
-                }
-            }
-        }
-        opts = vim.tbl_deep_extend("force", opts, custom_opts)
+    local has_custom_opts, server_custom_opts = pcall(require, "rc/lsp/settings." .. server)
+    if has_custom_opts then
+        opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
     end
 
     require('lspconfig')[server].setup(opts)
 end
-
