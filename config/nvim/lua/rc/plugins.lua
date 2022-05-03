@@ -81,12 +81,11 @@ require("packer").startup(function()
     --------------------------------------------------------------
     -- Completion
     use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-buffer"
-    use "hrsh7th/cmp-path"
-    use 'saadparwaiz1/cmp_luasnip'
+    use {"hrsh7th/cmp-buffer", after = {"nvim-cmp"}}
+    use {"hrsh7th/cmp-path", after = {"nvim-cmp"}}
+    use {'saadparwaiz1/cmp_luasnip', after = {"nvim-cmp"}}
     use {
         "onsails/lspkind-nvim",
-        event = "VimEnter",
         config = function()
             require("rc/pluginconfig/lspkind-nvim")
         end,
