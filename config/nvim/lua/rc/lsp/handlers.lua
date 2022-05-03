@@ -1,6 +1,20 @@
 local M = {}
 
-M.setup = function ()
+M.setup = function()
+    -- Change the border of the window displaying the results of requests
+    -- sent from the client to the LSP.
+
+    -- hint(hover)
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover, {
+        border = "rounded",
+    })
+
+    -- candidates signature(member definitionns)
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, {
+        border = "rounded",
+    })
 end
 
 local function lsp_keymaps(bufnr)
