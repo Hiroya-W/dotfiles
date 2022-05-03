@@ -27,17 +27,21 @@ local check_back_space = function()
     end
 end
 
-
 cmp.setup({
     formatting = {
         -- lspkind
         format = lspkind.cmp_format({
-            mode = 'symbol', -- show only symbol annotations
+            mode = 'symbol_text', -- show only symbol annotations
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
             -- The function below will be called before any actual modifications from lspkind
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
             before = function (entry, vim_item)
+                vim_item.menu = ({
+                    luasnnip = "[Snippet]",
+                    buffer = "[Buffer]",
+                    path = "[Path]",
+                })[entry.source.name]
                 return vim_item
             end
         })
@@ -48,8 +52,8 @@ cmp.setup({
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
