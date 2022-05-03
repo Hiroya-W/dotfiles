@@ -90,6 +90,8 @@ require("packer").startup(function()
             require("rc/plugins/lspkind-nvim")
         end,
     }
+    use {"hrsh7th/cmp-nvim-lsp", after = {"nvim-cmp"}}
+    use {"hrsh7th/cmp-nvim-lua", after = {"nvim-cmp"}}
     --------------------------------------------------------------
     -- Snippets
     use "L3MON4D3/LuaSnip"
@@ -100,6 +102,7 @@ require("packer").startup(function()
         "williamboman/nvim-lsp-installer",
         {
             "neovim/nvim-lspconfig",
+            after = {"cmp-nvim-lsp"},
             --  This is because load order of plugins is not guaranteed, 
             --  leading to nvim-lsp-installer's config function potentially executing after lspconfig's.
             --  See, https://github.com/williamboman/nvim-lsp-installer#setup

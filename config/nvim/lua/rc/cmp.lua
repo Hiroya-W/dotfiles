@@ -38,6 +38,8 @@ cmp.setup({
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
             before = function (entry, vim_item)
                 vim_item.menu = ({
+                    nvim_lsp = "[LSP]",
+                    nvim_lua = "[LSP]",
                     luasnnip = "[Snippet]",
                     buffer = "[Buffer]",
                     path = "[Path]",
@@ -67,6 +69,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
+        { name = 'nvim_lua' }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
         { name = 'luasnip' }, -- For luasnip users.
         { name = 'buffer' },
     }),
