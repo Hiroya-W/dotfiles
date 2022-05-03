@@ -44,7 +44,6 @@ require("packer").startup(function()
     -- Library
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
-    use "kyazdani42/nvim-web-devicons"
     use {
         "rcarriga/nvim-notify",
         event = "VimEnter"
@@ -87,7 +86,7 @@ require("packer").startup(function()
     use { "hrsh7th/cmp-nvim-lua", after = { "nvim-cmp" } }
     use { 'saadparwaiz1/cmp_luasnip', after = { "nvim-cmp" } }
     use {
-        "onsails/lspkind-nvim",
+        "onsails/lspkind-nvim", -- to show lsp icons
         config = function()
             require("rc/plugins/lspkind-nvim")
         end,
