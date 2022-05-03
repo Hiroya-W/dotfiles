@@ -66,7 +66,7 @@ require("packer").startup(function()
         after = colorscheme,
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         config = function()
-            require("rc/pluginconfig/lualine")
+            require("rc/plugins/lualine")
         end,
     }
 
@@ -75,7 +75,7 @@ require("packer").startup(function()
         after = colorscheme,
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         config = function()
-            require("rc/pluginconfig/bufferline")
+            require("rc/plugins/bufferline")
         end,
     }
     --------------------------------------------------------------
@@ -87,7 +87,7 @@ require("packer").startup(function()
     use {
         "onsails/lspkind-nvim",
         config = function()
-            require("rc/pluginconfig/lspkind-nvim")
+            require("rc/plugins/lspkind-nvim")
         end,
     }
     --------------------------------------------------------------
