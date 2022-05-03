@@ -83,6 +83,8 @@ require("packer").startup(function()
     use "hrsh7th/nvim-cmp"
     use { "hrsh7th/cmp-buffer", after = { "nvim-cmp" } }
     use { "hrsh7th/cmp-path", after = { "nvim-cmp" } }
+    use { "hrsh7th/cmp-nvim-lsp", after = { "nvim-cmp" } }
+    use { "hrsh7th/cmp-nvim-lua", after = { "nvim-cmp" } }
     use { 'saadparwaiz1/cmp_luasnip', after = { "nvim-cmp" } }
     use {
         "onsails/lspkind-nvim",
@@ -90,8 +92,6 @@ require("packer").startup(function()
             require("rc/plugins/lspkind-nvim")
         end,
     }
-    use { "hrsh7th/cmp-nvim-lsp", after = { "nvim-cmp" } }
-    use { "hrsh7th/cmp-nvim-lua", after = { "nvim-cmp" } }
     --------------------------------------------------------------
     -- Snippets
     use "L3MON4D3/LuaSnip"
