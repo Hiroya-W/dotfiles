@@ -109,9 +109,27 @@ require("packer").startup(function()
     }
     use {
         "j-hui/fidget.nvim", -- UI for nvim-lsp progress
-        config = function ()
+        config = function()
             require("fidget").setup()
         end
+    }
+    --------------------------------------------------------------
+    -- Telescope
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        },
+        config = function ()
+            require("rc/plugins/telescope")
+        end
+    }
+    use {
+        "nvim-telescope/telescope-frecency.nvim",
+        requires = { "tami5/sqlite.lua" },
+        config = function()
+            require "telescope".load_extension("frecency")
+        end,
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
