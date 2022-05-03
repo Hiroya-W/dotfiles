@@ -79,10 +79,11 @@ require("packer").startup(function()
         end,
     }
     --------------------------------------------------------------
-    -- LSP
-    use {
-        "hrsh7th/nvim-cmp"
-    }
+    -- Completion
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use 'saadparwaiz1/cmp_luasnip'
     use {
         "onsails/lspkind-nvim",
         event = "VimEnter",
@@ -90,6 +91,10 @@ require("packer").startup(function()
             require("rc/pluginconfig/lspkind-nvim")
         end,
     }
+    --------------------------------------------------------------
+    -- Snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
