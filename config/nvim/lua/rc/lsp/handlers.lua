@@ -18,7 +18,7 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-    local opts = {noremap=true, silent=true}
+    local opts = { noremap = true, silent = true }
 
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
     --vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
@@ -39,6 +39,8 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>fmt', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>', opts)
+    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
 local function common_capabilities()
@@ -51,7 +53,7 @@ local function common_capabilities()
     return capabilities
 end
 
-M.on_attach = function (_, bufnr)
+M.on_attach = function(_, bufnr)
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
     lsp_keymaps(bufnr)

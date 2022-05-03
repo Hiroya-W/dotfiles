@@ -5,7 +5,7 @@ end
 
 -- automatically install
 -- https://github.com/neovim/nvim-lspconfig/wiki/Installing-language-servers#automatically
-local servers = {"sumneko_lua", "rust_analyzer"}
+local servers = { "sumneko_lua", "rust_analyzer" }
 
 require("nvim-lsp-installer").setup({
     ensure_installed = servers, -- ensure these servers are always installed

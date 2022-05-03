@@ -36,7 +36,7 @@ cmp.setup({
 
             -- The function below will be called before any actual modifications from lspkind
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-            before = function (entry, vim_item)
+            before = function(entry, vim_item)
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
                     nvim_lua = "[LSP]",
@@ -50,7 +50,7 @@ cmp.setup({
     },
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            luasnip.lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
