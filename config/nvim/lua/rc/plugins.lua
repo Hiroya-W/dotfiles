@@ -99,17 +99,14 @@ require("packer").startup(function()
     --------------------------------------------------------------
     -- LSP
     use {
-        "williamboman/nvim-lsp-installer",
-        {
-            "neovim/nvim-lspconfig",
-            after = { "cmp-nvim-lsp" },
-            --  This is because load order of plugins is not guaranteed,
-            --  leading to nvim-lsp-installer's config function potentially executing after lspconfig's.
-            --  See, https://github.com/williamboman/nvim-lsp-installer#setup
-            config = function()
-                require("rc/lsp")
-            end
-        }
+        "neovim/nvim-lspconfig",
+        requires = {
+            "williamboman/nvim-lsp-installer",
+        },
+        after = { "cmp-nvim-lsp" },
+        config = function()
+            require("rc/lsp")
+        end
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
