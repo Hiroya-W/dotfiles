@@ -9,3 +9,5 @@
 	editor = /usr/bin/nvim
 [init]
 	defaultBranch = main
+[commit]
+	template = /home/hiroya/.commit_template
