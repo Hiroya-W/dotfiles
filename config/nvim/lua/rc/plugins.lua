@@ -104,9 +104,7 @@ require("packer").startup(function()
             --  leading to nvim-lsp-installer's config function potentially executing after lspconfig's.
             --  See, https://github.com/williamboman/nvim-lsp-installer#setup
             config = function()
-                require("nvim-lsp-installer").setup {}
-                local lspconfig = require("lspconfig")
-                lspconfig.sumneko_lua.setup {}
+                require("rc/lsp")
             end
         }
     }
