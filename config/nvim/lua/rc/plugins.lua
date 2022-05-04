@@ -91,6 +91,13 @@ require("packer").startup(function()
             require("rc/plugins/lspkind-nvim")
         end,
     }
+    use {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("rc/plugins/nvim-autopairs")
+        end,
+        after = { "nvim-cmp" }
+    }
     --------------------------------------------------------------
     -- Snippets
     use "L3MON4D3/LuaSnip"
