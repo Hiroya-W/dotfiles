@@ -44,7 +44,7 @@ require("packer").startup(function()
     -- Improve startup time for neovim
     use {
         "lewis6991/impatient.nvim",
-        config = function ()
+        config = function()
             local impatient = require("impatient")
             impatient.enable_profile()
         end
@@ -68,7 +68,7 @@ require("packer").startup(function()
     }
     use {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
-        config = function ()
+        config = function()
             require("indent_blankline").setup {
                 space_char_blankline = " ",
                 show_current_context = true,
