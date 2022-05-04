@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 vim.g.mapleader = " "
+opt.shell = "fish"
 
 ----------------------------------------------------------------------------
 -- Search
