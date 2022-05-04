@@ -76,6 +76,12 @@ require("packer").startup(function()
             }
         end
     }
+    use {
+        'mvllow/modes.nvim', -- Change line color in current mode
+        config = function()
+            require("rc/plugins/modes")
+        end
+    }
     --------------------------------------------------------------
     -- Statusline / Bufferline
     use {
