@@ -139,7 +139,7 @@ require("packer").startup(function()
         end
     }
     use {
-        "jose-elias-alvarez/null-ls.nvim",
+        "jose-elias-alvarez/null-ls.nvim", -- Use non LSP sources, such as flake8, black
         config = function()
             require("rc/lsp/null-ls")
         end,
