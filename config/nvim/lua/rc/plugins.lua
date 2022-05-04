@@ -41,6 +41,14 @@ packer.init {
 require("packer").startup(function()
     -- Packer can manage itself as an optional plugin
     use { 'wbthomason/packer.nvim', opt = true }
+    -- Improve startup time for neovim
+    use {
+        "lewis6991/impatient.nvim",
+        config = function ()
+            local impatient = require("impatient")
+            impatient.enable_profile()
+        end
+    }
     -- Library
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
@@ -186,7 +194,7 @@ require("packer").startup(function()
     -- UI
     use {
         "akinsho/toggleterm.nvim",
-        config = function ()
+        config = function()
             require("rc/plugins/toggleterm")
         end
     }
