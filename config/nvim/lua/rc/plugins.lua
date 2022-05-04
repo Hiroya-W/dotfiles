@@ -82,6 +82,13 @@ require("packer").startup(function()
             require("rc/plugins/modes")
         end
     }
+    use {
+        "folke/todo-comments.nvim", -- Highlight for todo comments
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup()
+        end
+    }
     --------------------------------------------------------------
     -- Statusline / Bufferline
     use {
