@@ -93,18 +93,18 @@ require("packer").startup(function()
         "norcalli/nvim-colorizer.lua", -- Color highlighter, such as #FFF
         config = function()
             require("colorizer").setup()
-		end
+        end
     }
     use {
         "chentau/marks.nvim", -- Show vim mark
-        config = function ()
+        config = function()
             require("rc/plugins/marks")
         end
     }
     use {
         "SmiteshP/nvim-gps", -- Show scope you are working inside
         requires = "nvim-treesitter/nvim-treesitter",
-        config = function ()
+        config = function()
             require("nvim-gps").setup()
         end
     }
