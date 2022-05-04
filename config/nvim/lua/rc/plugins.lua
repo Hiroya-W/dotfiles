@@ -145,6 +145,7 @@ require("packer").startup(function()
         end,
         requires = { "nvim-lua/plenary.nvim" },
     }
+    use "folke/lsp-colors.nvim" -- Automatically creates missing LSP highlights groups
     --------------------------------------------------------------
     -- Telescope
     use {
