@@ -95,6 +95,12 @@ require("packer").startup(function()
             require("colorizer").setup()
 		end
     }
+    use {
+        "chentau/marks.nvim", -- Show vim mark
+        config = function ()
+            require("rc/plugins/marks")
+        end
+    }
     --------------------------------------------------------------
     -- Statusline / Bufferline
     use {
