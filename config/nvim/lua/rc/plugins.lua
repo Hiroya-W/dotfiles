@@ -89,6 +89,12 @@ require("packer").startup(function()
             require("todo-comments").setup()
         end
     }
+    use {
+        "norcalli/nvim-colorizer.lua", -- Color highlighter, such as #FFF
+        config = function()
+            require("colorizer").setup()
+		end
+    }
     --------------------------------------------------------------
     -- Statusline / Bufferline
     use {
