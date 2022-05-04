@@ -182,6 +182,14 @@ require("packer").startup(function()
             vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
         end
     }
+    --------------------------------------------------------------
+    -- UI
+    use {
+        "akinsho/toggleterm.nvim",
+        config = function ()
+            require("rc/plugins/toggleterm")
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
