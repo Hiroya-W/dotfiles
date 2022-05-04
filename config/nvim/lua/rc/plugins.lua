@@ -120,7 +120,7 @@ require("packer").startup(function()
         requires = {
             "nvim-lua/plenary.nvim"
         },
-        config = function ()
+        config = function()
             require("rc/plugins/telescope")
         end
     }
@@ -131,6 +131,17 @@ require("packer").startup(function()
             require "telescope".load_extension("frecency")
         end,
     }
+    --------------------------------------------------------------
+    -- Treesitter
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+        config = function()
+            require("rc/plugins/nvim-treesitter")
+        end,
+    })
+    use({ "yioneko/nvim-yati", after = "nvim-treesitter" }) -- indent
+    use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } }) -- rainbow parantheses
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
