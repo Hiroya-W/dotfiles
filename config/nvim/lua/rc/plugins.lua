@@ -120,6 +120,13 @@ require("packer").startup(function()
             require("fidget").setup()
         end
     }
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        config = function()
+            require("rc/lsp/null-ls")
+        end,
+        requires = { "nvim-lua/plenary.nvim" },
+    }
     --------------------------------------------------------------
     -- Telescope
     use {
