@@ -101,6 +101,13 @@ require("packer").startup(function()
             require("rc/plugins/marks")
         end
     }
+    use {
+        "SmiteshP/nvim-gps", -- Show scope you are working inside
+        requires = "nvim-treesitter/nvim-treesitter",
+        config = function ()
+            require("nvim-gps").setup()
+        end
+    }
     --------------------------------------------------------------
     -- Statusline / Bufferline
     use {
