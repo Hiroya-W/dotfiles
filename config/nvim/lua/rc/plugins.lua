@@ -149,6 +149,21 @@ require("packer").startup(function()
     })
     use({ "yioneko/nvim-yati", after = "nvim-treesitter" }) -- indent
     use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } }) -- rainbow parantheses
+    --------------------------------------------------------------
+    -- Git
+    use {
+        'lewis6991/gitsigns.nvim',
+        tag = 'release',
+        config = function()
+            require("gitsigns").setup()
+        end
+    }
+    use {
+        "kdheepak/lazygit.nvim",
+        config = function()
+            vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
