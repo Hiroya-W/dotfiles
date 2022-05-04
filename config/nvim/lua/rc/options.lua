@@ -45,6 +45,8 @@ opt.relativenumber = true -- 相対距離
 opt.cursorline = true -- 現在の行を強調表示
 -- Show <TAB> and <CR>
 opt.list = true
+opt.listchars:append("space:⋅")
+opt.listchars:append("eol:↴")
 -- Height of command line.
 opt.cmdheight = 1
 opt.wrap = true

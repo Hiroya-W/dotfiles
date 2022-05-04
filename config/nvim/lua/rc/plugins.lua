@@ -57,14 +57,24 @@ require("packer").startup(function()
         event = "VimEnter"
     }
     --------------------------------------------------------------
-    -- Colorscheme
-    local colorscheme = "tokyonight.nvim"
+    -- Appearance
+    local colorscheme = "tokyonight.nvim" -- Colorscheme
     use {
         'folke/tokyonight.nvim',
         config = function()
             vim.g.tokyonight_style = "night"
             vim.cmd [[colorscheme tokyonight]]
         end,
+    }
+    use {
+        "lukas-reineke/indent-blankline.nvim", -- Indent guides
+        config = function ()
+            require("indent_blankline").setup {
+                space_char_blankline = " ",
+                show_current_context = true,
+                show_current_context_start = true,
+            }
+        end
     }
     --------------------------------------------------------------
     -- Statusline / Bufferline
