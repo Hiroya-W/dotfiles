@@ -250,6 +250,12 @@ require("packer").startup(function()
             require("rc/plugins/committia")
         end
     }
+    use {
+        'akinsho/git-conflict.nvim',
+        config = function()
+            require('git-conflict').setup()
+        end
+    }
     -- GitHub
     use {
         'pwntester/octo.nvim',
