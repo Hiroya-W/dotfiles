@@ -246,7 +246,7 @@ require("packer").startup(function()
     }
     use {
         "rhysd/committia.vim", -- Show status, diff windows when git commit
-        config = function ()
+        config = function()
             require("rc/plugins/committia")
         end
     }
@@ -277,7 +277,7 @@ require("packer").startup(function()
     -- Search
     use {
         "haya14busa/vim-asterisk",
-        config = function ()
+        config = function()
             require("rc/plugins/vim-asterisk")
         end
     }
