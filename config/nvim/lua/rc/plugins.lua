@@ -273,6 +273,12 @@ require("packer").startup(function()
             require("rc/plugins/toggleterm")
         end
     }
+    use {
+        'numToStr/Comment.nvim', -- toggle comment
+        config = function()
+            require('Comment').setup()
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
