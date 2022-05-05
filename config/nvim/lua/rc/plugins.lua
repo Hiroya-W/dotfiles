@@ -252,6 +252,14 @@ require("packer").startup(function()
             require("rc/plugins/toggleterm")
         end
     }
+    --------------------------------------------------------------
+    -- Search
+    use {
+        "haya14busa/vim-asterisk",
+        config = function ()
+            require("rc/plugins/vim-asterisk")
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
