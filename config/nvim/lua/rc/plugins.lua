@@ -250,6 +250,21 @@ require("packer").startup(function()
             require("rc/plugins/committia")
         end
     }
+    -- GitHub
+    use {
+        'pwntester/octo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'kyazdani42/nvim-web-devicons',
+        },
+        -- 622ab9feaa735dc0999e567183ce357f3dff080f is broken
+        -- Detect owner/repository is incorrect
+        commit = "43185282331a768417c3dc7a6a1ac7c3f09c28f9",
+        config = function()
+            require("octo").setup()
+        end
+    }
     --------------------------------------------------------------
     -- UI
     use {
