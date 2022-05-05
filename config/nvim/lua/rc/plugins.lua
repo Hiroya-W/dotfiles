@@ -244,6 +244,12 @@ require("packer").startup(function()
             vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
         end
     }
+    use {
+        "rhysd/committia.vim", -- Show status, diff windows when git commit
+        config = function ()
+            require("rc/plugins/committia")
+        end
+    }
     --------------------------------------------------------------
     -- UI
     use {
