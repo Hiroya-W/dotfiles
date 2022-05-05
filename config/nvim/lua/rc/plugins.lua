@@ -196,6 +196,17 @@ require("packer").startup(function()
             require "telescope".load_extension("frecency")
         end,
     }
+    use {
+        "AckslD/nvim-neoclip.lua", -- Clipboard manager
+        requires = {
+            "nvim-telescope/telescope.nvim",
+            "tami5/sqlite.lua"
+        },
+        config = function()
+            require('neoclip').setup()
+            require("telescope").load_extension("neoclip")
+        end,
+    }
     --------------------------------------------------------------
     -- File explorer
     use {
