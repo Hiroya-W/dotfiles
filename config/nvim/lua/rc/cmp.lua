@@ -58,8 +58,8 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "c"}),
+        ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
         ["<C-b>"] = cmp.mapping.scroll_docs(-1),
         ["<C-f>"] = cmp.mapping.scroll_docs(1),
         -- Conflict IME ><
@@ -79,9 +79,9 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
+        end, { -- Enable on
+            "i", -- insert mode and
+            "s", -- select mode
         }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
