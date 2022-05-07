@@ -6,9 +6,13 @@ local code_actions = null_ls.builtins.code_actions
 require("null-ls").setup({
     sources = {
         -- formatting
+        -- Python
         formatting.black,
+        formatting.isort,
         -- diagnostics
+        -- Python
         diagnostics.flake8,
+        diagnostics.mypy,
         -- code_actions
         code_actions.refactoring,
     },
