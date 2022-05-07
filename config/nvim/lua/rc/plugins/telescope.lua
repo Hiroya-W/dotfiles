@@ -25,5 +25,6 @@ require("telescope").setup {
         frecency = {
             ignore_patterns = { "*.git/*", "*/tmp/*" }
         },
+        command_palette = require("rc/plugins/telescope-command-palette")
     }
 }

@@ -207,6 +207,15 @@ require("packer").startup(function()
             require("telescope").load_extension("neoclip")
         end,
     }
+    use {
+        "Hiroya-W/telescope-command-palette.nvim",
+        requires = {
+            "nvim-telescope/telescope.nvim",
+        },
+        config = function()
+            require("telescope").load_extension("command_palette")
+        end
+    }
     --------------------------------------------------------------
     -- File explorer
     use {
