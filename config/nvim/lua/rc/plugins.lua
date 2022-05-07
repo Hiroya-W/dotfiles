@@ -165,6 +165,16 @@ require("packer").startup(function()
         end
     }
     use {
+        "tami5/lspsaga.nvim", -- add UI for LSP
+        --branch = "nvim6.0",
+        requires = {
+            "neovim/nvim-lspconfig"
+        },
+        config = function ()
+            require("rc/plugins/lspsaga")
+        end
+    }
+    use {
         "j-hui/fidget.nvim", -- UI for nvim-lsp progress
         config = function()
             require("fidget").setup()
