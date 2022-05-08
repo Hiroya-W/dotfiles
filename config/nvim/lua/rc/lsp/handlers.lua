@@ -26,13 +26,13 @@ local function lsp_keymaps(bufnr)
     -- vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     --
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>fmt', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float(nil, {border = "rounded", scope = "cursor"})<CR>', opts)
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
@@ -48,11 +48,20 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":Lspsaga signature_help<CR>", opts)
     -- close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", ":Lspsaga rename<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gd", ":Lspsaga preview_definition<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", opts)
+    -- don't work?
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>gd", ":Lspsaga preview_definition<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cl", ":Lspsaga show_line_diagnostics<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cc", ":Lspsaga show_cursor_diagnostics<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", ":Lspsaga diagnostic_jump_next<CR>", opts)
+
+    -- Use UIs provided by trouble
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TroubleToggle lsp_references<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TroubleToggle lsp_definitions<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TroubleToggle lsp_implementations<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cw", ":TroubleToggle workspace_diagnostics<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cd", ":TroubleToggle document_diagnostics<CR>", opts)
+
 end
 
 local function common_capabilities()

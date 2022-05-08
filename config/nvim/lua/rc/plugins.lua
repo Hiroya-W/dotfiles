@@ -304,6 +304,15 @@ require("packer").startup(function()
             require('Comment').setup()
         end
     }
+    use {
+        "folke/trouble.nvim", -- UI for diagnostics, references,...
+        cyrequiresrequires = {
+            "kyazdani42/nvim-web-devicons"
+        },
+        config = function ()
+            require("trouble").setup()
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
