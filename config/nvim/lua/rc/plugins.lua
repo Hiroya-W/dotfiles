@@ -326,6 +326,13 @@ require("packer").startup(function()
             "nvim-treesitter/nvim-treesitter"
         },
     }
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v1', -- optional but strongly recommended
+        config = function()
+            require("rc/plugins/hop")
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
