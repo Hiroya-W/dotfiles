@@ -56,6 +56,12 @@ require("packer").startup(function()
         "rcarriga/nvim-notify",
         event = "VimEnter"
     }
+    use {
+        "junegunn/fzf",
+        run = function ()
+            vim.fn["fzf#install"]()
+        end
+    }
     --------------------------------------------------------------
     -- Appearance
     local colorscheme = "tokyonight.nvim" -- Colorscheme
@@ -312,6 +318,13 @@ require("packer").startup(function()
         config = function ()
             require("trouble").setup()
         end
+    }
+    use {
+        "kevinhwang91/nvim-bqf", -- show quickfix preview on float window
+        requires = {
+            "junegunn/fzf",
+            "nvim-treesitter/nvim-treesitter"
+        },
     }
     --------------------------------------------------------------
     -- Search
