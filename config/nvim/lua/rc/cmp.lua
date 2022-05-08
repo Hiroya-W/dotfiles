@@ -40,6 +40,7 @@ cmp.setup({
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
                     nvim_lua = "[LSP]",
+                    copilot = "[Copilot]",
                     luasnip = "[Snippet]",
                     buffer = "[Buffer]",
                     path = "[Path]",
@@ -99,6 +100,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
+        { name = "copilot" },
         { name = 'luasnip' }, -- For luasnip users.
         { name = 'buffer' },
     }),

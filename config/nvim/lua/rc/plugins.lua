@@ -154,6 +154,33 @@ require("packer").startup(function()
         end,
         after = { "nvim-cmp" }
     }
+    use {
+        "github/copilot.vim",
+        -- Need to install manually
+        -- run = ":Copilot"
+    }
+    use {
+        "zbirenbaum/copilot.lua",
+        requires = {
+            "github/copilot.vim"
+        },
+        event = "VimEnter",
+        config = function()
+            vim.defer_fn(
+                function()
+                    require("copilot").setup()
+                end,
+                100
+            )
+        end
+    }
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = {
+            "copilot.lua",
+            "nvim-cmp"
+        }
+    }
     --------------------------------------------------------------
     -- Snippets
     use "L3MON4D3/LuaSnip"
