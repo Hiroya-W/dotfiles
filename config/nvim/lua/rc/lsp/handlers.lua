@@ -61,7 +61,6 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TroubleToggle lsp_implementations<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cw", ":TroubleToggle workspace_diagnostics<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cd", ":TroubleToggle document_diagnostics<CR>", opts)
-
 end
 
 local function common_capabilities()
@@ -77,7 +76,6 @@ end
 M.on_attach = function(client, bufnr)
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
-    
     if client.name == "pylsp" then
         -- Use null-ls format
         client.resolved_capabilities.document_formatting = false

@@ -58,7 +58,7 @@ require("packer").startup(function()
     }
     use {
         "junegunn/fzf",
-        run = function ()
+        run = function()
             vim.fn["fzf#install"]()
         end
     }
@@ -176,7 +176,7 @@ require("packer").startup(function()
         requires = {
             "neovim/nvim-lspconfig"
         },
-        config = function ()
+        config = function()
             require("rc/plugins/lspsaga")
         end
     }
@@ -315,7 +315,7 @@ require("packer").startup(function()
         cyrequiresrequires = {
             "kyazdani42/nvim-web-devicons"
         },
-        config = function ()
+        config = function()
             require("trouble").setup()
         end
     }
@@ -333,6 +333,7 @@ require("packer").startup(function()
             require("rc/plugins/hop")
         end
     }
+    use "tpope/vim-surround"
     --------------------------------------------------------------
     -- Search
     use {
