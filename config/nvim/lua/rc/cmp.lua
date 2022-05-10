@@ -40,8 +40,8 @@ cmp.setup({
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
                     nvim_lua = "[LSP]",
-                    copilot = "[Copilot]",
                     luasnip = "[Snippet]",
+                    copilot = "[Copilot]",
                     buffer = "[Buffer]",
                     path = "[Path]",
                 })[entry.source.name]
