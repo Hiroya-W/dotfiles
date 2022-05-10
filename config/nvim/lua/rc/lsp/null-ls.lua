@@ -13,6 +13,8 @@ require("null-ls").setup({
         -- Python
         diagnostics.flake8,
         diagnostics.mypy,
+        -- Golang
+        diagnostics.golangci_lint,
         -- code_actions
         code_actions.refactoring,
     },

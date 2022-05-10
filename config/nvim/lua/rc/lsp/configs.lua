@@ -8,7 +8,8 @@ end
 local servers = {
     "sumneko_lua",
     "pylsp",
-    "rust_analyzer"
+    "rust_analyzer",
+    "gopls"
 }
 
 require("nvim-lsp-installer").setup({
