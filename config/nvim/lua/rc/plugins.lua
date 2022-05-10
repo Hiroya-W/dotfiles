@@ -142,6 +142,13 @@ require("packer").startup(function()
     use { "hrsh7th/cmp-nvim-lua", after = { "nvim-cmp" } }
     use { 'saadparwaiz1/cmp_luasnip', after = { "nvim-cmp" } }
     use {
+        "ray-x/lsp_signature.nvim", -- Show signature on float window automatically
+        after = { "nvim-cmp" },
+        config = function()
+            require("lsp_signature").setup()
+        end
+    }
+    use {
         "onsails/lspkind-nvim", -- to show lsp icons
         config = function()
             require("rc/plugins/lspkind-nvim")
