@@ -70,6 +70,8 @@ local function common_capabilities()
     if status_ok then
         capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
     end
+
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
     return capabilities
 end
 
