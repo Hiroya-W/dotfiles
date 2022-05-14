@@ -102,7 +102,7 @@ require("packer").startup(function()
         end
     }
     use {
-        "chentau/marks.nvim", -- Show vim mark
+        "chentoast/marks.nvim", -- Show vim mark
         config = function()
             require("rc/plugins/marks")
         end
