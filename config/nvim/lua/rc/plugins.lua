@@ -346,7 +346,7 @@ require("packer").startup(function()
     }
     use {
         "folke/trouble.nvim", -- UI for diagnostics, references,...
-        cyrequiresrequires = {
+        requires = {
             "kyazdani42/nvim-web-devicons"
         },
         config = function()
