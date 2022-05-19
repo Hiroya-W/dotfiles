@@ -13,13 +13,14 @@ off
 output DP-5
 off
 output DVI-I-1
-crtc 1
+crtc 0
 mode 1920x1080
 pos 0x0
+primary
 rate 144.00
 x-prop-non_desktop 0
 output HDMI-0
-crtc 0
+crtc 1
 mode 1920x1080
 pos 1920x0
 rate 60.00
