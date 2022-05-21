@@ -28,7 +28,7 @@ packer.init {
     },
 }
 
-require("packer").startup(function()
+return require("packer").startup(function()
     use { 'wbthomason/packer.nvim'}
     -- Improve startup time for neovim
     use {
