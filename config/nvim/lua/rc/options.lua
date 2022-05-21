@@ -45,6 +45,7 @@ opt.mouse = "a" -- Enable mouse input
 opt.number = true -- 行番号を表示
 opt.relativenumber = true -- 相対距離
 opt.cursorline = true -- 現在の行を強調表示
+opt.laststatus = 3 -- ステータスバーをウィンドウ全体で1個常に表示する
 -- Show <TAB> and <CR>
 opt.list = true
 opt.listchars:append("space:⋅")
@@ -66,7 +67,6 @@ opt.wildmode = "full"
 opt.showfulltag = true
 -- Complete all candidates
 opt.wildignorecase = true
-
 
 -- Completion setting.
 opt.completeopt = "menuone"
