@@ -43,7 +43,9 @@ return require("packer").startup(function()
     use "nvim-lua/plenary.nvim"
     use {
         "rcarriga/nvim-notify",
-        event = "VimEnter"
+        config = function ()
+            vim.notify = require("notify")
+        end
     }
     use {
         "junegunn/fzf",
