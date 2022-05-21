@@ -357,6 +357,12 @@ return require("packer").startup(function()
         end
     }
     use "tpope/vim-surround"
+    use {
+        "matbme/JABS.nvim", --  Buffer Switcher
+        config = function ()
+            require("rc/plugins/JABS")
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
