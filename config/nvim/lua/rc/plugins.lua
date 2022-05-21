@@ -5,16 +5,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
--- packer-custom-initialization
--- This approach has the benefit of not requiring that the `packer` plugin be loaded unless you want to
--- perform plugin management operations, but it is more involved to use.
-vim.cmd [[command! -nargs=* -complete=customlist,v:lua.require'packer'.plugin_complete  PackerInstall lua require('packer').install(<f-args>)]]
-vim.cmd [[command! -nargs=* -complete=customlist,v:lua.require'packer'.plugin_complete PackerUpdate lua require('packer').update(<f-args>)]]
-vim.cmd [[command! -nargs=* -complete=customlist,v:lua.require'packer'.plugin_complete PackerSync lua require('packer').sync(<f-args>)]]
-vim.cmd [[command! PackerClean packadd packer.nvim | lua require('plugins').clean()]]
-vim.cmd [[command! PackerCompile packadd packer.nvim | lua require('plugins').compile('~/.config/nvim/plugin/packer_load.vim')]]
-vim.cmd [[command! -bang -nargs=+ -complete=customlist,v:lua.require'packer'.loader_complete PackerLoad lua require('packer').loader(<f-args>, '<bang>')]]
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
     augroup packer_user_config
@@ -39,8 +29,7 @@ packer.init {
 }
 
 require("packer").startup(function()
-    -- Packer can manage itself as an optional plugin
-    use { 'wbthomason/packer.nvim', opt = true }
+    use { 'wbthomason/packer.nvim'}
     -- Improve startup time for neovim
     use {
         "lewis6991/impatient.nvim",
