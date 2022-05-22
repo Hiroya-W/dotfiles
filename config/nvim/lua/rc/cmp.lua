@@ -95,7 +95,6 @@ cmp.setup({
         { name = 'nvim_lua' }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
         { name = "copilot" },
         { name = 'luasnip' }, -- For luasnip users.
-        { name = 'vsnip' }, -- For vsnip
         { name = 'buffer' },
     }),
 })
