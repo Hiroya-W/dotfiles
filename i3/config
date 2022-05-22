@@ -78,7 +78,7 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 ## sound
 bindsym $mod+Ctrl+m exec pavucontrol
 
-focus_follows_mouse no
+focus_follows_mouse yes
 
 # kill focused window
 bindsym Mod1+F4 kill
