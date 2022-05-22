@@ -219,6 +219,13 @@ return require("packer").startup(function()
         requires = { "nvim-lua/plenary.nvim" },
     }
     use "folke/lsp-colors.nvim" -- Automatically creates missing LSP highlights groups
+    use {
+        "simrat39/rust-tools.nvim",
+        after = { "nvim-lspconfig" },
+        config = function ()
+            require("rust-tools").setup()
+        end
+    }
     --------------------------------------------------------------
     -- Telescope
     use {
