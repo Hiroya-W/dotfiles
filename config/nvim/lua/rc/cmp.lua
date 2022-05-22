@@ -90,12 +90,14 @@ cmp.setup({
             "s",
         }),
     }),
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'nvim_lua' }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
-        { name = "copilot" },
-        { name = 'luasnip' }, -- For luasnip users.
-        { name = 'buffer' },
+    sources = cmp.config.sources(
+        {
+            { name = 'nvim_lsp', priority_weight = 20 },
+            { name = 'nvim_lua', priority_weight = 20 }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
+            { name = 'luasnip', priority_weight = 20 }, -- For luasnip users.
+            { name = "copilot", priority_weight = 10 }
+        }, {
+        { name = 'buffer' }
     }),
 })
 
