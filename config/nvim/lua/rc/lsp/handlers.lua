@@ -26,7 +26,7 @@ local function lsp_keymaps(bufnr)
     -- vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     --
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -57,7 +57,10 @@ local function lsp_keymaps(bufnr)
 
     -- Use UIs provided by trouble
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TroubleToggle lsp_references<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TroubleToggle lsp_definitions<CR>", opts)
+    -- Don't works Trouble's GoToDefinition action
+    -- https://github.com/folke/trouble.nvim/pull/175
+    -- https://github.com/folke/trouble.nvim/issues/153
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TroubleToggle lsp_definitions<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TroubleToggle lsp_implementations<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cw", ":TroubleToggle workspace_diagnostics<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cd", ":TroubleToggle document_diagnostics<CR>", opts)
