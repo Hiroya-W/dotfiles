@@ -66,6 +66,13 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cd", ":TroubleToggle document_diagnostics<CR>", opts)
 end
 
+local function rust_tools_keymap(bufnr)
+    -- hover_with_actions provided by rust-tools overrides lspsaga.nvim's hover action
+    -- Therefore, use the built-in commands.
+    local opts = { noremap = true, silent = true }
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+end
+
 local function common_capabilities()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -85,7 +92,13 @@ M.on_attach = function(client, bufnr)
         -- Use null-ls format
         client.resolved_capabilities.document_formatting = false
     end
+
     lsp_keymaps(bufnr)
+
+    -- override keymaps for each LSP
+    if client.name == "rust_analyzer" then
+       rust_tools_keymap(bufnr)
+    end
 end
 
 M.capabilities = common_capabilities()
