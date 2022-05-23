@@ -39,7 +39,13 @@ for _, server in ipairs(servers) do
     if server == "rust_analyzer" then
         -- rust-tools send to options to lspconfig,
         -- and set up lspconfig automatically.
-        require("rust-tools").setup({ server = opts })
+        require("rust-tools").setup {
+            tools = opts.tools,
+            server = {
+                on_attach = opts.on_attach,
+                capabilities = opts.capabilities
+            }
+        }
     else
         require('lspconfig')[server].setup(opts)
     end
