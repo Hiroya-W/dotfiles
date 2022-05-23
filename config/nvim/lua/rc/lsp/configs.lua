@@ -36,5 +36,11 @@ for _, server in ipairs(servers) do
         opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
     end
 
-    require('lspconfig')[server].setup(opts)
+    if server == "rust_analyzer" then
+        -- rust-tools send to options to lspconfig,
+        -- and set up lspconfig automatically.
+        require("rust-tools").setup({ server = opts })
+    else
+        require('lspconfig')[server].setup(opts)
+    end
 end

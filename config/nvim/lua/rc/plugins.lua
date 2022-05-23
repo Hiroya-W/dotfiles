@@ -222,9 +222,6 @@ return require("packer").startup(function()
     use {
         "simrat39/rust-tools.nvim",
         after = { "nvim-lspconfig" },
-        config = function ()
-            require("rust-tools").setup()
-        end
     }
     --------------------------------------------------------------
     -- Telescope
