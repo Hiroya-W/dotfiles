@@ -29,7 +29,7 @@ packer.init {
 }
 
 return require("packer").startup(function()
-    use { 'wbthomason/packer.nvim'}
+    use { 'wbthomason/packer.nvim' }
     -- Improve startup time for neovim
     use {
         "lewis6991/impatient.nvim",
@@ -43,7 +43,7 @@ return require("packer").startup(function()
     use "nvim-lua/plenary.nvim"
     use {
         "rcarriga/nvim-notify",
-        config = function ()
+        config = function()
             vim.notify = require("notify")
         end
     }
@@ -363,7 +363,7 @@ return require("packer").startup(function()
     use "tpope/vim-surround"
     use {
         "matbme/JABS.nvim", --  Buffer Switcher
-        config = function ()
+        config = function()
             require("rc/plugins/JABS")
         end
     }
