@@ -9,8 +9,6 @@ require("null-ls").setup({
         -- Python
         formatting.black,
         formatting.isort,
-        -- Rust
-        formatting.rustfmt,
         -- diagnostics
         -- Python
         diagnostics.flake8,
