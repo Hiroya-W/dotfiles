@@ -62,6 +62,8 @@ end
 alias exa "exa --icons"
 alias ls "exa"
 
+fish_add_path $HOME/go/bin
+
 # fish & pacman
 source /opt/asdf-vm/asdf.fish
 
