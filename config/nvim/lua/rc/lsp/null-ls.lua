@@ -16,6 +16,6 @@ require("null-ls").setup({
         -- Golang
         diagnostics.golangci_lint,
         -- code_actions
-        code_actions.refactoring,
+        -- code_actions.refactoring,
     },
 })
