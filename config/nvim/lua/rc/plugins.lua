@@ -401,6 +401,12 @@ return require("packer").startup(function()
             require("nvim-dap-virtual-text").setup()
         end
     }
+    use {
+        "jbyuki/one-small-step-for-vimkind",
+        requires = {
+            "mfussenegger/nvim-dap"
+        }
+    }
     --------------------------------------------------------------
     -- Markdown previewer
     use {
