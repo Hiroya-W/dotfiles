@@ -369,6 +369,12 @@ return require("packer").startup(function()
             require("rc/plugins/JABS")
         end
     }
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("rc/plugins/which-key")
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
@@ -382,14 +388,12 @@ return require("packer").startup(function()
     use {
         "mfussenegger/nvim-dap",
         config = function()
+            require("rc/dap")
         end,
     }
     use {
         "rcarriga/nvim-dap-ui",
         requires = { "mfussenegger/nvim-dap" },
-        config = function()
-            require("dapui").setup()
-        end
     }
     use {
         "theHamsta/nvim-dap-virtual-text",
