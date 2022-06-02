@@ -378,6 +378,30 @@ return require("packer").startup(function()
         end
     }
     --------------------------------------------------------------
+    -- Debugger
+    use {
+        "mfussenegger/nvim-dap",
+        config = function()
+        end,
+    }
+    use {
+        "rcarriga/nvim-dap-ui",
+        requires = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("dapui").setup()
+        end
+    }
+    use {
+        "theHamsta/nvim-dap-virtual-text",
+        requires = {
+            "mfussenegger/nvim-dap",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("nvim-dap-virtual-text").setup()
+        end
+    }
+    --------------------------------------------------------------
     -- Markdown previewer
     use {
         "iamcco/markdown-preview.nvim",
