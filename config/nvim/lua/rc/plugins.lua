@@ -411,6 +411,12 @@ return require("packer").startup(function()
             "mfussenegger/nvim-dap"
         }
     }
+    use {
+        "leoluz/nvim-dap-go",
+        config = function ()
+            require("dap-go").setup()
+        end
+    }
     --------------------------------------------------------------
     -- Markdown previewer
     use {
