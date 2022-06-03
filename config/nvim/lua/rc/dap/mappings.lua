@@ -73,12 +73,12 @@ vim.keymap.set("n","<leader>dq", "<cmd>lua require'dap'.close()<cr>", {
     desc = "Quit"
 })
 
-vim.keymap.set("n", "[debugger]x", '<Cmd>lua require("dapui").toggle()<CR>', {
+vim.keymap.set("n", "<leader>dx", '<Cmd>lua require("dapui").toggle()<CR>', {
     noremap = true,
     silent = true,
     desc = "Toggle UI"
 })
-vim.keymap.set("v", "[debugger]e", '<Cmd>lua require("dapui").eval()<CR>', {
+vim.keymap.set("v", "<leader>de", '<Cmd>lua require("dapui").eval()<CR>', {
     noremap = true,
     silent = true,
     desc = "Evaluate"
