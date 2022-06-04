@@ -428,7 +428,7 @@ return require("packer").startup(function()
     }
     use {
         "leoluz/nvim-dap-go",
-        config = function ()
+        config = function()
             require("dap-go").setup()
         end
     }
