@@ -381,6 +381,15 @@ return require("packer").startup(function()
             require("bufresize").setup()
         end
     }
+    use {
+        "petertriho/nvim-scrollbar",
+        requires = {
+            "kevinhwang91/nvim-hlslens"
+        },
+        config = function()
+            require("rc/plugins/nvim-scrollbar")
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
