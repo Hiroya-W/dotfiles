@@ -375,6 +375,12 @@ return require("packer").startup(function()
             require("rc/plugins/which-key")
         end
     }
+    use {
+        "kwkarlwang/bufresize.nvim",
+        config = function()
+            require("bufresize").setup()
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
