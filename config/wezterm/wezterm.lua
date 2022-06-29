@@ -2,15 +2,15 @@ local wezterm = require("wezterm")
 
 local function default_prog()
     if wezterm.target_triple == "x86_64-apple-darwin" then
-        return {"/usr/local/bin/fish", "-l"}
+        return { "/usr/local/bin/fish", "-l" }
     else
-        return {"/usr/bin/fish"}
+        return { "/usr/bin/fish" }
     end
 end
 
 return {
     default_prog = default_prog(),
-    color_scheme_dirs = {"$HOME/.config/wezterm/colors/"},
+    color_scheme_dirs = { "$HOME/.config/wezterm/colors/" },
     color_scheme = "tokyonight",
     font = wezterm.font("HackGenNerd Console"),
     use_ime = true,
