@@ -1,6 +1,7 @@
 require("rc/dap/mappings")
 require("rc/dap/settings/lua")
 require("rc/dap/settings/go")
+require("rc/dap/settings/cpp")
 
 local dap, dapui = require "dap", require "dapui"
 
