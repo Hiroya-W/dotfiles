@@ -1,0 +1,23 @@
+#https://sequoiatheme.com/sequoia-color-palette
+[colors]
+# The default text color
+foreground = "#868690"
+# The default background color
+background = "#0F1014"
+# Overrides the cell background color when the current cell is occupied by the
+# cursor and the cursor style is set to Block
+cursor_bg = "#c58fff"
+# Overrides the text color when the current cell is occupied by the cursor
+cursor_fg = "#868690"
+# Specifies the border color of the cursor when the cursor style is set to Block,
+# or the color of the vertical or horizontal bar when the cursor style is set to
+# Bar or Underline.
+cursor_border = "#c58fff"
+# the foreground color of selected text
+selection_fg = "#93939c"
+# the background color of selected text
+selection_bg = "#22222a"
+
+#        black       red       green      yellow     blue       purple     cyan       white
+ansi = ["#131317", "#f58ee0", "#8eb5f5", "#9898a6", "#c58fff", "#fdfdfe", "#ffbb88", "#868690"]
+brights = ["#575861", "#f58ee0", "#8eb5f5", "#9898a6", "#c58fff", "#fdfdfe", "#ffbb88", "#868690"]

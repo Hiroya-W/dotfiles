@@ -11,7 +11,7 @@ end
 return {
     default_prog = default_prog(),
     color_scheme_dirs = { "$HOME/.config/wezterm/colors/" },
-    color_scheme = "tokyonight",
+    color_scheme = "sequoia-moonlight",
     font = wezterm.font("HackGenNerd Console"),
     use_ime = true,
     font_size = 11.0;
