@@ -67,4 +67,4 @@ fish_add_path $HOME/go/bin
 # fish & pacman
 source /opt/asdf-vm/asdf.fish
 
-#eval (starship init fish)
+eval (starship init fish)
