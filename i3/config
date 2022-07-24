@@ -40,7 +40,7 @@ exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 exec --no-startup-id gitify
 exec --no-startup-id slack
-exec --no-startup-id discord
+exec --no-startup-id discord-ptb
 # exec_always --no-startup-id sbxkb
 exec_always --no-startup-id xidlehook_betterlockscreen
 exec_always --no-startup-id ff-theme-util
