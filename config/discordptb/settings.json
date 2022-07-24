@@ -1,0 +1,5 @@
+{
+  "BACKGROUND_COLOR": "#202225",
+  "UPDATE_ENDPOINT": "https://updates.goosemod.com/goosemod",
+  "NEW_UPDATE_ENDPOINT": "https://updates.goosemod.com/goosemod/"
+}
