@@ -1,5 +1,13 @@
 {
   "BACKGROUND_COLOR": "#202225",
   "UPDATE_ENDPOINT": "https://updates.goosemod.com/goosemod",
-  "NEW_UPDATE_ENDPOINT": "https://updates.goosemod.com/goosemod/"
+  "NEW_UPDATE_ENDPOINT": "https://updates.goosemod.com/goosemod/",
+  "IS_MAXIMIZED": false,
+  "IS_MINIMIZED": false,
+  "WINDOW_BOUNDS": {
+    "x": 2888,
+    "y": 13,
+    "width": 939,
+    "height": 1054
+  }
 }
