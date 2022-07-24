@@ -15,7 +15,11 @@ if [ ! -d "$BACKGROUNDS_DIR" ]; then
 fi
 
 for img in "${!BACKGROUND_IMGS[@]}"; do
-    wget -O "$BACKGROUNDS_DIR/${img}" "${BACKGROUND_IMGS[${img}]}"
+    if [ ! -f "$BACKGROUNDS_DIR/$img" ]; then
+        wget --quiet -O "$BACKGROUNDS_DIR/$img" "${BACKGROUND_IMGS[$img]}"
+    else
+        echo "$img is exists. Skip."
+    fi
 done
 
 ## i3wm
