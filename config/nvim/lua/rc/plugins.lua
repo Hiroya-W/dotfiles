@@ -448,4 +448,6 @@ return require("packer").startup(function()
     if PACKER_BOOTSTRAP then
         require('packer').sync()
     end
+    -- Japanese
+    use "deton/jasegment.vim"
 end)
