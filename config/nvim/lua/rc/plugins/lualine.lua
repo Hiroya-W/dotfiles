@@ -1,7 +1,4 @@
-local status, nvim_gps = pcall(require, "nvim-gps")
-if not status then
-    return
-end
+local navic = require("nvim-navic")
 
 require('lualine').setup {
     options = {
@@ -18,7 +15,7 @@ require('lualine').setup {
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
             'filename',
-            { nvim_gps.get_location, cond = nvim_gps.is_available }
+            { navic.get_location, cond = navic.is_available }
         },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },

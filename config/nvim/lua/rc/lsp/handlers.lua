@@ -85,20 +85,21 @@ local function common_capabilities()
     return capabilities
 end
 
+local navic = require("nvim-navic")
+
 M.on_attach = function(client, bufnr)
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
     if client.name == "pylsp" then
         -- Use null-ls format
         client.resolved_capabilities.document_formatting = false
+    -- override keymaps for each LSP
+    elseif client.name == "rust_analyzer" then
+       rust_tools_keymap(bufnr)
     end
 
     lsp_keymaps(bufnr)
-
-    -- override keymaps for each LSP
-    if client.name == "rust_analyzer" then
-       rust_tools_keymap(bufnr)
-    end
+    navic.attach(client, bufnr)
 end
 
 M.capabilities = common_capabilities()

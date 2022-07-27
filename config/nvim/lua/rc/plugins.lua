@@ -101,11 +101,10 @@ return require("packer").startup(function()
         end
     }
     use {
-        "SmiteshP/nvim-gps", -- Show scope you are working inside
-        requires = "nvim-treesitter/nvim-treesitter",
-        config = function()
-            require("nvim-gps").setup()
-        end
+        "SmiteshP/nvim-navic", -- Show scope you are working inside
+        requires = {
+            "neovim/nvim-lspconfig",
+        },
     }
     --------------------------------------------------------------
     -- Statusline / Bufferline
