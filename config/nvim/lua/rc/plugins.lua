@@ -2,7 +2,8 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    PACKER_BOOTSTRAP = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -442,11 +443,12 @@ return require("packer").startup(function()
         end,
         ft = { "markdown" },
     }
+    --------------------------------------------------------------
+    -- For Japanese plugin
+    use "deton/jasegment.vim"
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
         require('packer').sync()
     end
-    -- Japanese
-    use "deton/jasegment.vim"
 end)
