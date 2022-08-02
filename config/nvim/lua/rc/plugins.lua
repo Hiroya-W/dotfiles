@@ -298,6 +298,7 @@ return require("packer").startup(function()
             require("rc/plugins/nvim-treesitter")
         end,
     })
+    use { "nvim-treesitter/playground" }
     use({ "yioneko/nvim-yati", after = "nvim-treesitter" }) -- indent
     use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } }) -- rainbow parantheses
     --------------------------------------------------------------
