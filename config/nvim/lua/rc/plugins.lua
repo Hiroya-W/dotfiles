@@ -228,13 +228,12 @@ return require("packer").startup(function()
         end,
         requires = { "nvim-lua/plenary.nvim" },
     }
-    use{
+    use {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         config = function()
-            vim.diagnostic.config{
-                virtual_text = false,
-            }
-            require("lsp_lines").setup()
+            local lsp_lines = require("lsp_lines")
+            vim.keymap.set("", "<Leader>l", lsp_lines.toggle, { desc = "Toggle lsp_lines" })
+            lsp_lines.setup()
         end,
     }
     use "folke/lsp-colors.nvim" -- Automatically creates missing LSP highlights groups

@@ -15,6 +15,12 @@ M.setup = function()
         vim.lsp.handlers.signature_help, {
         border = "rounded",
     })
+
+    -- for lsp_lines.nvim
+    vim.diagnostic.config {
+        virtual_text = false,
+        virtual_lines = false,
+    }
 end
 
 local function lsp_keymaps(bufnr)
