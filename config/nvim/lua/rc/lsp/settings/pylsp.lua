@@ -5,16 +5,19 @@
 -- Here, I use null-ls, so you don't need to install plugins using PylspInstall cmd.
 
 return {
-    pylsp = {
-        configurationSources = { "flake8", "mypy", "isort", "black" },
-        plugins = {
-            -- https://github.com/emanspeaks/pyls-flake8/
-            -- load setup.cfg, tox.ini, .flake8
-            flake8 = { enabled = false },
-            pylint = { enabled = false },
-            pycodestyle = { enabled = false },
-            yapf = { enabled = false },
-            -- black enabled if python-lsp-black installed
+    settings = {
+        pylsp = {
+            configurationSources = { "flake8", "mypy", "isort", "black" },
+            plugins = {
+                -- https://github.com/emanspeaks/pyls-flake8/
+                -- load setup.cfg, tox.ini, .flake8
+                pyflakes = { enabled = false },
+                flake8 = { enabled = false },
+                pylint = { enabled = false },
+                pycodestyle = { enabled = false },
+                yapf = { enabled = false },
+                -- black enabled if python-lsp-black installed
+            }
         }
     }
 }
