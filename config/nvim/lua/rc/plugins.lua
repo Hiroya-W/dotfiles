@@ -63,8 +63,15 @@ return require("packer").startup(function()
             vim.g.tokyonight_style = "night"
             vim.g.tokyonight_italic_comments = false
             vim.g.tokyonight_italic_keywords = false
-            vim.cmd [[colorscheme tokyonight]]
+            -- vim.cmd [[colorscheme tokyonight]]
         end,
+    }
+    use {
+        -- "~/Repositories/github.com/Hiroya-W/sequoia-moonlight.nvim",
+        "Hiroya-W/sequoia-moonlight.nvim",
+        config = function()
+            vim.cmd [[colorscheme sequoia]]
+        end
     }
     use {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
