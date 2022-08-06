@@ -2,8 +2,6 @@
     type = "git-repo"
     url = "https://github.com/Hiroya-W/polybar-adapta-theme.git"
     refreshPeriod = "0"
-    [".config/polybar_themes/polybar-adapta-theme".clone]
-        args = ["-b hiroya-settings"]
 
 [".config/polybar_themes/polybar-sequoia-theme"]
     type = "git-repo"
@@ -14,8 +12,6 @@
     type = "git-repo"
     url = "https://github.com/Hiroya-W/rofi.git"
     refreshPeriod = "0"
-    [".config/rofi_themes/rofi".clone]
-        args = ["-b hiroya-settings"]
 
 [".config/xremap/xremap-my-eucalyn"]
     type = "git-repo"
