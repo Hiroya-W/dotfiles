@@ -1,3 +1,12 @@
+{{ if eq .chezmoi.os "linux" }}
+
+[".config/xremap/xremap-my-eucalyn"]
+    type = "git-repo"
+    url = "https://github.com/Hiroya-W/xremap-my-eucalyn.git"
+    refreshPeriod = "0"
+
+{{   if contains "i3" (output "printenv" "DESKTOP_SESSION") }}
+
 [".config/polybar_themes/polybar-adapta-theme"]
     type = "git-repo"
     url = "https://github.com/Hiroya-W/polybar-adapta-theme.git"
@@ -13,7 +22,5 @@
     url = "https://github.com/Hiroya-W/rofi.git"
     refreshPeriod = "0"
 
-[".config/xremap/xremap-my-eucalyn"]
-    type = "git-repo"
-    url = "https://github.com/Hiroya-W/xremap-my-eucalyn.git"
-    refreshPeriod = "0"
+{{   end }}
+{{ end }}
