@@ -1,0 +1,19 @@
+[".config/polybar_themes/polybar-adapta-theme"]
+    type = "git-repo"
+    url = "https://github.com/Hiroya-W/polybar-adapta-theme.git"
+    refreshPeriod = "0"
+
+[".config/polybar_themes/polybar-sequoia-theme"]
+    type = "git-repo"
+    url = "https://github.com/Hiroya-W/polybar-sequoia-theme.git"
+    refreshPeriod = "0"
+
+[".config/rofi_themes/rofi"]
+    type = "git-repo"
+    url = "https://github.com/Hiroya-W/rofi.git"
+    refreshPeriod = "0"
+
+[".config/xremap/xremap-my-eucalyn"]
+    type = "git-repo"
+    url = "https://github.com/Hiroya-W/xremap-my-eucalyn.git"
+    refreshPeriod = "0"
