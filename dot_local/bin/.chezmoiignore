@@ -1,0 +1,4 @@
+{{ if eq .chezmoi.os "linux" }}
+notify-logger.sh
+xidlehook_betterlockscreen
+{{ end }}

@@ -1,0 +1,18 @@
+{{ if eq .chezmoi.os "linux" }}
+
+autorandr
+fontconfig
+gtk-3.0
+nitrogen
+pacman
+xfce4
+xremap
+
+{{   if not (contains "i3" (output "printenv" "DESKTOP_SESSION")) }}
+
+picom.conf
+symlink_polybar
+symlink_rofi
+
+{{   end }}
+{{ end }}

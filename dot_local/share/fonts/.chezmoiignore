@@ -1,15 +1,5 @@
-README.md
-LICENSE
-screenshots
-
 {{ if ne .chezmoi.os "linux" }}
-dot_gtkrc-2.0
-dot_profile
-dot_initrc
-dot_Xmodmap*
-dot_xprofile
-
 {{   if contains "i3" (output "printenv" "DESKTOP_SESSION") }}
-dot_i3
+symlink_rofi_theme
 {{   end }}
 {{ end }}
