@@ -21,22 +21,16 @@
 
 ## Install
 
-Clone onto your pc:
+Install chezmoi:
 
 ```bash
-git clone https://github.com/Hiroya-W/dotfiles.git --recursive ~/dotfiles
-```
-
-Install rcm:
-
-```bash
-yay -S rcm
+sudo pacman -S chezmoi
 ```
 
 Install the dotfiles:
 
 ```bash
-env RCRC=$HOME/dotfiles/rcrc rcup
+chezmoi init --apply https://github.com/Hiroya-W/dotfiles.git
 ```
 
 ## References
