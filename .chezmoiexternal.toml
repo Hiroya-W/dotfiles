@@ -22,5 +22,15 @@
     url = "https://github.com/Hiroya-W/rofi.git"
     refreshPeriod = "0"
 
+["Pictures/backgrounds/wp8679761.jpg"]
+    type = "file"
+    url = "https://wallpapercave.com/wp/wp8679761.jpg"
+    refreshPeriod = "0"
+
+["Pictures/backgrounds/sakura.jpg"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/Stardust-kyun/dotfiles/6e4c23b3d2840c7c531d87b2e3eda19aef39c92b/home/.config/awesome/colors/sakura/sakura.jpg"
+    refreshPeriod = "0"
+
 {{   end }}
 {{ end }}
