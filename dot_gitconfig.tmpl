@@ -6,7 +6,7 @@
 [ghq]
 	root = {{ .chezmoi.homeDir }}/ghq
 [core]
-	editor = !{{ output "which" "nvim" }}
+	editor = {{ output "which" "nvim" }}
 [init]
 	defaultBranch = main
 [commit]
