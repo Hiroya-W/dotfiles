@@ -9,7 +9,7 @@ dot_initrc
 dot_Xmodmap*
 dot_xprofile
 
-{{   if contains "i3" (output "printenv" "DESKTOP_SESSION") }}
+{{   if contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}") }}
 dot_i3
 {{   end }}
 {{ end }}

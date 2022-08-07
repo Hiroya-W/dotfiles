@@ -8,7 +8,7 @@ pacman
 xfce4
 xremap
 
-{{   if not (contains "i3" (output "printenv" "DESKTOP_SESSION")) }}
+{{   if contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}") }}
 
 picom.conf
 symlink_polybar

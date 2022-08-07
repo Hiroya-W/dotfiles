@@ -5,7 +5,7 @@
     url = "https://github.com/Hiroya-W/xremap-my-eucalyn.git"
     refreshPeriod = "0"
 
-{{   if contains "i3" (output "printenv" "DESKTOP_SESSION") }}
+{{   if contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}") }}
 
 [".config/polybar_themes/polybar-adapta-theme"]
     type = "git-repo"
