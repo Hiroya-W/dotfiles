@@ -59,20 +59,19 @@ function fish_user_key_bindings
     bind \c] peco_ghq
 end
 
-function source_asdf
-    if test (uname -s) = "Darwin"
-        source /usr/local/opt/asdf/libexec/asdf.fish
-    else
-        # fish & pacman
-        source /opt/asdf-vm/asdf.fish
-    end
-end
-
 alias exa "exa --icons"
 alias ls "exa"
 
 fish_add_path $HOME/go/bin
 
-source_asdf
+# source asdf
+if test (uname -s) = "Darwin"
+    # for macOS
+    source /usr/local/opt/asdf/libexec/asdf.fish
+else
+    # for Linux
+    # fish & pacman
+    source /opt/asdf-vm/asdf.fish
+end
 
 eval (starship init fish)
