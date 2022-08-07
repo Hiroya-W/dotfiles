@@ -2,6 +2,16 @@ README.md
 LICENSE
 screenshots
 
+
+{{ if ne .chezmoi.os "linux" }}
+.bashrc_linux
+.zshrc_linux
+{{ end }}
+{{ if ne .chezmoi.os "darwin" }}
+.bashrc_darwin
+.zshrc_darwin
+{{ end }}
+
 {{ if ne .chezmoi.os "linux" }}
 .gtkrc-2.0
 .profile
