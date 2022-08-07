@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" }}
+{{ if ne .chezmoi.os "linux" }}
 
 autorandr
 fontconfig
@@ -8,11 +8,11 @@ pacman
 xfce4
 xremap
 
-{{   if contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}") }}
+{{   if not (contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}")) }}
 
 picom.conf
-symlink_polybar
-symlink_rofi
+polybar
+rofi
 
 {{   end }}
 {{ end }}

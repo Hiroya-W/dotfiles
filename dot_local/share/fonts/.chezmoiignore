@@ -1,5 +1,5 @@
 {{ if ne .chezmoi.os "linux" }}
-{{   if contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}") }}
-symlink_rofi_theme
+{{   if not (contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}")) }}
+rofi_theme
 {{   end }}
 {{ end }}

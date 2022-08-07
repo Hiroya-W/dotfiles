@@ -3,13 +3,13 @@ LICENSE
 screenshots
 
 {{ if ne .chezmoi.os "linux" }}
-dot_gtkrc-2.0
-dot_profile
-dot_initrc
-dot_Xmodmap*
-dot_xprofile
+.gtkrc-2.0
+.profile
+.xinitrc
+.Xmodmap*
+.xprofile
 
-{{   if contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}") }}
-dot_i3
+{{   if not (contains "i3" (output "bash" "-c" "env" "|" "{" "grep" "DESKTOP_SESSION" "||" "true;" "}")) }}
+.i3
 {{   end }}
 {{ end }}

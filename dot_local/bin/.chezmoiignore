@@ -1,4 +1,4 @@
-{{ if eq .chezmoi.os "linux" }}
+{{ if ne .chezmoi.os "linux" }}
 notify-logger.sh
 xidlehook_betterlockscreen
 {{ end }}
