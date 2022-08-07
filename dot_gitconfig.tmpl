@@ -1,0 +1,19 @@
+[user]
+	email = hyuyukun@gmail.com
+	name = Hiroya-W
+[include]
+	path = {{ .chezmoi.homeDir }}/.config/git/gitconfig_shared
+[ghq]
+	root = {{ .chezmoi.homeDir }}/ghq
+[core]
+	editor = /usr/bin/nvim
+[init]
+	defaultBranch = main
+[commit]
+	template = {{ .chezmoi.homeDir }}/.commit_template
+[credential "https://github.com"]
+	helper =
+	helper = !{{ output "which" "gh" | trim }} auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !{{ output "which" "gh" | trim }} auth git-credential
