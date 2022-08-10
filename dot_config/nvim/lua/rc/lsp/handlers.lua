@@ -61,8 +61,10 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", ":Lspsaga hover_doc<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
+        opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"
+        , opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":Lspsaga signature_help<CR>", opts)
     -- close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", ":Lspsaga rename<CR>", opts)
@@ -111,9 +113,9 @@ M.on_attach = function(client, bufnr)
     if client.name == "pylsp" then
         -- Use null-ls format
         client.resolved_capabilities.document_formatting = false
-    -- override keymaps for each LSP
+        -- override keymaps for each LSP
     elseif client.name == "rust_analyzer" then
-       rust_tools_keymap(bufnr)
+        rust_tools_keymap(bufnr)
     end
 
     lsp_keymaps(bufnr)
