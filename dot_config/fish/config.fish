@@ -59,8 +59,8 @@ function fish_user_key_bindings
     bind \c] peco_ghq
 end
 
-set -g fish_key_bindings fish_vi_key_bindings
-bind -M insert \cc kill-whole-line repaint
+#set -g fish_key_bindings fish_vi_key_bindings
+#bind -M insert \cc kill-whole-line repaint
 
 alias exa "exa --icons"
 alias ls "exa"
