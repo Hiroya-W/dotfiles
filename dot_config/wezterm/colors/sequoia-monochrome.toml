@@ -6,22 +6,22 @@ foreground = "#868690"
 background = "#0F1014"
 # Overrides the cell background color when the current cell is occupied by the
 # cursor and the cursor style is set to Block
-cursor_bg = "#c58fff"
+cursor_bg = "#7C829D"
 # Overrides the text color when the current cell is occupied by the cursor
 cursor_fg = "#868690"
 # Specifies the border color of the cursor when the cursor style is set to Block,
 # or the color of the vertical or horizontal bar when the cursor style is set to
 # Bar or Underline.
-cursor_border = "#c58fff"
+cursor_border = "#7C829D"
 # the foreground color of selected text
 selection_fg = "#93939c"
 # the background color of selected text
 selection_bg = "#22222a"
 
-ansi = ["#131317", "#f58ee0", "#8eb5f5", "#9898a6", "#c58fff", "#fdfdfe", "#ffbb88", "#868690"]
-brights = ["#575861", "#f58ee0", "#8eb5f5", "#9898a6", "#c58fff", "#fdfdfe", "#ffbb88", "#868690"]
+ansi = ["#131317", "#999EB2", "#626983", "#D3D5DE", "#7C829D", "#E2E4ED", "#B6BAC8", "#868690"]
+brights = ["#575861", "#999EB2", "#626983", "#D3D5DE", "#7C829D", "#E2E4ED", "#B6BAC8", "#868690"]
 
 [metadata]
-name = "Sequoia Moonlight"
+name = "Sequoia Monochrome"
 author = "Hiroya-W and Michael Andreuzza"
 origin_url = "https://github.com/Hiroya-W/wezterm-sequoia-theme"
