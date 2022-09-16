@@ -410,6 +410,17 @@ return require("packer").startup(function()
             require("rc/plugins/nvim-scrollbar")
         end
     }
+    use {
+        -- Show current cursor position
+        "gen740/SmoothCursor.nvim",
+        config = function()
+            require('smoothcursor').setup({
+                fancy = {
+                    enable = true
+                }
+            })
+        end
+    }
     --------------------------------------------------------------
     -- Search
     use {
