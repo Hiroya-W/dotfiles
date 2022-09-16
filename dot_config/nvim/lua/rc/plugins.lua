@@ -122,7 +122,7 @@ return require("packer").startup(function()
     use {
         "nvim-lualine/lualine.nvim",
         after = colorscheme,
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        requires = { "kyazdani42/nvim-web-devicons" },
         config = function()
             require("rc/plugins/lualine")
         end,
@@ -131,7 +131,7 @@ return require("packer").startup(function()
     use {
         "akinsho/bufferline.nvim",
         after = colorscheme,
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        requires = { "kyazdani42/nvim-web-devicons" },
         config = function()
             require("rc/plugins/bufferline")
         end,
