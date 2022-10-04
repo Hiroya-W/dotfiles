@@ -58,8 +58,10 @@ local function lsp_keymaps(bufnr)
     -- Use UIs provided by lspsaga
     -- See https://github.com/tami5/lspsaga.nvim/wiki
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", ":Lspsaga lsp_finder<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", ":Lspsaga hover_doc<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
         opts)

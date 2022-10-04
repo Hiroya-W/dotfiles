@@ -202,6 +202,7 @@ return require("packer").startup(function()
         requires = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+            "aznhe21/actions-preview.nvim"
         },
         after = { "cmp-nvim-lsp" },
         config = function()
