@@ -1,3 +1,10 @@
+{{ $model_identifier := (output "bash" "-c" "system_profiler SPHardwareDataType | grep \"Model Identifier\" | awk -F \": \" '{print $2}'") }}
+{{ $product_id := 9999 }}
+{{ $vendor_id := 9999 }}
+{{ if contains "Mac14,2" $model_identifier }}
+{{   $product_id = 0 }}
+{{   $vendor_id = 0 }}
+{{ end }}
 {
     "global": {
         "check_for_updates_on_startup": true,
@@ -23,8 +30,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 631,
-                        "vendor_id": 1452
+                        "product_id": {{ $product_id }},
+                        "vendor_id": {{ $vendor_id }}
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
@@ -37,8 +44,8 @@
                     "identifiers": {
                         "is_keyboard": false,
                         "is_pointing_device": true,
-                        "product_id": 631,
-                        "vendor_id": 1452
+                        "product_id": {{ $product_id }},
+                        "vendor_id": {{ $vendor_id }}
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
@@ -226,8 +233,8 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 631,
-                        "vendor_id": 1452
+                        "product_id": {{ $product_id }},
+                        "vendor_id": {{ $vendor_id }}
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
@@ -451,8 +458,8 @@
                     "identifiers": {
                         "is_keyboard": false,
                         "is_pointing_device": true,
-                        "product_id": 631,
-                        "vendor_id": 1452
+                        "product_id": {{ $product_id }},
+                        "vendor_id": {{ $vendor_id }}
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
