@@ -72,7 +72,12 @@ fish_add_path /opt/homebrew/bin
 # source asdf
 if test (uname -s) = "Darwin"
     # for macOS
-    source /usr/local/opt/asdf/libexec/asdf.fish
+    if test (uname -m) = "arm64"
+        # for apple-silicon
+        source /opt/homebrew/opt/asdf/libexec/asdf.fish
+    else
+        source /usr/local/opt/asdf/libexec/asdf.fish
+    end
 else
     # for Linux
     # fish & pacman
