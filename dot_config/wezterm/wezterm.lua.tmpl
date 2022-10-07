@@ -4,6 +4,8 @@ local utils = require("utils")
 local function default_prog()
     if wezterm.target_triple == "x86_64-apple-darwin" then
         return { "/usr/local/bin/fish", "-l" }
+    elseif wezterm.target_triple == "aarch64-apple-darwin" then
+        return { "/opt/homebrew/bin/fish", "-l" }
     else
         return { "/usr/bin/fish" }
     end
