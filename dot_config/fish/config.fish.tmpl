@@ -66,22 +66,19 @@ alias exa "exa --icons"
 alias ls "exa"
 
 fish_add_path $HOME/go/bin
-# for apple-silicon
-fish_add_path /opt/homebrew/bin
+{{ if eq .chezmoi.os "darwin" }}
+# for brew
+eval (/opt/homebrew/bin/brew shellenv)
+{{ end }}
 
 # source asdf
-if test (uname -s) = "Darwin"
-    # for macOS
-    if test (uname -m) = "arm64"
-        # for apple-silicon
-        source /opt/homebrew/opt/asdf/libexec/asdf.fish
-    else
-        source /usr/local/opt/asdf/libexec/asdf.fish
-    end
-else
-    # for Linux
-    # fish & pacman
-    source /opt/asdf-vm/asdf.fish
+{{ if eq .chezmoi.os "darwin" }}
+source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
 end
+{{ end }}
+{{ if eq .chezmoi.os "linux" }}
+# fish & pacman
+source /opt/asdf-vm/asdf.fish
+{{ end }}
 
 eval (starship init fish)
