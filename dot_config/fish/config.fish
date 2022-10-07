@@ -66,6 +66,8 @@ alias exa "exa --icons"
 alias ls "exa"
 
 fish_add_path $HOME/go/bin
+# for apple-silicon
+fish_add_path /opt/homebrew/bin
 
 # source asdf
 if test (uname -s) = "Darwin"
