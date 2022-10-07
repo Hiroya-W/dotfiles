@@ -74,7 +74,6 @@ eval (/opt/homebrew/bin/brew shellenv)
 # source asdf
 {{ if eq .chezmoi.os "darwin" }}
 source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
-end
 {{ end }}
 {{ if eq .chezmoi.os "linux" }}
 # fish & pacman
