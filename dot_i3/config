@@ -9,10 +9,10 @@ set $mod Mod4
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 default_border pixel 1
-default_floating_border normal
+default_floating_border pixel 1
 
 # Hide borders
-hide_edge_borders none
+hide_edge_borders smart
 
 # change borders
 bindsym $mod+u border none
