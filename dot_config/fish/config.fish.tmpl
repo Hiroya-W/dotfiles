@@ -68,7 +68,11 @@ alias ls "exa"
 fish_add_path $HOME/go/bin
 {{ if eq .chezmoi.os "darwin" }}
 # for brew
+{{   if eq "arm64" (output "uname" "-m")}}
 eval (/opt/homebrew/bin/brew shellenv)
+{{   else }}
+eval (/usr/local/bin/brew shellenv)
+{{   end }}
 {{ end }}
 
 # source asdf
