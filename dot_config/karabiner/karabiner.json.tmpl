@@ -4,6 +4,9 @@
 {{ if contains "Mac14,2" $model_identifier }}
 {{   $product_id = 0 }}
 {{   $vendor_id = 0 }}
+{{ else if contains "MacBookPro16,2" $model_identifier }}
+{{   $product_id = 638 }}
+{{   $vendor_id = 1452}}
 {{ end }}
 {
     "global": {
