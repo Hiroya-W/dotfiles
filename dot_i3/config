@@ -193,8 +193,8 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
 # assign [class="Google-chrome"] $ws1
-assign [class="Slack"] $ws2
-assign [class="discord"] $ws2
+assign [class="Slack"] $ws1
+assign [class="discord"] $ws1
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
