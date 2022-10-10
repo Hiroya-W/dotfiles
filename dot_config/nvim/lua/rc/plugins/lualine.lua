@@ -2,7 +2,7 @@ local navic = require("nvim-navic")
 
 -- https://github.com/nvim-lualine/lualine.nvim/discussions/493
 local function get_time()
-    return "🕙" .. os.date("%I:%M", os.time())
+    return "🕙" .. os.date("%H:%M", os.time())
 end
 
 require('lualine').setup {
