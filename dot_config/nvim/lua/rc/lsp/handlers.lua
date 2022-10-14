@@ -121,7 +121,11 @@ M.on_attach = function(client, bufnr)
     end
 
     lsp_keymaps(bufnr)
-    navic.attach(client, bufnr)
+
+    -- satysfi-ls does not support documentSymbols
+    if client.name ~= "satysfi-ls" then
+        navic.attach(client, bufnr)
+    end
 end
 
 M.capabilities = common_capabilities()
