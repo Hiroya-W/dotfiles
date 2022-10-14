@@ -7,7 +7,6 @@ local servers = {
     "rust_analyzer",
     "gopls",
     "clangd",
-    "satysfi-ls"
 }
 
 require("mason").setup({
@@ -53,6 +52,20 @@ mason_lspconfig.setup_handlers{function(server_name)
     end
 end}
 
-require('lspconfig')["satysfi-ls"].setup({
-    autostart = true
-})
+-- Unsupported LSPs by Mason
+local unsupported_servers = {
+    "satysfi-ls"
+}
+
+for _, server_name in ipairs(unsupported_servers) do
+    local opts = {
+        on_attach = require("rc/lsp/handlers").on_attach,
+        capabilities = require("rc/lsp/handlers").capabilities
+    }
+
+    local has_custom_opts, server_custom_opts = pcall(require, "rc/lsp/settings/" .. server_name)
+    if has_custom_opts then
+        opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
+    end
+    require('lspconfig')[server_name].setup(opts)
+end
