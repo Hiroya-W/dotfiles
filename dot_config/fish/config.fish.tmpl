@@ -84,4 +84,9 @@ source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.fish
 source /opt/asdf-vm/asdf.fish
 {{ end }}
 
+{{ if eq .chezmoi.os "darwin" }}
+# opam configuration
+source /Users/hiroya/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+{{ end }}
+
 eval (starship init fish)
