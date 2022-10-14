@@ -66,6 +66,8 @@ alias exa "exa --icons"
 alias ls "exa"
 
 fish_add_path $HOME/go/bin
+fish_add_path $HOME/.cargo/bin
+
 {{ if eq .chezmoi.os "darwin" }}
 # for brew
 {{   if contains "arm64" (output "uname" "-m")}}
