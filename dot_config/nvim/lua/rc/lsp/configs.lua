@@ -6,7 +6,8 @@ local servers = {
     "pyright",
     "rust_analyzer",
     "gopls",
-    "clangd"
+    "clangd",
+    "satysfi-ls"
 }
 
 require("mason").setup({
@@ -51,3 +52,7 @@ mason_lspconfig.setup_handlers{function(server_name)
         require('lspconfig')[server_name].setup(opts)
     end
 end}
+
+require('lspconfig')["satysfi-ls"].setup({
+    autostart = true
+})
