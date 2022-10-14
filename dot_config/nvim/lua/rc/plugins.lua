@@ -304,6 +304,7 @@ return require("packer").startup(function()
     use { "nvim-treesitter/playground" }
     use({ "yioneko/nvim-yati", after = "nvim-treesitter" }) -- indent
     use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } }) -- rainbow parantheses
+    use { "qnighy/satysfi.vim" } -- for satysfi syntax-highlight
     --------------------------------------------------------------
     -- Git
     use {
