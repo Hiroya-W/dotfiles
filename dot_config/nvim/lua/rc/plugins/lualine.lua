@@ -1,10 +1,5 @@
 local navic = require("nvim-navic")
 
--- https://github.com/nvim-lualine/lualine.nvim/discussions/493
-local function get_time()
-    return "🕙" .. os.date("%H:%M", os.time())
-end
-
 require('lualine').setup {
     options = {
         icons_enabled = true,
@@ -25,8 +20,8 @@ require('lualine').setup {
             { navic.get_location, cond = navic.is_available }
         },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
-        lualine_y = { 'progress', 'location' },
-        lualine_z = { get_time }
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
     },
     inactive_sections = {
         lualine_a = {},
