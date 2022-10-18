@@ -92,6 +92,20 @@ wezterm.on('update-right-status', function(window, pane)
   window:set_right_status(wezterm.format(elements))
 end)
 
+-- https://zenn.dev/yutakatay/articles/wezterm-intro#%E3%82%BF%E3%83%96%E3%82%92-tmux-%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AB
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+    local title = wezterm.truncate_right(utils.basename(tab.active_pane.foreground_process_name), max_width)
+    if title == "" then
+        title = wezterm.truncate_right(
+            utils.basename(utils.convert_home_dir(tab.active_pane.current_working_dir)),
+            max_width
+        )
+    end
+    return {
+        { Text = " " .. tab.tab_index + 1 .. ":" .. title .. " " },
+    }
+end)
+
 return {
     default_prog = default_prog(),
     color_scheme_dirs = { "$HOME/.config/wezterm/colors/" },
@@ -175,17 +189,4 @@ return {
         { key = "k", mods = "ALT|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Up" }) },
         { key = "j", mods = "ALT|SHIFT", action = wezterm.action({ ActivatePaneDirection = "Down" }) },
     },
-    -- https://zenn.dev/yutakatay/articles/wezterm-intro#%E3%82%BF%E3%83%96%E3%82%92-tmux-%E3%81%BF%E3%81%9F%E3%81%84%E3%81%AB
-    wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-        local title = wezterm.truncate_right(utils.basename(tab.active_pane.foreground_process_name), max_width)
-        if title == "" then
-            title = wezterm.truncate_right(
-                utils.basename(utils.convert_home_dir(tab.active_pane.current_working_dir)),
-                max_width
-            )
-        end
-        return {
-            { Text = " " .. tab.tab_index + 1 .. ":" .. title .. " " },
-        }
-    end)
 }
