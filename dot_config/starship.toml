@@ -73,17 +73,9 @@ $status\
 $shell\
 $character"""
 
-right_format = """
-$time
-"""
-
 [directory]
 format = " [$path]($style)[$read_only]($read_only_style) "
 
 [character]
 success_symbol = "[\\(*'-'\\) <](bold green)"
 error_symbol = "[\\(*;-;\\) <](bold red)"
-
-[time]
-format = "🕙[\\[ $time \\]]($style) "
-disabled = false
