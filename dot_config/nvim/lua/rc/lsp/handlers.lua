@@ -114,7 +114,7 @@ M.on_attach = function(client, bufnr)
     -- after the language server attaches to the current buffer
     if client.name == "pylsp" then
         -- Use null-ls format
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         -- override keymaps for each LSP
     elseif client.name == "rust_analyzer" then
         rust_tools_keymap(bufnr)
