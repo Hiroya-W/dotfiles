@@ -110,9 +110,7 @@ return require("packer").startup(function()
     }
     use {
         -- Using SymbolInformatin support
-        -- Require pylsp
-        "jason0x43/nvim-navic", -- Show scope you are working inside
-        branch = "symbolinformation-support",
+        "SmiteshP/nvim-navic", -- Show scope you are working inside
         requires = {
             "neovim/nvim-lspconfig",
         },
