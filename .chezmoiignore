@@ -8,6 +8,7 @@ screenshots
 .zshrc_linux
 {{ end }}
 {{ if ne .chezmoi.os "darwin" }}
+Library
 .bashrc_darwin
 .zshrc_darwin
 {{ end }}
