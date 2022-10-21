@@ -43,10 +43,15 @@ return require("packer").startup(function()
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use {
-        "rcarriga/nvim-notify",
+        "folke/noice.nvim",
+        event = "VimEnter",
         config = function()
-            vim.notify = require("notify")
-        end
+            require("noice").setup()
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
     }
     use {
         "junegunn/fzf",
@@ -464,17 +469,6 @@ return require("packer").startup(function()
             })
         end
     }
-    use({
-        "folke/noice.nvim",
-        event = "VimEnter",
-        config = function()
-            require("noice").setup()
-        end,
-        requires = {
-            "MunifTanjim/nui.nvim",
-            "rcarriga/nvim-notify",
-        }
-    })
     --------------------------------------------------------------
     -- Search
     use {
