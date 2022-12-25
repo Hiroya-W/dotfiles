@@ -79,3 +79,6 @@ format = " [$path]($style)[$read_only]($read_only_style) "
 [character]
 success_symbol = "[\\(*'-'\\) <](bold green)"
 error_symbol = "[\\(*;-;\\) <](bold red)"
+
+[aws]
+disabled = true
