@@ -87,5 +87,47 @@ require("lazy").setup({
         config = function()
             require("bufferline").setup()
         end,
-    }
+    },
+    --------------------------------------------------------------
+    -- Completion
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+            "saadparwaiz1/cmp_luasnip",
+            "zbirenbaum/copilot-cmp",
+        }
+    },
+    {
+        "ray-x/lsp_signature.nvim", -- Show signature on float window automatically
+        dependencies = { "hrsh7th/nvim-cmp" },
+        config = function()
+            require("lsp_signature").setup()
+        end
+    },
+    {
+        "onsails/lspkind-nvim", -- to show lsp icons
+        config = function()
+            require("rc/plugins/lspkind-nvim")
+        end,
+    },
+    {
+        "windwp/nvim-autopairs",
+        config = function()
+            require("rc/plugins/nvim-autopairs")
+        end,
+        dependencies = { "hrsh7th/nvim-cmp" }
+    },
+    {
+        "github/copilot.vim"
+        -- Need to install manually
+        -- run = ":Copilot"
+    },
+    {
+        "zbirenbaum/copilot-cmp",
+        dependencies = "zbirenbaum/copilot.lua",
+    },
 })
