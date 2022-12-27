@@ -287,4 +287,101 @@ require("lazy").setup({
             require("octo").setup()
         end
     },
+    --------------------------------------------------------------
+    -- UI
+    {
+        "akinsho/toggleterm.nvim",
+        config = function()
+            require("rc/plugins/toggleterm")
+        end
+    },
+    {
+        "numToStr/Comment.nvim", -- toggle comment
+        config = function()
+            require('Comment').setup()
+        end
+    },
+    {
+        "folke/trouble.nvim", -- UI for diagnostics, references,...
+        dependencies = {
+            "kyazdani42/nvim-web-devicons"
+        },
+        config = function()
+            require("trouble").setup()
+        end
+    },
+    {
+        "kevinhwang91/nvim-bqf", -- show quickfix preview on float window
+        dependencies = {
+            "junegunn/fzf",
+            "nvim-treesitter/nvim-treesitter"
+        },
+    },
+    {
+        'phaazon/hop.nvim',
+        branch = 'v1', -- optional but strongly recommended
+        config = function()
+            require("rc/plugins/hop")
+        end
+    },
+    { "tpope/vim-surround" },
+    {
+        "matbme/JABS.nvim", --  Buffer Switcher
+        config = function()
+            require("rc/plugins/JABS")
+        end
+    },
+    {
+        "folke/which-key.nvim",
+        config = function()
+            require("rc/plugins/which-key")
+        end
+    },
+    {
+        "kwkarlwang/bufresize.nvim",
+        config = function()
+            require("bufresize").setup()
+        end
+    },
+    {
+        "petertriho/nvim-scrollbar",
+        dependencies = {
+            "kevinhwang91/nvim-hlslens"
+        },
+        config = function()
+            require("rc/plugins/nvim-scrollbar")
+        end
+    },
+    {
+        -- Show current cursor position
+        "gen740/SmoothCursor.nvim",
+        config = function()
+            require('smoothcursor').setup({
+                fancy = {
+                    enable = true
+                }
+            })
+        end
+    },
+    --------------------------------------------------------------
+    -- Search
+    {
+        "haya14busa/vim-asterisk",
+        config = function()
+            require("rc/plugins/vim-asterisk")
+        end
+    },
+    --------------------------------------------------------------
+    -- Markdown previewer
+    {
+        "iamcco/markdown-preview.nvim",
+        build = "cd app && npm install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
+    --------------------------------------------------------------
+    -- For Japanese plugin
+    { "deton/jasegment.vim" }
 })
