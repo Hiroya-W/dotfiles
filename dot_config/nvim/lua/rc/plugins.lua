@@ -244,7 +244,7 @@ return require("packer").startup(function()
         requires = { "nvim-lua/plenary.nvim" },
     }
     use {
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        "Maan2003/lsp_lines.nvim",
         config = function()
             local lsp_lines = require("lsp_lines")
             vim.keymap.set("", "<Leader>l", lsp_lines.toggle, { desc = "Toggle lsp_lines" })
