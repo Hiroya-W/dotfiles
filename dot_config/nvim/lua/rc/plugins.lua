@@ -246,4 +246,45 @@ require("lazy").setup({
     { "yioneko/nvim-yati", dependencies = "nvim-treesitter" }, -- indent
     { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter" } }, -- rainbow parantheses
     { "qnighy/satysfi.vim" }, -- for satysfi syntax-highlight
+    --------------------------------------------------------------
+    -- Git
+    {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
+        end
+    },
+    {
+        "kdheepak/lazygit.nvim",
+        config = function()
+            vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
+        end
+    },
+    {
+        "rhysd/committia.vim", -- Show status, diff windows when git commit
+        config = function()
+            require("rc/plugins/committia")
+        end
+    },
+    {
+        "akinsho/git-conflict.nvim",
+        config = function()
+            require('git-conflict').setup()
+        end
+    },
+    -- GitHub
+    {
+        "pwntester/octo.nvim",
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'kyazdani42/nvim-web-devicons',
+        },
+        -- 622ab9feaa735dc0999e567183ce357f3dff080f is broken
+        -- Detect owner/repository is incorrect
+        commit = "43185282331a768417c3dc7a6a1ac7c3f09c28f9",
+        config = function()
+            require("octo").setup()
+        end
+    },
 })
