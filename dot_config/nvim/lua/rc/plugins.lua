@@ -92,6 +92,7 @@ require("lazy").setup({
     -- Completion
     {
         "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
         dependencies = {
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
@@ -124,10 +125,14 @@ require("lazy").setup({
             -- Snippets
             { "L3MON4D3/LuaSnip" },
             {"rafamadriz/friendly-snippets" },
-        }
+        },
+        config = function ()
+            require("rc/cmp")
+        end
     },
     {
         "ray-x/lsp_signature.nvim", -- Show signature on float window automatically
+        event = "InsertEnter",
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require("lsp_signature").setup()
