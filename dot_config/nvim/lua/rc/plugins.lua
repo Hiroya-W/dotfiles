@@ -93,12 +93,37 @@ require("lazy").setup({
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-            "saadparwaiz1/cmp_luasnip",
-            "zbirenbaum/copilot-cmp",
+            { "hrsh7th/cmp-buffer" },
+            { "hrsh7th/cmp-path" },
+            { "hrsh7th/cmp-nvim-lsp" },
+            { "hrsh7th/cmp-nvim-lua" },
+            { "saadparwaiz1/cmp_luasnip" },
+            {
+                -- Need to install manually
+                -- run = ":Copilot"
+                "zbirenbaum/copilot-cmp",
+                dependencies = {
+                    {
+                        "zbirenbaum/copilot.lua",
+                        dependencies = { "github/copilot.vim" }
+                    }
+                },
+            },
+            {
+                "windwp/nvim-autopairs",
+                config = function()
+                    require("rc/plugins/nvim-autopairs")
+                end,
+            },
+            {
+                "onsails/lspkind-nvim", -- to show lsp icons
+                config = function()
+                    require("rc/plugins/lspkind-nvim")
+                end,
+            },
+            -- Snippets
+            { "L3MON4D3/LuaSnip" },
+            {"rafamadriz/friendly-snippets" },
         }
     },
     {
@@ -108,32 +133,6 @@ require("lazy").setup({
             require("lsp_signature").setup()
         end
     },
-    {
-        "onsails/lspkind-nvim", -- to show lsp icons
-        config = function()
-            require("rc/plugins/lspkind-nvim")
-        end,
-    },
-    {
-        "windwp/nvim-autopairs",
-        config = function()
-            require("rc/plugins/nvim-autopairs")
-        end,
-        dependencies = { "hrsh7th/nvim-cmp" }
-    },
-    {
-        "github/copilot.vim"
-        -- Need to install manually
-        -- run = ":Copilot"
-    },
-    {
-        "zbirenbaum/copilot-cmp",
-        dependencies = "zbirenbaum/copilot.lua",
-    },
-    --------------------------------------------------------------
-    -- Snippets
-    { "L3MON4D3/LuaSnip" },
-    {"rafamadriz/friendly-snippets" },
     --------------------------------------------------------------
     -- LSP
     {
