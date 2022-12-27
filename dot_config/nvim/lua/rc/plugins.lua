@@ -127,7 +127,7 @@ require("lazy").setup({
             {"rafamadriz/friendly-snippets" },
         },
         config = function ()
-            require("rc/cmp")
+            require("rc/plugins/cmp")
         end
     },
     {
