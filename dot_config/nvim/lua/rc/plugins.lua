@@ -134,4 +134,51 @@ require("lazy").setup({
     -- Snippets
     { "L3MON4D3/LuaSnip" },
     {"rafamadriz/friendly-snippets" },
+    --------------------------------------------------------------
+    -- LSP
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+            "aznhe21/actions-preview.nvim"
+        },
+        -- after = { "cmp-nvim-lsp" },
+        config = function()
+            require("rc/lsp")
+        end
+    },
+    {
+        "tami5/lspsaga.nvim", -- add UI for LSP
+        --branch = "nvim6.0",
+        dependencies = {
+            "neovim/nvim-lspconfig"
+        },
+        config = function()
+            require("rc/plugins/lspsaga")
+        end
+    },
+    {
+        "j-hui/fidget.nvim", -- UI for nvim-lsp progress
+        config = function()
+            require("fidget").setup()
+        end
+    },
+    {
+        "jose-elias-alvarez/null-ls.nvim", -- Use non LSP sources, such as flake8, black
+        config = function()
+            require("rc/lsp/null-ls")
+        end,
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+    {
+        "Maan2003/lsp_lines.nvim",
+        config = function()
+            local lsp_lines = require("lsp_lines")
+            vim.keymap.set("", "<Leader>l", lsp_lines.toggle, { desc = "Toggle lsp_lines" })
+            lsp_lines.setup()
+        end,
+    },
+    { "folke/lsp-colors.nvim" }, -- Automatically creates missing LSP highlights groups
+    { "simrat39/rust-tools.nvim" },
 })
