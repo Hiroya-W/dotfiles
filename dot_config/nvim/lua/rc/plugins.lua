@@ -218,5 +218,16 @@ require("lazy").setup({
         config = function()
             require("telescope").load_extension("command_palette")
         end
+    },
+    --------------------------------------------------------------
+    -- File explorer
+    {
+        "kyazdani42/nvim-tree.lua",
+        dependencies = {
+            'kyazdani42/nvim-web-devicons',
+        },
+        config = function()
+            require("rc/plugins/nvim-tree")
+        end
     }
 })
