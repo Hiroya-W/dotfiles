@@ -229,5 +229,21 @@ require("lazy").setup({
         config = function()
             require("rc/plugins/nvim-tree")
         end
-    }
+    },
+    --------------------------------------------------------------
+    -- Treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+        config = function()
+            require("rc/plugins/nvim-treesitter")
+        end,
+    },
+    { "nvim-treesitter/playground" },
+    { "yioneko/nvim-yati", dependencies = "nvim-treesitter" }, -- indent
+    { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter" } }, -- rainbow parantheses
+    { "qnighy/satysfi.vim" }, -- for satysfi syntax-highlight
 })
