@@ -372,6 +372,40 @@ require("lazy").setup({
         end
     },
     --------------------------------------------------------------
+    -- Debugger
+    {
+        "mfussenegger/nvim-dap",
+        config = function()
+            require("rc/dap")
+        end,
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap" },
+    },
+    {
+        "theHamsta/nvim-dap-virtual-text",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        config = function()
+            require("nvim-dap-virtual-text").setup()
+        end
+    },
+    {
+        "jbyuki/one-small-step-for-vimkind",
+        dependencies = {
+            "mfussenegger/nvim-dap"
+        }
+    },
+    {
+        "leoluz/nvim-dap-go",
+        config = function()
+            require("dap-go").setup()
+        end
+    },
+    --------------------------------------------------------------
     -- Markdown previewer
     {
         "iamcco/markdown-preview.nvim",
