@@ -34,6 +34,11 @@ require("noice").setup({
             ["vim.lsp.util.stylize_markdown"] = true,
             ["cmp.entry.get_documentation"] = true,
         },
+        -- noice.nvim  ERROR `vim.lsp.handlers["textDocument/signatureHelp"]` has been overwritten by another plugin?
+        -- Either disable the other plugin or set `config.lsp.signature.enabled = false` in your **Noice** config.
+        signature = {
+            enabled = false
+        },
     },
     -- you can enable a preset for easier configuration
     presets = {
