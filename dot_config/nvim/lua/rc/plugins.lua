@@ -68,5 +68,24 @@ require("lazy").setup({
         dependencies = {
             "neovim/nvim-lspconfig",
         },
+    },
+    --------------------------------------------------------------
+    -- Statusline / Bufferline
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = {
+            "kyazdani42/nvim-web-devicons",
+            "SmiteshP/nvim-navic"
+        },
+        config = function()
+            require("rc/plugins/lualine")
+        end,
+    },
+    {
+        "akinsho/bufferline.nvim",
+        dependencies = { "kyazdani42/nvim-web-devicons" },
+        config = function()
+            require("bufferline").setup()
+        end,
     }
 })
