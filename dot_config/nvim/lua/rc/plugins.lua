@@ -160,7 +160,7 @@ require("lazy").setup({
     {
         "tami5/lspsaga.nvim", -- add UI for LSP
         --branch = "nvim6.0",
-        event = "BufReadPre",
+        cmd = "Lspsaga",
         dependencies = {
             "neovim/nvim-lspconfig"
         },
@@ -283,18 +283,21 @@ require("lazy").setup({
     -- UI
     {
         "akinsho/toggleterm.nvim",
+        keys = "<C-t>",
         config = function()
             require("rc/plugins/toggleterm")
         end
     },
     {
         "numToStr/Comment.nvim", -- toggle comment
+        keys = { "gc", "gb" },
         config = function()
             require('Comment').setup()
         end
     },
     {
         "folke/trouble.nvim", -- UI for diagnostics, references,...
+        cmd = "Trouble",
         dependencies = {
             "kyazdani42/nvim-web-devicons"
         },
@@ -310,10 +313,13 @@ require("lazy").setup({
         },
     },
     {
-        'phaazon/hop.nvim',
-        branch = 'v1', -- optional but strongly recommended
+        "phaazon/hop.nvim",
+        branch = "v2", -- optional but strongly recommended
+        lazy = true,
         config = function()
-            require("rc/plugins/hop")
+            require("hop").setup {
+                keys = 'etovxqpdygfblzhckisuran'
+            }
         end
     },
     { "tpope/vim-surround" },
@@ -331,12 +337,26 @@ require("lazy").setup({
     },
     {
         "kwkarlwang/bufresize.nvim",
+        event = {
+            "BufWinEnter",
+            "WinEnter",
+        },
         config = function()
             require("bufresize").setup()
         end
     },
     {
         "petertriho/nvim-scrollbar",
+        event = {
+            "BufWinEnter",
+            "CmdwinLeave",
+            "TabEnter",
+            "TermEnter",
+            "TextChanged",
+            "VimResized",
+            "WinEnter",
+            "WinScrolled",
+        },
         dependencies = {
             "kevinhwang91/nvim-hlslens"
         },
@@ -347,6 +367,7 @@ require("lazy").setup({
     {
         -- Show current cursor position
         "gen740/SmoothCursor.nvim",
+        event = "BufWinEnter",
         config = function()
             require('smoothcursor').setup({
                 fancy = {
@@ -359,8 +380,14 @@ require("lazy").setup({
     -- Search
     {
         "haya14busa/vim-asterisk",
+        keys = {
+            "<Plug>(asterisk-z*)",
+            "<Plug>(asterisk-z#)",
+            "<Plug>(asterisk-gz*)",
+            "<Plug>(asterisk-gz#)",
+        },
         config = function()
-            require("rc/plugins/vim-asterisk")
+            vim.g["asterisk#keeppos"] = 1
         end
     },
     --------------------------------------------------------------
