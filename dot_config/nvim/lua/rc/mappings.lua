@@ -28,3 +28,6 @@ vim.keymap.set("n", "<leader>tg", ":Telescope live_grep<CR>", {
 
 -- NvimTree
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+
+-- LazyGit
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
