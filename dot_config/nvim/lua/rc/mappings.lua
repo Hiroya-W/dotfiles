@@ -12,3 +12,16 @@ vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "<down>", "gj")
 vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "<up>", "gk")
+
+-- Telescope
+vim.keymap.set("n", "<leader>tf", ":Telescope find_files<CR>", {
+    noremap = true,
+    silent = true,
+    desc = "Find files"
+})
+
+vim.keymap.set("n", "<leader>tg", ":Telescope live_grep<CR>", {
+    noremap = true,
+    silent = true,
+    desc = "Live grep"
+})

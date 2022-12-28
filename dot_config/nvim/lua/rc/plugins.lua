@@ -194,38 +194,23 @@ require("lazy").setup({
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
+        cmd = "Telescope",
         dependencies = {
-            "nvim-lua/plenary.nvim"
+            "nvim-lua/plenary.nvim",
+            {
+                "nvim-telescope/telescope-frecency.nvim",
+                dependencies = { "tami5/sqlite.lua" },
+            },
+            {
+                "AckslD/nvim-neoclip.lua", -- Clipboard manager
+                dependencies = { "tami5/sqlite.lua" },
+            },
         },
         config = function()
             require("rc/plugins/telescope")
-        end
-    },
-    {
-        "nvim-telescope/telescope-frecency.nvim",
-        dependencies = { "tami5/sqlite.lua" },
-        config = function()
-            require "telescope".load_extension("frecency")
-        end,
-    },
-    {
-        "AckslD/nvim-neoclip.lua", -- Clipboard manager
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-            "tami5/sqlite.lua"
-        },
-        config = function()
+            require("telescope").load_extension("frecency")
             require('neoclip').setup()
             require("telescope").load_extension("neoclip")
-        end,
-    },
-    {
-        "Hiroya-W/telescope-command-palette.nvim",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-        },
-        config = function()
-            require("telescope").load_extension("command_palette")
         end
     },
     --------------------------------------------------------------
