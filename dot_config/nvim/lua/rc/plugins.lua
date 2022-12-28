@@ -145,12 +145,14 @@ require("lazy").setup({
     -- LSP
     {
         "neovim/nvim-lspconfig",
+        lazy = true,
         dependencies = {
-            "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-            "aznhe21/actions-preview.nvim"
+            { "williamboman/mason.nvim" },
+            { "williamboman/mason-lspconfig.nvim" },
+            { "aznhe21/actions-preview.nvim" },
+            { "folke/lsp-colors.nvim" }, -- Automatically creates missing LSP highlights groups
+            { "simrat39/rust-tools.nvim" },
         },
-        -- after = { "cmp-nvim-lsp" },
         config = function()
             require("rc/lsp")
         end
@@ -158,6 +160,7 @@ require("lazy").setup({
     {
         "tami5/lspsaga.nvim", -- add UI for LSP
         --branch = "nvim6.0",
+        event = "BufReadPre",
         dependencies = {
             "neovim/nvim-lspconfig"
         },
@@ -167,6 +170,7 @@ require("lazy").setup({
     },
     {
         "j-hui/fidget.nvim", -- UI for nvim-lsp progress
+        event = "VimEnter",
         config = function()
             require("fidget").setup()
         end
@@ -186,8 +190,6 @@ require("lazy").setup({
             lsp_lines.setup()
         end,
     },
-    { "folke/lsp-colors.nvim" }, -- Automatically creates missing LSP highlights groups
-    { "simrat39/rust-tools.nvim" },
     --------------------------------------------------------------
     -- Telescope
     {
