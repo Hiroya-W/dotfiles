@@ -97,3 +97,9 @@ wk.register({
 wk.register({
     ["<leader>bp"] = { "<cmd>BufferLinePick<CR>", "BufferLinePick" }
 })
+
+wk.register({
+    ["<leader>d"] = {
+        name = "Debug",
+    },
+})
