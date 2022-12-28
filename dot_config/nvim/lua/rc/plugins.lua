@@ -29,6 +29,7 @@ require("lazy").setup({
     },
     {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
+        event = "VimEnter",
         config = function()
             require("indent_blankline").setup {
                 space_char_blankline = " ",
@@ -38,13 +39,15 @@ require("lazy").setup({
         end
     },
     {
-        'mvllow/modes.nvim', -- Change line color in current mode
+        "mvllow/modes.nvim", -- Change line color in current mode
+        event = "ModeChanged",
         config = function()
             require("rc/plugins/modes")
         end
     },
     {
         "folke/todo-comments.nvim", -- Highlight for todo comments
+        event = "VimEnter",
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
             require("todo-comments").setup()
@@ -52,6 +55,7 @@ require("lazy").setup({
     },
     {
         "norcalli/nvim-colorizer.lua", -- Color highlighter, such as #FFF
+        event = "VimEnter",
         config = function()
             require("colorizer").setup()
         end
@@ -62,20 +66,19 @@ require("lazy").setup({
             require("rc/plugins/marks")
         end
     },
-    {
-        -- Using SymbolInformatin support
-        "SmiteshP/nvim-navic", -- Show scope you are working inside
-        dependencies = {
-            "neovim/nvim-lspconfig",
-        },
-    },
     --------------------------------------------------------------
     -- Statusline / Bufferline
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
             "kyazdani42/nvim-web-devicons",
-            "SmiteshP/nvim-navic"
+            {
+                -- Using SymbolInformatin support
+                "SmiteshP/nvim-navic", -- Show scope you are working inside
+                -- dependencies = {
+                --     "neovim/nvim-lspconfig",
+                -- },
+            },
         },
         config = function()
             require("rc/plugins/lualine")
