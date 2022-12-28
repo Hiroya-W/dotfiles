@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "--single-branch",
-    "https://github.com/folke/lazy.nvim.git",
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "--single-branch",
+        "https://github.com/folke/lazy.nvim.git",
+        lazypath,
+    })
 end
 vim.opt.runtimepath:prepend(lazypath)
 
@@ -23,7 +23,7 @@ require("lazy").setup({
     -- },
     {
         "Shatur/neovim-ayu",
-        config = function ()
+        config = function()
             require("rc/plugins/ayu")
         end
     },
@@ -127,9 +127,9 @@ require("lazy").setup({
             },
             -- Snippets
             { "L3MON4D3/LuaSnip" },
-            {"rafamadriz/friendly-snippets" },
+            { "rafamadriz/friendly-snippets" },
         },
-        config = function ()
+        config = function()
             require("rc/plugins/cmp")
         end
     },
