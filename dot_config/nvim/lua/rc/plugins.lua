@@ -200,17 +200,21 @@ require("lazy").setup({
             {
                 "nvim-telescope/telescope-frecency.nvim",
                 dependencies = { "tami5/sqlite.lua" },
+                config = function()
+                    require("telescope").load_extension("frecency")
+                end
             },
             {
                 "AckslD/nvim-neoclip.lua", -- Clipboard manager
                 dependencies = { "tami5/sqlite.lua" },
+                config = function()
+                    require('neoclip').setup()
+                    require("telescope").load_extension("neoclip")
+                end
             },
         },
         config = function()
             require("rc/plugins/telescope")
-            require("telescope").load_extension("frecency")
-            require('neoclip').setup()
-            require("telescope").load_extension("neoclip")
         end
     },
     --------------------------------------------------------------
