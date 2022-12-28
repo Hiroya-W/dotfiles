@@ -25,3 +25,6 @@ vim.keymap.set("n", "<leader>tg", ":Telescope live_grep<CR>", {
     silent = true,
     desc = "Live grep"
 })
+
+-- NvimTree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })

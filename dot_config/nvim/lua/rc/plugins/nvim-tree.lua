@@ -33,8 +33,6 @@ require 'nvim-tree'.setup {
     },
 }
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
-
 -- https://github.com/kyazdani42/nvim-tree.lua#tips--reminders
 -- The auto_close option has been removed because it causes bugs.
 -- Now, you can automatically close the tab/vim when nvim-tree is the last window in the tab using following autocmd.

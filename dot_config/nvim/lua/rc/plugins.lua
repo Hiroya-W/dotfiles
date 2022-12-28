@@ -217,8 +217,9 @@ require("lazy").setup({
     -- File explorer
     {
         "kyazdani42/nvim-tree.lua",
+        cmd = "NvimTreeToggle",
         dependencies = {
-            'kyazdani42/nvim-web-devicons',
+            "kyazdani42/nvim-web-devicons",
         },
         config = function()
             require("rc/plugins/nvim-tree")
