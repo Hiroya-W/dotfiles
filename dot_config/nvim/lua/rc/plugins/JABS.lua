@@ -1,7 +1,7 @@
 -- (Optional) easy way to get Neovim current size.
 local ui = vim.api.nvim_list_uis()[1]
 
-require("jabs").setup {
+require("jabs").setup({
     position = "corner", -- center, corner
     width = 50,
     height = 10,
@@ -12,13 +12,13 @@ require("jabs").setup {
     preview = {
         width = 40,
         height = 30,
-        border = 'double', -- none, single, double, rounded, solid, shadow, (or an array or chars)
+        border = "double", -- none, single, double, rounded, solid, shadow, (or an array or chars)
     },
 
     -- the options below are ignored when position = 'center'
     col = ui.width, -- Window appears on the right
     row = ui.height / 2, -- Window appears in the vertical middle
-}
+})
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<leader>bb", ":JABSOpen<CR>", opts)

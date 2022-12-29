@@ -17,13 +17,13 @@ vim.keymap.set("n", "<up>", "gk")
 vim.keymap.set("n", "<leader>tf", ":Telescope find_files<CR>", {
     noremap = true,
     silent = true,
-    desc = "Find files"
+    desc = "Find files",
 })
 
 vim.keymap.set("n", "<leader>tg", ":Telescope live_grep<CR>", {
     noremap = true,
     silent = true,
-    desc = "Live grep"
+    desc = "Live grep",
 })
 
 -- NvimTree
@@ -33,12 +33,48 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
 -- hop.nvim
-vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
-vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {})
-vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
-vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", {})
+vim.api.nvim_set_keymap(
+    "n",
+    "f",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+    ,
+    {}
+)
+vim.api.nvim_set_keymap(
+    "n",
+    "F",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+    ,
+    {}
+)
+vim.api.nvim_set_keymap(
+    "o",
+    "f",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+    ,
+    {}
+)
+vim.api.nvim_set_keymap(
+    "o",
+    "F",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
+    ,
+    {}
+)
+vim.api.nvim_set_keymap(
+    "",
+    "t",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+    ,
+    {}
+)
+vim.api.nvim_set_keymap(
+    "",
+    "T",
+    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+    ,
+    {}
+)
 -- vim.api.nvim_set_keymap('n', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
 -- vim.api.nvim_set_keymap('v', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
 -- vim.api.nvim_set_keymap('o', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>", {})
@@ -64,77 +100,77 @@ vim.keymap.set("", "g#", "<Plug>(asterisk-gz#)")
 vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Continue"
+    desc = "Continue",
 })
-vim.keymap.set("n","<leader>dp", "<cmd>lua require'dap'.pause()<cr>", {
+vim.keymap.set("n", "<leader>dp", "<cmd>lua require'dap'.pause()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Pause"
+    desc = "Pause",
 })
 
-vim.keymap.set("n","<leader>di", "<cmd>lua require'dap'.step_into()<cr>", {
+vim.keymap.set("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Step Into"
+    desc = "Step Into",
 })
 vim.keymap.set("n", "<leader>dB", "<cmd>lua require'dap'.step_back()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Step Back"
+    desc = "Step Back",
 })
-vim.keymap.set("n","<leader>do", "<cmd>lua require'dap'.step_over()<cr>", {
+vim.keymap.set("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Step Over"
+    desc = "Step Over",
 })
-vim.keymap.set("n","<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", {
+vim.keymap.set("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Step Out"
+    desc = "Step Out",
 })
 
 vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Toggle Breakpoint"
+    desc = "Toggle Breakpoint",
 })
 
-vim.keymap.set("n","<leader>dr", "<cmd>lua require'dap'.run_to_cursor()<cr>", {
+vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.run_to_cursor()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Run To Cursor"
+    desc = "Run To Cursor",
 })
 
-vim.keymap.set("n","<leader>ds", "<cmd>lua require'dap'.session()<cr>", {
+vim.keymap.set("n", "<leader>ds", "<cmd>lua require'dap'.session()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Get Session"
+    desc = "Get Session",
 })
-vim.keymap.set("n","<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>", {
+vim.keymap.set("n", "<leader>dd", "<cmd>lua require'dap'.disconnect()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Disconnect"
-})
-
-vim.keymap.set("n","<leader>dt", "<cmd>lua require'dap'.repl.toggle()<cr>", {
-    noremap = true,
-    silent = true,
-    desc = "Toggle Repl"
+    desc = "Disconnect",
 })
 
-vim.keymap.set("n","<leader>dq", "<cmd>lua require'dap'.close()<cr>", {
+vim.keymap.set("n", "<leader>dt", "<cmd>lua require'dap'.repl.toggle()<cr>", {
     noremap = true,
     silent = true,
-    desc = "Quit"
+    desc = "Toggle Repl",
+})
+
+vim.keymap.set("n", "<leader>dq", "<cmd>lua require'dap'.close()<cr>", {
+    noremap = true,
+    silent = true,
+    desc = "Quit",
 })
 
 vim.keymap.set("n", "<leader>dx", '<Cmd>lua require("dapui").toggle()<CR>', {
     noremap = true,
     silent = true,
-    desc = "Toggle UI"
+    desc = "Toggle UI",
 })
 vim.keymap.set("v", "<leader>de", '<Cmd>lua require("dapui").eval()<CR>', {
     noremap = true,
     silent = true,
-    desc = "Evaluate"
+    desc = "Evaluate",
 })

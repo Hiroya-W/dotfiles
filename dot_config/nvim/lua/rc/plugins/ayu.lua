@@ -1,11 +1,11 @@
-local colors = require('ayu.colors')
+local colors = require("ayu.colors")
 require("ayu").setup({
     overrides = {
         Comment = { fg = colors.comment },
-        LspSignatureActiveParameter = { italic = false }
-    }
+        LspSignatureActiveParameter = { italic = false },
+    },
 })
-vim.cmd [[colorscheme ayu-light]]
+vim.cmd([[colorscheme ayu-light]])
 vim.g.terminal_color_0 = "#000000"
 vim.g.terminal_color_8 = "#323232"
 

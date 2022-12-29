@@ -3,6 +3,6 @@ return {
         gopls = {
             gofumpt = true,
             usePlaceholders = true,
-        }
+        },
     },
 }

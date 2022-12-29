@@ -1,4 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
     -- A list of parser names, or "all"
     ensure_installed = "all",
 
@@ -7,7 +7,7 @@ require 'nvim-treesitter.configs'.setup {
 
     -- List of parsers to ignore installing (for "all")
     ignore_install = {
-        "phpdoc"
+        "phpdoc",
     },
 
     highlight = {
@@ -37,7 +37,7 @@ require 'nvim-treesitter.configs'.setup {
     },
     indent = {
         -- nvim-treesitter's indent is broken, use nvim-yati instead.
-        enable = false
+        enable = false,
     },
     rainbow = {
         enable = true,
@@ -48,6 +48,6 @@ require 'nvim-treesitter.configs'.setup {
         -- termcolors = {} -- table of colour name strings
     },
     yati = {
-        enable = true
-    }
-}
+        enable = true,
+    },
+})

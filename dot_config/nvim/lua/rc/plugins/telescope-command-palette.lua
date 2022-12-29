@@ -78,7 +78,7 @@ return {
     },
     {
         "nvim-autopairs",
-        { "<M-e> | fast wrap", "" }
+        { "<M-e> | fast wrap", "" },
     },
     {
         "nvim-tree",
@@ -95,7 +95,7 @@ return {
     },
     {
         "lazygit.nvim",
-        { "<leader>gg | Toggle Lazygit", ":LazyGit" }
+        { "<leader>gg | Toggle Lazygit", ":LazyGit" },
     },
     {
         "committia.vim",
@@ -135,5 +135,5 @@ return {
         { "g* | Search for matching words in forword", "" },
         { "# | Search for matching words in backword(Does not match substring)", "" },
         { "* | Search for matching words in forword(Does not match substring)", "" },
-    }
+    },
 }

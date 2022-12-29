@@ -1,9 +1,9 @@
 local wk = require("which-key")
-local M = require 'which-key.view'
-local Keys = require 'which-key.keys'
-local Layout = require 'which-key.layout'
-local Util = require 'which-key.util'
-local config = require 'which-key.config'
+local M = require("which-key.view")
+local Keys = require("which-key.keys")
+local Layout = require("which-key.layout")
+local Util = require("which-key.util")
+local config = require("which-key.config")
 
 -- E5108: Error executing lua ...te/pack/packer/opt/which-key.nvim/lua/which-key/view.lua:52: Window was closed immediately
 -- https://github.com/folke/which-key.nvim/issues/273
@@ -66,15 +66,15 @@ end
 
 local function open(keys, opts)
     opts = opts or {}
-    M.keys = keys or ''
+    M.keys = keys or ""
     M.mode = opts.mode or Util.get_mode()
-    M.count = vim.api.nvim_get_vvar 'count'
-    M.reg = vim.api.nvim_get_vvar 'register'
+    M.count = vim.api.nvim_get_vvar("count")
+    M.reg = vim.api.nvim_get_vvar("register")
 
     on_keys(opts)
 end
 
-local ignore_filetype = { 'TelescopePrompt' }
+local ignore_filetype = { "TelescopePrompt" }
 local show = wk.show
 wk.show = function(keys, opts)
     if vim.tbl_contains(ignore_filetype, vim.bo.filetype) then
@@ -85,7 +85,6 @@ wk.show = function(keys, opts)
     end
 end
 
-
 wk.setup()
 
 wk.register({
@@ -95,7 +94,7 @@ wk.register({
 })
 
 wk.register({
-    ["<leader>bp"] = { "<cmd>BufferLinePick<CR>", "BufferLinePick" }
+    ["<leader>bp"] = { "<cmd>BufferLinePick<CR>", "BufferLinePick" },
 })
 
 wk.register({

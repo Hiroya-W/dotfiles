@@ -17,7 +17,7 @@ return {
                 pycodestyle = { enabled = false },
                 yapf = { enabled = false },
                 -- black enabled if python-lsp-black installed
-            }
-        }
-    }
+            },
+        },
+    },
 }

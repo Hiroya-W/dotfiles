@@ -1,6 +1,6 @@
 local actions = require("telescope.actions")
 
-require("telescope").setup {
+require("telescope").setup({
     defaults = {
         -- default mappings
         -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
@@ -10,9 +10,9 @@ require("telescope").setup {
                 ["<C-k>"] = actions.move_selection_previous,
             },
             n = {
-                ["<C-c>"] = actions.close
-            }
-        }
+                ["<C-c>"] = actions.close,
+            },
+        },
     },
     pickers = {
         -- Default configuration for builtin pickers goes here:
@@ -26,8 +26,8 @@ require("telescope").setup {
     extensions = {
         -- https://github.com/nvim-telescope/telescope-frecency.nvim
         frecency = {
-            ignore_patterns = { "*.git/*", "*/tmp/*" }
+            ignore_patterns = { "*.git/*", "*/tmp/*" },
         },
-        command_palette = require("rc/plugins/telescope-command-palette")
-    }
-}
+        command_palette = require("rc/plugins/telescope-command-palette"),
+    },
+})

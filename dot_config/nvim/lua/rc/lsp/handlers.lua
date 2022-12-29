@@ -5,33 +5,31 @@ M.setup = function()
     -- sent from the client to the LSP.
 
     -- hint(hover)
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-        vim.lsp.handlers.hover, {
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = "rounded",
     })
 
     -- candidates signature(member definitionns)
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-        vim.lsp.handlers.signature_help, {
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = "rounded",
     })
 
     -- for lsp_lines.nvim
-    vim.diagnostic.config {
+    vim.diagnostic.config({
         virtual_text = false,
         virtual_lines = false,
-    }
+    })
 
-    vim.api.nvim_create_autocmd('InsertEnter', {
+    vim.api.nvim_create_autocmd("InsertEnter", {
         callback = function()
             vim.diagnostic.config({ virtual_lines = false })
-        end
+        end,
     })
-    vim.api.nvim_create_autocmd('ModeChanged', {
-        pattern = 'i:*',
+    vim.api.nvim_create_autocmd("ModeChanged", {
+        pattern = "i:*",
         callback = function()
             vim.diagnostic.config({ virtual_lines = true })
-        end
+        end,
     })
 end
 
@@ -43,30 +41,52 @@ local function lsp_keymaps(bufnr)
     -- vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     -- vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     --
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>fmt', '<cmd>lua vim.lsp.buf.format({async = true})<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fmt", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float(nil, {border = "rounded", scope = "cursor"})<CR>', opts)
-    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+    vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
     -- Use UIs provided by lspsaga
     -- See https://github.com/tami5/lspsaga.nvim/wiki
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", ":Lspsaga lsp_finder<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "<leader>ca",
+        "<cmd>lua require('actions-preview').code_actions()<CR>",
+        opts
+    )
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "v",
+        "<leader>ca",
+        "<cmd>lua require('actions-preview').code_actions()<CR>",
+        opts
+    )
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", ":Lspsaga hover_doc<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
-        opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>"
-        , opts)
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "<C-f>",
+        "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
+        opts
+    )
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "<C-b>",
+        "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",
+        opts
+    )
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":Lspsaga signature_help<CR>", opts)
     -- close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", ":Lspsaga rename<CR>", opts)
@@ -92,7 +112,7 @@ local function rust_tools_keymap(bufnr)
     -- hover_with_actions provided by rust-tools overrides lspsaga.nvim's hover action
     -- Therefore, use the built-in commands.
     local opts = { noremap = true, silent = true }
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 end
 
 local function common_capabilities()

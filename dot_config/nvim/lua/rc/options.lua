@@ -17,7 +17,7 @@ opt.shiftwidth = 4 -- 行頭でのTab文字の表示幅
 opt.smartindent = true -- 改行時に前の行の構文をチェックし次の行のインデントを増減する
 
 -- Add angle brackets to the list of recognized characters in a pair
-opt.matchpairs:append { "<:>" }
+opt.matchpairs:append({ "<:>" })
 
 opt.hidden = true
 
@@ -33,8 +33,8 @@ opt.fileformat = "unix"
 -- OSのクリップボードを使う
 -- +レジスタ：Ubuntuの[Ctrl-v]で貼り付けられるもの unnamedplus
 -- *レジスタ：マウス中クリックで貼り付けられるもの unnamed
-opt.clipboard:append { "unnamedplus" }
-opt.clipboard:append { "unnamed" }
+opt.clipboard:append({ "unnamedplus" })
+opt.clipboard:append({ "unnamed" })
 
 ---------------------------------------------------------------------------
 -- View

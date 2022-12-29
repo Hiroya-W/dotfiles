@@ -25,25 +25,25 @@ require("lazy").setup({
         "Shatur/neovim-ayu",
         config = function()
             require("rc/plugins/ayu")
-        end
+        end,
     },
     {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
         event = "VimEnter",
         config = function()
-            require("indent_blankline").setup {
+            require("indent_blankline").setup({
                 space_char_blankline = " ",
                 show_current_context = true,
                 show_current_context_start = true,
-            }
-        end
+            })
+        end,
     },
     {
         "mvllow/modes.nvim", -- Change line color in current mode
         event = "ModeChanged",
         config = function()
             require("rc/plugins/modes")
-        end
+        end,
     },
     {
         "folke/todo-comments.nvim", -- Highlight for todo comments
@@ -51,20 +51,20 @@ require("lazy").setup({
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
             require("todo-comments").setup()
-        end
+        end,
     },
     {
         "norcalli/nvim-colorizer.lua", -- Color highlighter, such as #FFF
         event = "VimEnter",
         config = function()
             require("colorizer").setup()
-        end
+        end,
     },
     {
         "chentoast/marks.nvim", -- Show vim mark
         config = function()
             require("rc/plugins/marks")
-        end
+        end,
     },
     --------------------------------------------------------------
     -- Statusline / Bufferline
@@ -109,8 +109,8 @@ require("lazy").setup({
                 dependencies = {
                     {
                         "zbirenbaum/copilot.lua",
-                        dependencies = { "github/copilot.vim" }
-                    }
+                        dependencies = { "github/copilot.vim" },
+                    },
                 },
             },
             {
@@ -131,7 +131,7 @@ require("lazy").setup({
         },
         config = function()
             require("rc/plugins/cmp")
-        end
+        end,
     },
     {
         "ray-x/lsp_signature.nvim", -- Show signature on float window automatically
@@ -139,7 +139,7 @@ require("lazy").setup({
         dependencies = { "hrsh7th/nvim-cmp" },
         config = function()
             require("lsp_signature").setup()
-        end
+        end,
     },
     --------------------------------------------------------------
     -- LSP
@@ -155,24 +155,24 @@ require("lazy").setup({
         },
         config = function()
             require("rc/lsp")
-        end
+        end,
     },
     {
         "tami5/lspsaga.nvim", -- add UI for LSP
         event = "VimEnter",
         dependencies = {
-            "neovim/nvim-lspconfig"
+            "neovim/nvim-lspconfig",
         },
         config = function()
             require("rc/plugins/lspsaga")
-        end
+        end,
     },
     {
         "j-hui/fidget.nvim", -- UI for nvim-lsp progress
         event = "VimEnter",
         config = function()
             require("fidget").setup()
-        end
+        end,
     },
     {
         "jose-elias-alvarez/null-ls.nvim", -- Use non LSP sources, such as flake8, black
@@ -201,20 +201,20 @@ require("lazy").setup({
                 dependencies = { "tami5/sqlite.lua" },
                 config = function()
                     require("telescope").load_extension("frecency")
-                end
+                end,
             },
             {
                 "AckslD/nvim-neoclip.lua", -- Clipboard manager
                 dependencies = { "tami5/sqlite.lua" },
                 config = function()
-                    require('neoclip').setup()
+                    require("neoclip").setup()
                     require("telescope").load_extension("neoclip")
-                end
+                end,
             },
         },
         config = function()
             require("rc/plugins/telescope")
-        end
+        end,
     },
     --------------------------------------------------------------
     -- File explorer
@@ -226,7 +226,7 @@ require("lazy").setup({
         },
         config = function()
             require("rc/plugins/nvim-tree")
-        end
+        end,
     },
     --------------------------------------------------------------
     -- Syntax Highlight
@@ -238,7 +238,7 @@ require("lazy").setup({
             { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter" } }, -- rainbow parantheses
         },
         build = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
             ts_update()
         end,
         config = function()
@@ -253,7 +253,7 @@ require("lazy").setup({
     {
         -- for satysfi syntax-highlight
         "qnighy/satysfi.vim",
-        ft = "satysfi"
+        ft = "satysfi",
     },
     --------------------------------------------------------------
     -- Git
@@ -262,25 +262,25 @@ require("lazy").setup({
         event = "BufReadPre",
         config = function()
             require("gitsigns").setup()
-        end
+        end,
     },
     {
         "kdheepak/lazygit.nvim",
-        cmd = "LazyGit"
+        cmd = "LazyGit",
     },
     {
         "rhysd/committia.vim", -- Show status, diff windows when git commit
         event = "BufReadPre",
         config = function()
             require("rc/plugins/committia")
-        end
+        end,
     },
     {
         "akinsho/git-conflict.nvim",
         event = "BufReadPre",
         config = function()
-            require('git-conflict').setup()
-        end
+            require("git-conflict").setup()
+        end,
     },
     --------------------------------------------------------------
     -- UI
@@ -289,30 +289,30 @@ require("lazy").setup({
         keys = "<C-t>",
         config = function()
             require("rc/plugins/toggleterm")
-        end
+        end,
     },
     {
         "numToStr/Comment.nvim", -- toggle comment
         keys = { "gc", "gb" },
         config = function()
-            require('Comment').setup()
-        end
+            require("Comment").setup()
+        end,
     },
     {
         "folke/trouble.nvim", -- UI for diagnostics, references,...
         cmd = "Trouble",
         dependencies = {
-            "kyazdani42/nvim-web-devicons"
+            "kyazdani42/nvim-web-devicons",
         },
         config = function()
             require("trouble").setup()
-        end
+        end,
     },
     {
         "kevinhwang91/nvim-bqf", -- show quickfix preview on float window
         dependencies = {
             "junegunn/fzf",
-            "nvim-treesitter/nvim-treesitter"
+            "nvim-treesitter/nvim-treesitter",
         },
     },
     {
@@ -320,23 +320,23 @@ require("lazy").setup({
         branch = "v2", -- optional but strongly recommended
         lazy = true,
         config = function()
-            require("hop").setup {
-                keys = 'etovxqpdygfblzhckisuran'
-            }
-        end
+            require("hop").setup({
+                keys = "etovxqpdygfblzhckisuran",
+            })
+        end,
     },
     { "tpope/vim-surround" },
     {
         "matbme/JABS.nvim", --  Buffer Switcher
         config = function()
             require("rc/plugins/JABS")
-        end
+        end,
     },
     {
         "folke/which-key.nvim",
         config = function()
             require("rc/plugins/which-key")
-        end
+        end,
     },
     {
         "kwkarlwang/bufresize.nvim",
@@ -346,7 +346,7 @@ require("lazy").setup({
         },
         config = function()
             require("bufresize").setup()
-        end
+        end,
     },
     {
         "petertriho/nvim-scrollbar",
@@ -361,23 +361,23 @@ require("lazy").setup({
             "WinScrolled",
         },
         dependencies = {
-            "kevinhwang91/nvim-hlslens"
+            "kevinhwang91/nvim-hlslens",
         },
         config = function()
             require("rc/plugins/nvim-scrollbar")
-        end
+        end,
     },
     {
         -- Show current cursor position
         "gen740/SmoothCursor.nvim",
         event = "VimEnter",
         config = function()
-            require('smoothcursor').setup({
+            require("smoothcursor").setup({
                 fancy = {
-                    enable = true
-                }
+                    enable = true,
+                },
             })
-        end
+        end,
     },
     --------------------------------------------------------------
     -- Search
@@ -391,7 +391,7 @@ require("lazy").setup({
         },
         config = function()
             vim.g["asterisk#keeppos"] = 1
-        end
+        end,
     },
     --------------------------------------------------------------
     -- Debugger
@@ -407,9 +407,9 @@ require("lazy").setup({
                 },
                 config = function()
                     require("nvim-dap-virtual-text").setup()
-                end
+                end,
             },
-            {"jbyuki/one-small-step-for-vimkind"},
+            { "jbyuki/one-small-step-for-vimkind" },
         },
         config = function()
             require("rc/dap")
@@ -420,7 +420,7 @@ require("lazy").setup({
         ft = "go",
         config = function()
             require("dap-go").setup()
-        end
+        end,
     },
     --------------------------------------------------------------
     -- Markdown previewer
@@ -434,5 +434,5 @@ require("lazy").setup({
     },
     --------------------------------------------------------------
     -- For Japanese plugin
-    { "deton/jasegment.vim" }
+    { "deton/jasegment.vim" },
 })

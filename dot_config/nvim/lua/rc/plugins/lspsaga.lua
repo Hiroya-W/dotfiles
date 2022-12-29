@@ -1,5 +1,5 @@
-local lspsaga = require 'lspsaga'
-lspsaga.setup { -- defaults ...
+local lspsaga = require("lspsaga")
+lspsaga.setup({ -- defaults ...
     debug = false,
     use_saga_diagnostic_sign = true,
     -- diagnostic sign
@@ -46,4 +46,4 @@ lspsaga.setup { -- defaults ...
     diagnostic_prefix_format = "%d. ",
     diagnostic_message_format = "%m %c",
     highlight_prefix = false,
-}
+})

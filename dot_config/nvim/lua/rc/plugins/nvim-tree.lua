@@ -1,5 +1,4 @@
---
-require 'nvim-tree'.setup {
+require("nvim-tree").setup({
     disable_netrw = true,
     hijack_netrw = true,
     update_cwd = true,
@@ -7,7 +6,7 @@ require 'nvim-tree'.setup {
         mappings = {
             custom_only = false,
             list = {
-                { key = "v", action = "vsplit" }
+                { key = "v", action = "vsplit" },
             },
         },
     },
@@ -31,7 +30,7 @@ require 'nvim-tree'.setup {
         -- custom = { "^\\.git" },
         exclude = {},
     },
-}
+})
 
 -- https://github.com/kyazdani42/nvim-tree.lua#tips--reminders
 -- The auto_close option has been removed because it causes bugs.

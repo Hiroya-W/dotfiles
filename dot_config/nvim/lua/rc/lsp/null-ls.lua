@@ -9,6 +9,8 @@ require("null-ls").setup({
         -- Python
         formatting.black,
         formatting.isort,
+        -- Lua
+        formatting.stylua,
         -- diagnostics
         -- Python
         diagnostics.flake8,

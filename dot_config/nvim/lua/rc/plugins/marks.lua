@@ -1,4 +1,4 @@
-require 'marks'.setup {
+require("marks").setup({
     -- whether to map keybinds or not. default true
     default_mappings = true,
     -- which builtin marks to show. default {}
@@ -25,7 +25,7 @@ require 'marks'.setup {
     -- default virt_text is "".
     bookmark_0 = {
         sign = "⚑",
-        virt_text = "hello world"
+        virt_text = "hello world",
     },
-    mappings = {}
-}
+    mappings = {},
+})

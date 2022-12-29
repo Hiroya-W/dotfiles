@@ -14,7 +14,7 @@ cmp.setup({
     formatting = {
         -- lspkind
         format = lspkind.cmp_format({
-            mode = 'symbol_text', -- show only symbol annotations
+            mode = "symbol_text", -- show only symbol annotations
             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
             -- The function below will be called before any actual modifications from lspkind
@@ -29,8 +29,8 @@ cmp.setup({
                     path = "[Path]",
                 })[entry.source.name]
                 return vim_item
-            end
-        })
+            end,
+        }),
     },
     snippet = {
         expand = function(args)
@@ -78,38 +78,37 @@ cmp.setup({
             "s",
         }),
     }),
-    sources = cmp.config.sources(
-        {
-            { name = 'nvim_lsp', priority_weight = 20 },
-            { name = 'nvim_lua', priority_weight = 20 }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
-            { name = 'luasnip', priority_weight = 20 }, -- For luasnip users.
-            { name = "copilot", priority_weight = 10 }
-        }, {
-        { name = 'buffer' }
+    sources = cmp.config.sources({
+        { name = "nvim_lsp", priority_weight = 20 },
+        { name = "nvim_lua", priority_weight = 20 }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
+        { name = "luasnip", priority_weight = 20 }, -- For luasnip users.
+        { name = "copilot", priority_weight = 10 },
+    }, {
+        { name = "buffer" },
     }),
 })
 
 -- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
+cmp.setup.filetype("gitcommit", {
     sources = cmp.config.sources({
         -- { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-        { name = 'buffer' },
-    })
+        { name = "buffer" },
+    }),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
-    }
+        { name = "buffer" },
+    },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' },
-        { name = 'cmdline' }
-    })
+        { name = "path" },
+        { name = "cmdline" },
+    }),
 })

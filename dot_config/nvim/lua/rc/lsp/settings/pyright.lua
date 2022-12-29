@@ -1,7 +1,5 @@
 return {
     settings = {
-        python = {
-
-        }
-    }
+        python = {},
+    },
 }

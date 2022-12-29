@@ -3,7 +3,7 @@ require("rc/dap/settings/lua")
 require("rc/dap/settings/go")
 require("rc/dap/settings/cpp")
 
-local dap, dapui = require "dap", require "dapui"
+local dap, dapui = require("dap"), require("dapui")
 
 dapui.setup()
 
@@ -19,9 +19,9 @@ dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
 
-vim.fn.sign_define("DapBreakpoint", {text="🛑", texthl="", linehl="", numhl=""})
-vim.fn.sign_define("DapBreakpointRejected",{text="🔵", texthl="", linehl="", numhl=""} )
-vim.fn.sign_define("DapStopped", {text="", texthl="", linehl="", numhl=""})
+vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "🔵", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" })
 
 -- references:
 -- https://alpha2phi.medium.com/neovim-for-beginners-debugging-using-dap-44626a767f57
