@@ -370,7 +370,7 @@ require("lazy").setup({
     {
         -- Show current cursor position
         "gen740/SmoothCursor.nvim",
-        event = "BufWinEnter",
+        event = "VimEnter",
         config = function()
             require('smoothcursor').setup({
                 fancy = {
