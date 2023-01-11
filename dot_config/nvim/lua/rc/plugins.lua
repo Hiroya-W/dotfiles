@@ -66,6 +66,17 @@ require("lazy").setup({
             require("rc/plugins/marks")
         end,
     },
+    {
+        "folke/noice.nvim",
+        event = "VimEnter",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        config = function()
+            require("rc/plugins/noice")
+        end,
+    },
     --------------------------------------------------------------
     -- Statusline / Bufferline
     {
