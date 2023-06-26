@@ -251,7 +251,7 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         event = "BufReadPost",
         dependencies = {
-            { "yioneko/nvim-yati", dependencies = "nvim-treesitter" }, -- indent
+            { "yioneko/nvim-yati",    dependencies = "nvim-treesitter" },    -- indent
             { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter" } }, -- rainbow parantheses
         },
         build = function()
