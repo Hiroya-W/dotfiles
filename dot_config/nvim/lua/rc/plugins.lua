@@ -304,7 +304,7 @@ require("lazy").setup({
     },
     {
         "numToStr/Comment.nvim", -- toggle comment
-        keys = { "gc", "gb" },
+        -- keys = { "gc", "gb" },
         config = function()
             require("Comment").setup()
         end,
