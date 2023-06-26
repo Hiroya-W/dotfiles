@@ -1,7 +1,7 @@
 -- automatically install
 -- https://github.com/neovim/nvim-lspconfig/wiki/Installing-language-servers#automatically
 local servers = {
-    "sumneko_lua",
+    "lua_ls",
     "pylsp",
     -- "pyright",
     "rust_analyzer",
