@@ -187,11 +187,16 @@ require("lazy").setup({
         end,
     },
     {
-        "jose-elias-alvarez/null-ls.nvim", -- Use non LSP sources, such as flake8, black
+        "jay-babu/mason-null-ls.nvim", -- non LSP manager
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "williamboman/mason.nvim",
+            "jose-elias-alvarez/null-ls.nvim", -- Use non LSP sources
+        },
         config = function()
             require("rc/lsp/null-ls")
         end,
-        dependencies = { "nvim-lua/plenary.nvim" },
     },
     {
         "Maan2003/lsp_lines.nvim",
