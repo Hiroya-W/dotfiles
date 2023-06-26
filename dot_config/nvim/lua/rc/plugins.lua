@@ -180,6 +180,7 @@ require("lazy").setup({
     },
     {
         "j-hui/fidget.nvim", -- UI for nvim-lsp progress
+        tag = "legacy",
         event = "VimEnter",
         config = function()
             require("fidget").setup()
