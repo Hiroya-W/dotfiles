@@ -65,9 +65,6 @@ end
 alias exa "exa --icons"
 alias ls "exa"
 
-fish_add_path $HOME/go/bin
-fish_add_path $HOME/.cargo/bin
-
 {{ if eq .chezmoi.os "darwin" }}
 # for brew
 {{   if contains "arm64" (output "uname" "-m")}}
@@ -90,5 +87,9 @@ source /opt/asdf-vm/asdf.fish
 # opam configuration
 source /Users/hiroya/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 {{ end }}
+
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/.cargo/bin
+fish_add_path --move $HOME/.rye/shims
 
 eval (starship init fish)
