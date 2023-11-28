@@ -130,6 +130,8 @@ end
 local navic = require("nvim-navic")
 
 M.on_attach = function(client, bufnr)
+    lsp_keymaps(bufnr)
+
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer
     if client.name == "pylsp" then
@@ -139,8 +141,6 @@ M.on_attach = function(client, bufnr)
     elseif client.name == "rust_analyzer" then
         rust_tools_keymap(bufnr)
     end
-
-    lsp_keymaps(bufnr)
 
     -- satysfi-ls does not support documentSymbols
     if client.name ~= "satysfi-ls" then
