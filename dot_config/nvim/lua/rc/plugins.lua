@@ -29,6 +29,7 @@ require("lazy").setup({
     },
     {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
+        commit = "7075d78",
         event = "VimEnter",
         config = function()
             require("indent_blankline").setup({
