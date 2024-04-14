@@ -33,14 +33,10 @@ require("lazy").setup({
     },
     {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
-        commit = "7075d78",
+        main = "ibl",
         event = "VimEnter",
         config = function()
-            require("indent_blankline").setup({
-                space_char_blankline = " ",
-                show_current_context = true,
-                show_current_context_start = true,
-            })
+            require("rc/plugins/indent-blankline")
         end,
     },
     {
