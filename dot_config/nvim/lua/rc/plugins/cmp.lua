@@ -3,6 +3,9 @@ local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 require("luasnip/loaders/from_vscode").lazy_load()
 
+---@diagnostic disable-next-line: deprecated
+table.unpack = table.unpack or unpack
+
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
 local has_words_before = function()
     local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
