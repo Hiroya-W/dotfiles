@@ -26,9 +26,10 @@ cmp.setup({
                     nvim_lsp = "[LSP]",
                     nvim_lua = "[LSP]",
                     luasnip = "[Snippet]",
-                    copilot = "[Copilot]",
+                    -- copilot = "[Copilot]",
                     buffer = "[Buffer]",
                     path = "[Path]",
+                    skkeleton = "[SKK]"
                 })[entry.source.name]
                 return vim_item
             end,
@@ -44,12 +45,13 @@ cmp.setup({
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-        ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+        ["<CS-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+        ["<CS-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
         ["<C-b>"] = cmp.mapping.scroll_docs(-1),
         ["<C-f>"] = cmp.mapping.scroll_docs(1),
         -- Conflict IME ><
-        ["<C-Space>"] = cmp.mapping.complete(),
+        -- ["<C-Space>"] = cmp.mapping.complete(),
+        ["<A-CR>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         -- from: https://github.com/LunarVim/Neovim-from-scratch/blob/21877b4ced8fcca504df71c0a39ffa5e8c821ef6/lua/user/cmp.lua#L68-L96
@@ -81,10 +83,11 @@ cmp.setup({
         }),
     }),
     sources = cmp.config.sources({
-        { name = "nvim_lsp", priority_weight = 20 },
-        { name = "nvim_lua", priority_weight = 20 }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
-        { name = "luasnip",  priority_weight = 20 }, -- For luasnip users.
-        { name = "copilot",  priority_weight = 10 },
+        { name = "nvim_lsp",  priority_weight = 20 },
+        { name = "nvim_lua",  priority_weight = 20 }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
+        { name = "luasnip",   priority_weight = 20 }, -- For luasnip users.
+        { name = "skkeleton", priority_weight = 20 },
+        -- { name = "copilot",  priority_weight = 10 },
     }, {
         { name = "buffer" },
     }),
@@ -111,6 +114,7 @@ cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = "path" },
+    }, {
         { name = "cmdline" },
     }),
 })

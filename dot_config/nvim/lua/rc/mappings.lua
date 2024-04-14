@@ -168,3 +168,10 @@ vim.keymap.set("v", "<leader>de", '<Cmd>lua require("dapui").eval()<CR>', {
     silent = true,
     desc = "Evaluate",
 })
+
+-- skkeleton
+vim.keymap.set("i", "<C-j>", "<Plug>(skkeleton-enable)", {
+    noremap = true,
+    silent = true,
+    desc = "Evaluate",
+})

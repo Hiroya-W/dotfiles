@@ -13,6 +13,19 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
     {
+        "vim-denops/denops.vim",
+        dependencies = {
+            "vim-skk/skkeleton",
+            config = function()
+                vim.fn["skkeleton#config"]({
+                    globalDictionaries = {
+                        "~/.local/share/skk/SKK-JISYO.L"
+                    }
+                })
+            end
+        }
+    },
+    {
         "nvim-tree/nvim-web-devicons",
         lazy = true
     },
@@ -112,17 +125,19 @@ require("lazy").setup({
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
             { "saadparwaiz1/cmp_luasnip" },
-            {
-                -- Need to install manually
-                -- run = ":Copilot"
-                "zbirenbaum/copilot-cmp",
-                dependencies = {
-                    {
-                        "zbirenbaum/copilot.lua",
-                        dependencies = { "github/copilot.vim" },
-                    },
-                },
-            },
+            -- {
+            --     -- Need to install manually
+            --     -- run = ":Copilot"
+            --     "zbirenbaum/copilot-cmp",
+            --     dependencies = {
+            --         {
+            --             "zbirenbaum/copilot.lua",
+            --             dependencies = { "github/copilot.vim" },
+            --         },
+            --     },
+            -- },
+            -- SKK
+            { "rinx/cmp-skkeleton" },
             {
                 "windwp/nvim-autopairs",
                 config = function()
