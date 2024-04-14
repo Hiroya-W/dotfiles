@@ -388,11 +388,7 @@ require("lazy").setup({
         "gen740/SmoothCursor.nvim",
         event = "VimEnter",
         config = function()
-            require("smoothcursor").setup({
-                fancy = {
-                    enable = true,
-                },
-            })
+            require("rc/plugins/smoothcursor")
         end,
     },
     --------------------------------------------------------------
