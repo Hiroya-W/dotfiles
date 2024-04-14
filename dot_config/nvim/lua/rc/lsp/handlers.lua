@@ -25,12 +25,13 @@ M.setup = function()
             vim.diagnostic.config({ virtual_lines = false })
         end,
     })
-    vim.api.nvim_create_autocmd("ModeChanged", {
-        pattern = "i:*",
-        callback = function()
-            vim.diagnostic.config({ virtual_lines = true })
-        end,
-    })
+    -- Show multi line diagnostics on Normal mode automatically
+    -- vim.api.nvim_create_autocmd("ModeChanged", {
+    --     pattern = "i:*",
+    --     callback = function()
+    --         vim.diagnostic.config({ virtual_lines = true })
+    --     end,
+    -- })
 end
 
 local function lsp_keymaps(bufnr)
