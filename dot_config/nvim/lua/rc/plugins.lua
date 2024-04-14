@@ -12,6 +12,10 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true
+    },
     --------------------------------------------------------------
     -- Appearance
     -- {
@@ -83,7 +87,6 @@ require("lazy").setup({
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
-            "kyazdani42/nvim-web-devicons",
             {
                 -- Using SymbolInformatin support
                 "SmiteshP/nvim-navic", -- Show scope you are working inside
@@ -98,7 +101,6 @@ require("lazy").setup({
     },
     {
         "akinsho/bufferline.nvim",
-        dependencies = { "kyazdani42/nvim-web-devicons" },
         config = function()
             require("bufferline").setup()
         end,
