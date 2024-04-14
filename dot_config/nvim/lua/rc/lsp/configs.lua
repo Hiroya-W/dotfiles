@@ -7,6 +7,7 @@ local servers = {
     "rust_analyzer",
     "gopls",
     "clangd",
+    "intelephense",
 }
 
 require("mason").setup({
