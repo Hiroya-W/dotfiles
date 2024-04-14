@@ -1,5 +1,5 @@
 require("nvim-autopairs").setup({
-    check_ts = true, -- You can use treesitter to check for a pair.
+    check_ts = true,   -- You can use treesitter to check for a pair.
     fast_wrap = {
         map = "<M-e>", -- insert mode
         chars = { "{", "[", "(", '"', "'" },

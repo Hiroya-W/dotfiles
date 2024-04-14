@@ -14,7 +14,7 @@ cmp.setup({
         -- lspkind
         format = lspkind.cmp_format({
             mode = "symbol_text", -- show only symbol annotations
-            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            maxwidth = 50,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
             -- The function below will be called before any actual modifications from lspkind
             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
@@ -60,7 +60,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { -- Enable on
+        end, {   -- Enable on
             "i", -- insert mode and
             "s", -- select mode
         }),
@@ -80,8 +80,8 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = "nvim_lsp", priority_weight = 20 },
         { name = "nvim_lua", priority_weight = 20 }, -- This source will complete neovim's Lua runtime API such `vim.lsp.*`.
-        { name = "luasnip", priority_weight = 20 }, -- For luasnip users.
-        { name = "copilot", priority_weight = 10 },
+        { name = "luasnip",  priority_weight = 20 }, -- For luasnip users.
+        { name = "copilot",  priority_weight = 10 },
     }, {
         { name = "buffer" },
     }),
