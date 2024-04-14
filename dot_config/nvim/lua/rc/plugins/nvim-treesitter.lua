@@ -1,4 +1,7 @@
 require("nvim-treesitter.configs").setup({
+    modules = {},
+    -- Install parsers synchronously (only applied to `ensure_installed`)
+    sync_install = true,
     -- A list of parser names, or "all"
     ensure_installed = {
         "bash",
@@ -45,9 +48,7 @@ require("nvim-treesitter.configs").setup({
         "vimdoc",
         "yaml"
     },
-
-    -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = true,
+    auto_install = false,
 
     -- List of parsers to ignore installing (for "all")
     ignore_install = {
