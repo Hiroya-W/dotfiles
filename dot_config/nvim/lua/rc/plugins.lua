@@ -69,7 +69,7 @@ require("lazy").setup({
     },
     {
         "folke/noice.nvim",
-        event = "VimEnter",
+        event = "VeryLazy",
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
@@ -250,8 +250,8 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         event = "BufReadPost",
         dependencies = {
-            { "yioneko/nvim-yati",    dependencies = "nvim-treesitter" },    -- indent
-            { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter" } }, -- rainbow parantheses
+            { "yioneko/nvim-yati" }, -- indent
+            { "hiphish/rainbow-delimiters.nvim" }
         },
         build = function()
             local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
