@@ -31,6 +31,11 @@ require("ibl").setup({
     scope = {
         enabled = true,
         highlight = highlight
+    },
+    exclude = {
+        filetypes = {
+            "dashboard"
+        }
     }
 })
 
