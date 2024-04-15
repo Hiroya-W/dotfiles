@@ -15,6 +15,8 @@
 -- Please see https://github.com/nvim-tree/nvim-tree.lua/wiki/Migrating-To-on_attach for assistance in migrating.
 --
 
+local api = require("nvim-tree.api")
+
 local function on_attach(bufnr)
     local api = require('nvim-tree.api')
 
@@ -86,6 +88,40 @@ local function on_attach(bufnr)
     --
     -- You will need to insert "your code goes here" for any mappings with a custom action_cb
     vim.keymap.set('n', 'v', api.node.open.vertical, opts('Open: Vertical Split'))
+    -- Transfer.nvim
+    vim.keymap.set(
+        'n',
+        'uu',
+        function()
+            local node = api.tree.get_node_under_cursor()
+            vim.cmd("TransferUpload " .. node.absolute_path)
+        end,
+        opts('Upload file or directory')
+    )
+    vim.keymap.set(
+        'n',
+        'ud',
+        function()
+            local node = api.tree.get_node_under_cursor()
+            vim.cmd("TransferDownload " .. node.absolute_path)
+        end,
+        opts('Upload file or directory')
+    )
+    vim.keymap.set(
+        'n',
+        'uf',
+        function()
+            local node = api.tree.get_node_under_cursor()
+            local is_folder = node.fs_stat and node.fs_stat.type == 'directory' or false
+            local basedir = is_folder and node.absolute_path or vim.fn.fnamemodify(node.absolute_path, ":h")
+            if (node.name == '..' and TreeExplorer ~= nil) then
+                basedir = TreeExplorer.cwd
+            end
+            vim.cmd("TransferDirDiff " .. basedir)
+            api.tree.close()
+        end,
+        opts('Upload file or directory')
+    )
 end
 
 

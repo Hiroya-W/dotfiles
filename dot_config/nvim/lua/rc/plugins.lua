@@ -494,4 +494,12 @@ require("lazy").setup({
     --------------------------------------------------------------
     -- For Japanese plugin
     { "deton/jasegment.vim" },
+    --------------------------------------------------------------
+    -- rsync plugins
+    {
+        "coffebar/transfer.nvim",
+        lazy = true,
+        cmd = { "TransferInit", "DiffRemote", "TransferUpload", "TransferDownload", "TransferDirDiff", "TransferRepeat" },
+        opts = {},
+    },
 })
