@@ -427,6 +427,14 @@ require("lazy").setup({
             require("rc/plugins/smoothcursor")
         end,
     },
+    {
+        "karb94/neoscroll.nvim",
+        config = function()
+            if vim.g.neovide ~= true then
+                require('neoscroll').setup {}
+            end
+        end
+    },
     --------------------------------------------------------------
     -- Search
     {
