@@ -229,7 +229,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
             "williamboman/mason.nvim",
-            "jose-elias-alvarez/null-ls.nvim", -- Use non LSP sources
+            "nvimtools/none-ls.nvim", -- Use non LSP sources
         },
         config = function()
             require("rc/lsp/null-ls")
