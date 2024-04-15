@@ -431,10 +431,11 @@ require("lazy").setup({
     },
     {
         "karb94/neoscroll.nvim",
+        enabled = function()
+            return vim.g.neovide ~= true
+        end,
         config = function()
-            if vim.g.neovide ~= true then
-                require('neoscroll').setup {}
-            end
+            require("rc/plugins/neoscroll")
         end
     },
     --------------------------------------------------------------
