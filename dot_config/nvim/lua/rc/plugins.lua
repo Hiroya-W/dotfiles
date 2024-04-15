@@ -193,7 +193,7 @@ require("lazy").setup({
         end,
     },
     {
-        "tami5/lspsaga.nvim", -- add UI for LSP
+        "nvimdev/lspsaga.nvim", -- add UI for LSP
         event = "VimEnter",
         dependencies = {
             "neovim/nvim-lspconfig",
