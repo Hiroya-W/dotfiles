@@ -31,3 +31,5 @@ require("telescope").setup({
         command_palette = require("rc/plugins/telescope-command-palette"),
     },
 })
+
+require("telescope").load_extension("noice")

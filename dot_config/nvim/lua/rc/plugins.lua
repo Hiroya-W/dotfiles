@@ -249,6 +249,7 @@ require("lazy").setup({
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         dependencies = {
+            "folke/noice.nvim",
             "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-frecency.nvim",
