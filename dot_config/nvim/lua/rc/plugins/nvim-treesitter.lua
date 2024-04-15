@@ -35,6 +35,7 @@ require("nvim-treesitter.configs").setup({
         "luap",
         "make",
         "markdown",
+        "markdown_inline",
         "perl",
         "php",
         "python",
