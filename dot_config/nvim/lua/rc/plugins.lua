@@ -99,7 +99,7 @@ require("lazy").setup({
                 -- config
             }
         end,
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+        dependencies = { { "nvim-tree/nvim-web-devicons" } }
     },
     --------------------------------------------------------------
     -- Statusline / Bufferline
@@ -274,10 +274,10 @@ require("lazy").setup({
     --------------------------------------------------------------
     -- File explorer
     {
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         cmd = "NvimTreeToggle",
         dependencies = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
         },
         config = function()
             require("rc/plugins/nvim-tree")
