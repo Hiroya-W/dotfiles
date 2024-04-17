@@ -27,23 +27,25 @@ vim.keymap.set("n", "<leader>tg", ":Telescope live_grep<CR>", {
 })
 
 -- NvimTree
--- vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
 
 -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Recipes#smart-nvim-tree-toggling
-local nvimTreeFocusOrToggle = function()
-    local nvimTree = require("nvim-tree.api")
-    local currentBuf = vim.api.nvim_get_current_buf()
-    local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
-    if currentBufFt == "NvimTree" then
-        nvimTree.tree.toggle()
-    else
-        nvimTree.tree.focus()
-    end
-end
-vim.keymap.set("n", "<leader>e", nvimTreeFocusOrToggle)
+-- local nvimTreeFocusOrToggle = function()
+--     local nvimTree = require("nvim-tree.api")
+--     local currentBuf = vim.api.nvim_get_current_buf()
+--     local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
+--     if currentBufFt == "NvimTree" then
+--         nvimTree.tree.toggle()
+--     else
+--         nvimTree.tree.focus()
+--     end
+-- end
+-- vim.keymap.set("n", "<leader>e", nvimTreeFocusOrToggle)
 
 -- LazyGit
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
+-- blame.nvim
+vim.keymap.set("n", "<leader>gb", ":BlameToggle<CR>", { silent = true })
 
 -- hop.nvim
 vim.api.nvim_set_keymap(
@@ -187,4 +189,18 @@ vim.keymap.set("i", "<C-j>", "<Plug>(skkeleton-enable)", {
     noremap = true,
     silent = true,
     desc = "Evaluate",
+})
+
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+    -- group = "transfer",
+    -- pattern = { "*" },
+    callback = function()
+        local f = io.open(vim.fn.getcwd() .. "/.nvim/deployment.lua", "r")
+
+        if f ~= nil then
+            io.close(f)
+            vim.cmd("TransferUpload")
+        end
+    end,
 })
