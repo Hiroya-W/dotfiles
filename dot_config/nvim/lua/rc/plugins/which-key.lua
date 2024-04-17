@@ -103,7 +103,13 @@ wk.register({
     },
 })
 
-require("which-key").register({
+wk.register({
+    ["<leader>g"] = {
+        name = "+Git",
+    },
+})
+
+wk.register({
     ["<leader>u"] = {
         name = "Upload / Download",
         d = { "<cmd>TransferDownload<cr>", "Download from remote server (scp)" },

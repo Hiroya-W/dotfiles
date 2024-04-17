@@ -336,6 +336,12 @@ require("lazy").setup({
         event = "BufReadPre",
         config = true
     },
+    {
+        "FabijanZulj/blame.nvim",
+        config = function()
+            require("rc/plugins/blame")
+        end
+    },
     --------------------------------------------------------------
     -- UI
     {
