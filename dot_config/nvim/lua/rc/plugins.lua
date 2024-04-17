@@ -508,4 +508,42 @@ require("lazy").setup({
         cmd = { "TransferInit", "DiffRemote", "TransferUpload", "TransferDownload", "TransferDirDiff", "TransferRepeat" },
         opts = {},
     },
+    -- Remote SSH
+    -- {
+    --     "amitds1997/remote-nvim.nvim",
+    --     version = "v0.2.6",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",         -- For standard functions
+    --         "MunifTanjim/nui.nvim",          -- To build the plugin UI
+    --         "nvim-telescope/telescope.nvim", -- For picking b/w different remote methods
+    --     },
+    --     config = function()
+    --         require("remote-nvim").setup({
+    --             -- Add your other configuration parameters as usual
+    --             offline_mode = {
+    --                 enabled = true,
+    --                 no_github = true,
+    --                 -- Add this only if you want to change the path where the Neovim releases are downloaded/located.
+    --                 -- Default location is the output of :lua= vim.fn.stdpath("cache") .. "/remote-nvim.nvim/version_cache"
+    --                 -- cache_dir = <custom-path>,
+    --             },
+    --         })
+    --     end
+    -- },
+    -- {
+    --     "nosduco/remote-sshfs.nvim",
+    --     dependencies = {
+    --         "nvim-telescope/telescope.nvim"
+    --     },
+    --     config = function()
+    --         require("remote-sshfs").setup({});
+    --     end
+    -- },
+    -- {
+    --     "chipsenkbeil/distant.nvim",
+    --     branch = 'v0.3',
+    --     config = function()
+    --         require('distant'):setup()
+    --     end
+    -- }
 })
