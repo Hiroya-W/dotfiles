@@ -198,9 +198,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     callback = function()
         local f = io.open(vim.fn.getcwd() .. "/.nvim/deployment.lua", "r")
 
-        if f ~= nil then
-            io.close(f)
-            vim.cmd("TransferUpload")
+        if f == nil then
+            return
         end
+
+        io.close(f)
+
+        vim.cmd [[let g:current_buf_file_path = expand('%:p')]]
+        vim.cmd("TransferUpload " .. vim.g.current_buf_file_path)
     end,
 })
