@@ -247,6 +247,11 @@ require("lazy").setup({
             lsp_lines.setup()
         end,
     },
+    -- for editing neovim configs
+    {
+        "folke/neodev.nvim",
+        opts = {}
+    },
     --------------------------------------------------------------
     -- Telescope
     {
