@@ -200,6 +200,8 @@ require("lazy").setup({
             { "aznhe21/actions-preview.nvim" },
             { "folke/lsp-colors.nvim" }, -- Automatically creates missing LSP highlights groups
             { "simrat39/rust-tools.nvim" },
+            -- format on save
+            { "lukas-reineke/lsp-format.nvim" },
         },
         config = function()
             require("rc/lsp")
@@ -230,6 +232,8 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "williamboman/mason.nvim",
             "nvimtools/none-ls.nvim", -- Use non LSP sources
+            -- format on save
+            { "lukas-reineke/lsp-format.nvim" },
         },
         config = function()
             require("rc/lsp/null-ls")
