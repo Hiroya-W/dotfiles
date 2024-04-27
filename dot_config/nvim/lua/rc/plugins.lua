@@ -369,7 +369,7 @@ require("lazy").setup({
     },
     {
         "folke/trouble.nvim", -- UI for diagnostics, references,...
-        cmd = "Trouble",
+        cmd = { "Trouble", "TroubleToggle" },
         dependencies = {
             "kyazdani42/nvim-web-devicons",
         },
