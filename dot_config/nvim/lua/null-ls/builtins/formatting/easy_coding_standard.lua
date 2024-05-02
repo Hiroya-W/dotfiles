@@ -6,7 +6,7 @@ local FORMATTING = methods.internal.FORMATTING
 return h.make_builtin({
     name = "easy-coding-standard",
     meta = {
-        url = "",
+        url = "https://github.com/easy-coding-standard/easy-coding-standard",
         description = "Formats php programs.",
         notes = {
             ""
@@ -17,10 +17,16 @@ return h.make_builtin({
     generator_opts = {
         command = "ecs",
         args = {
+            "check",
+            "--no-interaction",
+            "--no-progress-bar",
+            "--no-error-table",
+            "--quiet",
             "--fix",
-            "$FILENAME"
+            "$FILENAME",
         },
-        to_stdin = true,
+        to_stdin = false,
+        to_temp_file = true,
     },
     factory = h.formatter_factory,
 })
