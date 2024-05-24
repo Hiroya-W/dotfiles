@@ -75,7 +75,7 @@ opt.completeopt = "menuone"
 -- Don't complete from other buffer.
 opt.complete = "."
 -- Use "/" for path completion
-opt.completeslash = "slash"
+-- opt.completeslash = "slash"
 
 -- Splitting a window will put the new window below the current one.
 opt.splitbelow = true
