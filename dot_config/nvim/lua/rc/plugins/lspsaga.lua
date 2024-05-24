@@ -47,4 +47,8 @@
 --     diagnostic_message_format = "%m %c",
 --     highlight_prefix = false,
 -- })
-require("lspsaga").setup({})
+require("lspsaga").setup({
+    symbol_in_winbar = {
+        enable = false
+    }
+})

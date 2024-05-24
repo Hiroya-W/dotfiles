@@ -120,9 +120,9 @@ require("lazy").setup({
                 -- dependencies = {
                 --     "neovim/nvim-lspconfig",
                 -- },
-                config = function()
-                    vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-                end
+                -- config = function()
+                --     vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+                -- end
             },
         },
         config = function()
@@ -136,14 +136,12 @@ require("lazy").setup({
         end,
     },
     -- Breadcrumbs
-    -- Required Neovim >= 0.10.0
-    -- {
-    --     'Bekaboo/dropbar.nvim',
-    --     -- optional, but required for fuzzy finder support
-    --     dependencies = {
-    --         'nvim-telescope/telescope-fzf-native.nvim'
-    --     }
-    -- },
+    {
+        'Bekaboo/dropbar.nvim',
+        dependencies = {
+            'nvim-telescope/telescope-fzf-native.nvim'
+        }
+    },
     --------------------------------------------------------------
     -- Completion
     {
