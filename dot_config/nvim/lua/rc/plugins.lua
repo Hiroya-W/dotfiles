@@ -145,8 +145,8 @@ require("lazy").setup({
     --------------------------------------------------------------
     -- Completion
     {
-        "hrsh7th/nvim-cmp",
-        tag = "v0.0.1", -- 最新だとコマンドラインからの補完が壊れてる
+        "Hiroya-W/nvim-cmp",
+        branch = "v0.0.1", -- 最新だとコマンドラインからの補完が壊れてる
         event = "InsertEnter",
         dependencies = {
             { "hrsh7th/cmp-buffer" },
@@ -190,7 +190,7 @@ require("lazy").setup({
     {
         "ray-x/lsp_signature.nvim", -- Show signature on float window automatically
         event = "InsertEnter",
-        dependencies = { "hrsh7th/nvim-cmp" },
+        dependencies = { "Hiroya-W/nvim-cmp" },
         config = function()
             require("lsp_signature").setup()
         end,
