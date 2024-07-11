@@ -97,16 +97,6 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cc", ":Lspsaga show_cursor_diagnostics<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", ":Lspsaga diagnostic_jump_next<CR>", opts)
-
-    -- Use UIs provided by trouble
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TroubleToggle lsp_references<CR>", opts)
-    -- Don't works Trouble's GoToDefinition action
-    -- https://github.com/folke/trouble.nvim/pull/175
-    -- https://github.com/folke/trouble.nvim/issues/153
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TroubleToggle lsp_definitions<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TroubleToggle lsp_implementations<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cw", ":TroubleToggle workspace_diagnostics<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cd", ":TroubleToggle document_diagnostics<CR>", opts)
 end
 
 local function rust_tools_keymap(bufnr)
