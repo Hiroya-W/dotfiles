@@ -9,12 +9,6 @@ require("toggleterm").setup({
 })
 
 local opts = { noremap = true, silent = true }
--- vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
--- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-W>h]], opts)
-vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-W>j]], opts)
-vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-W>k]], opts)
-vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-W>l]], opts)
 
 -- Custom Terminals
 -- Exec: `:lua _FUNCTION_NAME()`
