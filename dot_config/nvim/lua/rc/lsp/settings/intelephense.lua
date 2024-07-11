@@ -15,6 +15,10 @@ return {
     },
     settings = {
         intelephense = {
+            format = {
+                -- enable = true, -- LSPじゃなくてECSにフォーマットさせたいけど上手くいかねぇのでtrueにしてる...
+                enable = false -- ECSに今はフォーマットさせているのでこれでいい
+            },
         }
     }
 }
