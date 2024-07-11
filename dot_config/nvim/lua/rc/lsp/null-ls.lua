@@ -27,6 +27,8 @@ require("null-ls").setup({
         formatting.isort,
         -- Lua
         formatting.stylua,
+        -- PHP
+        formatting.easy_coding_standard,
         -- diagnostics
         -- Python
         diagnostics.flake8,
