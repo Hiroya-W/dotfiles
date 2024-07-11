@@ -121,9 +121,6 @@ end
 local navic = require("nvim-navic")
 
 M.on_attach = function(client, bufnr)
-    -- format on save
-    require("lsp-format").on_attach(client, bufnr)
-
     lsp_keymaps(bufnr)
 
     -- Use an on_attach function to only map the following keys

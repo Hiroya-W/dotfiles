@@ -18,7 +18,6 @@ require("mason-null-ls").setup({
     handlers = {},
 })
 
--- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 require("null-ls").setup({
     sources = {
         -- formatting
@@ -38,4 +37,5 @@ require("null-ls").setup({
         -- code_actions
         -- code_actions.refactoring,
     },
+    on_attach = require('lsp-format').on_attach
 })
