@@ -38,5 +38,4 @@ require("null-ls").setup({
         -- code_actions
         -- code_actions.refactoring,
     },
-    on_attach = require("lsp-format").on_attach
 })
