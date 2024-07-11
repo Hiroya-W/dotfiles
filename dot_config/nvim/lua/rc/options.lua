@@ -81,3 +81,7 @@ opt.complete = "."
 opt.splitbelow = true
 -- Splitting a window will put the new window right the current one.
 opt.splitright = true
+
+-- localを英語にしておく
+-- JABSなど :ls などバッファの正規表現をやっているのが英語でやってるので日本語が混ざるとコケる
+vim.cmd [[language en_US]]
