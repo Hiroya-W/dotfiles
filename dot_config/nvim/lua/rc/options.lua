@@ -84,4 +84,4 @@ opt.splitright = true
 
 -- localを英語にしておく
 -- JABSなど :ls などバッファの正規表現をやっているのが英語でやってるので日本語が混ざるとコケる
-vim.cmd [[language en_US]]
+vim.cmd [[language en_US.UTF-8]]
