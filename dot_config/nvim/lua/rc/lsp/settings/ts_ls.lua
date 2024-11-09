@@ -5,6 +5,9 @@ return {
         -- https://github.com/pmizio/typescript-tools.nvim?tab=readme-ov-file#-styled-components-support
         tsserver_plugins = {
             "@styled/typescript-styled-plugin",
+        },
+        jsx_close_tag = {
+            enable = true
         }
     }
 }
