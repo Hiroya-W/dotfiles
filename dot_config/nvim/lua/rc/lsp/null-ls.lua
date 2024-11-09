@@ -27,7 +27,7 @@ require("null-ls").setup({
         -- Lua
         formatting.stylua,
         -- PHP
-        formatting.easy_coding_standard,
+        require("none-ls-ecs.formatting"),
         -- diagnostics
         -- Python
         diagnostics.flake8,
