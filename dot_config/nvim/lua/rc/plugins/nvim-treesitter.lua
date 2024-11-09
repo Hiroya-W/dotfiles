@@ -9,6 +9,9 @@ require("nvim-treesitter.configs").setup({
         "cmake",
         "comment",
         "cpp",
+        "css",
+        "dockerfile",
+        "editorconfig",
         "fish",
         "git_config",
         "git_rebase",
@@ -36,24 +39,29 @@ require("nvim-treesitter.configs").setup({
         "make",
         "markdown",
         "markdown_inline",
+        "nginx",
         "perl",
         "php",
+        "phpdoc",
         "python",
         "ruby",
         "rust",
         "scss",
         "sql",
+        "ssh_config",
+        "styled",
         "toml",
+        "tsx",
         "typescript",
         "vim",
         "vimdoc",
+        "vue",
         "yaml"
     },
     auto_install = false,
 
     -- List of parsers to ignore installing (for "all")
     ignore_install = {
-        "phpdoc",
     },
 
     highlight = {
