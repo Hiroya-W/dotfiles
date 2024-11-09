@@ -58,6 +58,12 @@ mason_lspconfig.setup_handlers({
                     capabilities = opts.capabilities,
                 },
             })
+        elseif server_name == "ts_ls" then
+            require("typescript-tools").setup({
+                on_attach = opts.on_attach,
+                -- capabilities ? たぶんtypescript-toolsがよしなにしている
+                settings = opts.settings,
+            })
         else
             require("lspconfig")[server_name].setup(opts)
         end

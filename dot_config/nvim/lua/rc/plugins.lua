@@ -206,6 +206,7 @@ require("lazy").setup({
             { "aznhe21/actions-preview.nvim" },
             { "folke/lsp-colors.nvim" }, -- Automatically creates missing LSP highlights groups
             { "simrat39/rust-tools.nvim" },
+            { "pmizio/typescript-tools.nvim" },
         },
         config = function()
             require("rc/lsp")
