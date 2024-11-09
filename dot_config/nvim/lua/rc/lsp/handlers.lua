@@ -119,6 +119,19 @@ local function common_capabilities()
 end
 
 local navic = require("nvim-navic")
+-- nvim-navicではdocumentSymbolsを使うけど、対応していないのでエラーが出る
+local unsupported_document_symbols_servers = {
+    "tailwindcss",
+}
+
+local function is_unsupported_document_symbols_server(server_name)
+    for _, server in ipairs(unsupported_document_symbols_servers) do
+        if server == server_name then
+            return true
+        end
+    end
+    return false
+end
 
 M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
@@ -134,7 +147,7 @@ M.on_attach = function(client, bufnr)
     end
 
     -- satysfi-ls does not support documentSymbols
-    if client.name ~= "satysfi-ls" then
+    if not is_unsupported_document_symbols_server(client.name) then
         navic.attach(client, bufnr)
     end
 end
