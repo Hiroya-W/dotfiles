@@ -8,6 +8,10 @@ local servers = {
     "gopls",
     "clangd",
     "intelephense",
+    "cssls",
+    "tailwindcss",
+    "ts_ls",
+    "volar"
 }
 
 require("mason").setup({
