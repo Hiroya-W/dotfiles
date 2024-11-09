@@ -10,7 +10,12 @@ local servers = {
     "intelephense",
     "cssls",
     "tailwindcss",
+    "docker_compose_language_service",
+    "dockerls",
+    "jsonls",
     "ts_ls",
+    "marksman",
+    "sqls",
     "volar"
 }
 
