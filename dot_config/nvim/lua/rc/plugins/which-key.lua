@@ -1,36 +1,17 @@
 local wk = require("which-key")
 
-wk.setup()
+wk.add({
+    { "<leader>b", group = "+Buffer"},
+    { "<leader>bp", "<cmd>BufferLinePick<CR>", desc = "BufferLinePick" },
 
-wk.register({
-    ["<leader>b"] = {
-        name = "+Buffer",
-    },
-})
+    { "<leader>d", group = "Debug" },
 
-wk.register({
-    ["<leader>bp"] = { "<cmd>BufferLinePick<CR>", "BufferLinePick" },
-})
+    { "<leader>g", group = "+Git" },
 
-wk.register({
-    ["<leader>d"] = {
-        name = "Debug",
-    },
-})
-
-wk.register({
-    ["<leader>g"] = {
-        name = "+Git",
-    },
-})
-
-wk.register({
-    ["<leader>u"] = {
-        name = "Upload / Download",
-        d = { "<cmd>TransferDownload<cr>", "Download from remote server (scp)" },
-        u = { "<cmd>TransferUpload<cr>", "Upload to remote server (scp)" },
-        f = { "<cmd>DiffRemote<cr>", "Diff file with remote server (scp)" },
-        i = { "<cmd>TransferInit<cr>", "Init/Edit Deployment config" },
-        r = { "<cmd>TransferRepeat<cr>", "Repeat transfer command" },
-    }
+    { "<leader>u",  group = "Upload / Download" },
+    { "<leader>ud", "<cmd>TransferDownload<cr>", desc = "Download from remote server (scp)" },
+    { "<leader>uf", "<cmd>DiffRemote<cr>",       desc = "Diff file with remote server (scp)" },
+    { "<leader>ui", "<cmd>TransferInit<cr>",     desc = "Init/Edit Deployment config" },
+    { "<leader>ur", "<cmd>TransferRepeat<cr>",   desc = "Repeat transfer command" },
+    { "<leader>uu", "<cmd>TransferUpload<cr>",   desc = "Upload to remote server (scp)" },
 })

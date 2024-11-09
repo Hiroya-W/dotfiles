@@ -450,6 +450,10 @@ require("lazy").setup({
     },
     {
         "folke/which-key.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "echasnovski/mini.icons",
+        },
         config = function()
             require("rc/plugins/which-key")
         end,
