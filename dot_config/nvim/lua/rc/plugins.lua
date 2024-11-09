@@ -535,14 +535,16 @@ require("lazy").setup({
         end,
     },
     --------------------------------------------------------------
-    -- Markdown previewer
+    -- Markdown Previewer
     {
-        "iamcco/markdown-preview.nvim",
-        build = "cd app && npm install",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
+        "toppair/peek.nvim",
+        event = { "VeryLazy" },
+        build = "deno task --quiet build:fast",
+        config = function()
+            require("peek").setup()
+            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
         end,
-        ft = { "markdown" },
     },
     --------------------------------------------------------------
     -- For Japanese plugin
