@@ -11,7 +11,7 @@ require("mason-null-ls").setup({
         "flake8",
         "mypy",
         "golangci_lint",
-        "phpstan", -- intelephense が phpstan を出してくれるのでバイナリだけ入れておく
+        "phpstan",
         "easy-coding-standard",
         "eslint_d",
         "prettierd",
