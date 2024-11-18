@@ -13,25 +13,6 @@ M.setup = function()
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = "rounded",
     })
-
-    -- for lsp_lines.nvim
-    vim.diagnostic.config({
-        virtual_text = false,
-        virtual_lines = false,
-    })
-
-    vim.api.nvim_create_autocmd("InsertEnter", {
-        callback = function()
-            vim.diagnostic.config({ virtual_lines = false })
-        end,
-    })
-    -- Show multi line diagnostics on Normal mode automatically
-    -- vim.api.nvim_create_autocmd("ModeChanged", {
-    --     pattern = "i:*",
-    --     callback = function()
-    --         vim.diagnostic.config({ virtual_lines = true })
-    --     end,
-    -- })
 end
 
 local function lsp_keymaps(bufnr)
@@ -97,6 +78,7 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cc", ":Lspsaga show_cursor_diagnostics<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", ":Lspsaga diagnostic_jump_next<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>l", "<cmd>lua vim.diagnostic.enable(not vim.diagnostic.is_enabled())<CR>", opts)
 end
 
 local function rust_tools_keymap(bufnr)
