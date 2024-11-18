@@ -41,6 +41,9 @@ require("null-ls").setup({
         diagnostics.mypy,
         -- Golang
         diagnostics.golangci_lint,
+        diagnostics.phpstan.with({
+            args = { "analyze", "--memory-limit=2G", "--error-format", "json", "--no-progress", "$FILENAME" },
+        }),
         diagnostics.yamllint,
         diagnostics.markdownlint,
 
