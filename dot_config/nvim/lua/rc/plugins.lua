@@ -245,14 +245,6 @@ require("lazy").setup({
             require("rc/lsp/null-ls")
         end,
     },
-    {
-        "Maan2003/lsp_lines.nvim",
-        config = function()
-            local lsp_lines = require("lsp_lines")
-            vim.keymap.set("", "<Leader>l", lsp_lines.toggle, { desc = "Toggle lsp_lines" })
-            lsp_lines.setup()
-        end,
-    },
     -- for editing neovim configs
     {
         "folke/neodev.nvim",
