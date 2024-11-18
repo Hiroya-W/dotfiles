@@ -15,6 +15,9 @@ return {
     },
     settings = {
         intelephense = {
+            compatibility = {
+                preferPsalmPhpstanPrefixedAnnotations = true
+            },
             format = {
                 -- enable = true, -- LSPじゃなくてECSにフォーマットさせたいけど上手くいかねぇのでtrueにしてる...
                 enable = false -- ECSに今はフォーマットさせているのでこれでいい
