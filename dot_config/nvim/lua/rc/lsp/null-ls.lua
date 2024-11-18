@@ -19,7 +19,11 @@ require("mason-null-ls").setup({
         "markdownlint",
     },
     automatic_installation = false,
-    handlers = {},
+    handlers = {
+        -- mason-null-lsによって自動的に利用できるソースがActiveにしてくれる
+        -- 今回は手でnull-lsのsetupを呼んでやるので無効にしておかないと、重複してソースが起動してしまう
+        function() end
+    },
 })
 
 require("null-ls").setup({
