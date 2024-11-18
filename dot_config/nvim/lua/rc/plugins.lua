@@ -145,7 +145,8 @@ require("lazy").setup({
     --------------------------------------------------------------
     -- Completion
     {
-        "hrsh7th/nvim-cmp",
+        "Hiroya-W/nvim-cmp",
+        branch = "v0.0.1", -- 最新だとコマンドラインからの補完が壊れてる
         event = "InsertEnter",
         dependencies = {
             { "hrsh7th/cmp-buffer" },
