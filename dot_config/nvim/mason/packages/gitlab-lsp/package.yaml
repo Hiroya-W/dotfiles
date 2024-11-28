@@ -1,0 +1,15 @@
+---
+name: gitlab-lsp
+description: |
+  The GitLab Language Server provides a common interface for other IDE
+  extensions to build out GitLab functionality.
+homepage: https://gitlab.com/gitlab-org/editor-extensions/gitlab-lsp
+languages: []
+licenses:
+  - MIT
+categories:
+  - LSP
+source:
+  id: pkg:npm/@gitlab-org/gitlab-lsp@7.1.1
+bin:
+  gitlab-lsp: node:node_modules/@gitlab-org/gitlab-lsp/out/node/main-bundle.js

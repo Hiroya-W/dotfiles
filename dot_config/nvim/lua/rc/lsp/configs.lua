@@ -17,9 +17,15 @@ local servers = {
     "marksman",
     "sqls",
     "volar"
+
+    -- "yq", -- :MasonInstall yq for mason-registry
 }
 
 require("mason").setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "file:~/.config/nvim/mason",
+    },
     ui = {
         icons = {
             package_installed = "✓",
