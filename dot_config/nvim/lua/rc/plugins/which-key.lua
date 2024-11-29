@@ -14,4 +14,7 @@ wk.add({
     { "<leader>ui", "<cmd>TransferInit<cr>",     desc = "Init/Edit Deployment config" },
     { "<leader>ur", "<cmd>TransferRepeat<cr>",   desc = "Repeat transfer command" },
     { "<leader>uu", "<cmd>TransferUpload<cr>",   desc = "Upload to remote server (scp)" },
+
+    -- gitlab.nvim
+    { "<leader>gl", group = "GitLab Workflow" },
 })
