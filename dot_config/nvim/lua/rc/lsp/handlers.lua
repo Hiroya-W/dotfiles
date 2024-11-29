@@ -104,6 +104,7 @@ local navic = require("nvim-navic")
 -- nvim-navicではdocumentSymbolsを使うけど、対応していないのでエラーが出る
 local unsupported_document_symbols_servers = {
     "tailwindcss",
+    "gitlab_lsp",
 }
 
 local function is_unsupported_document_symbols_server(server_name)
