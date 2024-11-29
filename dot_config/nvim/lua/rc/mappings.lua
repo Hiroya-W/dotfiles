@@ -14,7 +14,9 @@ vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "<up>", "gk")
 
 -- Telescope
-vim.keymap.set("n", "<leader>tf", ":Telescope find_files<CR>", {
+vim.keymap.set("n", "<leader>tf", function()
+    require("telescope").extensions.smart_open.smart_open()
+end, {
     noremap = true,
     silent = true,
     desc = "Find files",
