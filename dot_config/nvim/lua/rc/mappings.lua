@@ -45,22 +45,22 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
 -- vim.keymap.set("n", "<leader>e", nvimTreeFocusOrToggle)
 
 -- LazyGit
-vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true, desc = "Open LazyGIt" })
 -- blame.nvim
-vim.keymap.set("n", "<leader>gb", ":BlameToggle<CR>", { silent = true })
+vim.keymap.set("n", "<leader>gb", ":BlameToggle<CR>", { silent = true, desc = "Open blame pane" })
 
 -- hop.nvim
 vim.api.nvim_set_keymap(
     "n",
     "f",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-    {}
+    { desc = "Hop hint after cursor" }
 )
 vim.api.nvim_set_keymap(
     "n",
     "F",
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
-    {}
+    { desc = "Hop hint before cursor" }
 )
 vim.api.nvim_set_keymap(
     "o",
