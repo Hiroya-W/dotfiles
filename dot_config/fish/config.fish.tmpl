@@ -64,6 +64,7 @@ end
 
 alias eza "eza --icons"
 alias ls "eza"
+alias cat "bat"
 
 {{ if eq .chezmoi.os "darwin" }}
 # for brew
@@ -89,5 +90,22 @@ fish_add_path $HOME/go/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path --move $HOME/.rye/shims
 fish_add_path $HOME/.pub-cache/bin
+fish_add_path /opt/homebrew/opt/node@20/bin
+fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.progate/bin
+
+set -x GITLAB_TOKEN ""
+set -x GITLAB_URL ""
+
+fish_add_path $HOME/.pyenv/bin
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "$HOME/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+fish_add_path $HOME/Library/Android/sdk/platform-tools
+fish_add_path /opt/homebrew/lib/ruby/gems/3.4.0/bin
+
+direnv hook fish | source
 
 eval (starship init fish)
