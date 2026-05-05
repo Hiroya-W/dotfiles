@@ -57,6 +57,7 @@ $conda\
 $spack\
 $memory_usage\
 $aws\
+$gcloud\
 $openstack\
 $azure\
 $env_var\
@@ -81,3 +82,8 @@ error_symbol = "[\\(*;-;\\) <](bold red)"
 
 [aws]
 disabled = true
+
+[gcloud]
+symbol = '󱇶 '
+format = '[$symbol$project]($style)'
+detect_env_vars = ['STARSHIP_ENABLED_GCLOUD']
