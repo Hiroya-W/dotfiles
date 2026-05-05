@@ -473,6 +473,12 @@ require("lazy").setup({
             })
         end,
     },
+    {
+        "nacro90/numb.nvim",
+        config = function()
+            require("numb").setup()
+        end,
+    },
     { "tpope/vim-surround" },
     {
         "matbme/JABS.nvim", --  Buffer Switcher
