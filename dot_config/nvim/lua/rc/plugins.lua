@@ -49,7 +49,13 @@ require("lazy").setup({
     {
         "Shatur/neovim-ayu",
         config = function()
-            require("rc/plugins/ayu")
+            -- require("rc/plugins/ayu")
+        end,
+    },
+    {
+        "catppuccin/nvim",
+        config = function()
+            require("rc/plugins/catppuccin")
         end,
     },
     {
