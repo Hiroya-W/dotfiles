@@ -345,11 +345,6 @@ require("lazy").setup({
     --    cmd = "TSPlaygroundToggle",
     --    dependencies = { "nvim-treesitter/nvim-treesitter" },
     --},
-    {
-        -- for satysfi syntax-highlight
-        "qnighy/satysfi.vim",
-        ft = "satysfi",
-    },
     --------------------------------------------------------------
     -- Git
     {
