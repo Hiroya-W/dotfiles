@@ -22,10 +22,6 @@ local servers = {
 }
 
 require("mason").setup({
-    registries = {
-        "github:mason-org/mason-registry",
-        "file:~/.config/nvim/mason",
-    },
     ui = {
         icons = {
             package_installed = "✓",
@@ -77,9 +73,8 @@ mason_lspconfig.setup_handlers({
 })
 
 -- Unsupported LSPs by Mason
-local unsupported_servers = {
-    "gitlab_lsp",
-}
+local unsupported_servers = {}
+
 for _, server_name in ipairs(unsupported_servers) do
     local opts = {
         on_attach = require("rc/lsp/handlers").on_attach,
