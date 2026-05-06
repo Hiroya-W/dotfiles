@@ -1,4 +1,5 @@
 -- https://zenn.dev/kawarimidoll/books/6064bf6f193b51/viewer/018161
+---@return vim.lsp.Config
 return {
     on_init = function(client)
         if client.workspace_folders then
@@ -21,6 +22,7 @@ return {
             },
         })
     end,
+    ---@type lspconfig.settings.lua_ls
     settings = {
         Lua = {
             diagnostics = {
