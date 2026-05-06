@@ -2,15 +2,15 @@
 -- https://github.com/neovim/nvim-lspconfig/wiki/Installing-language-servers#automatically
 local servers = {
     "lua_ls",
-    "intelephense",
-    "cssls",
-    "tailwindcss",
-    "docker_compose_language_service",
-    "dockerls",
-    "jsonls",
-    "ts_ls",
-    "marksman",
-    "sqls",
+    -- "intelephense",
+    -- "cssls",
+    -- "tailwindcss",
+    -- "docker_compose_language_service",
+    -- "dockerls",
+    -- "jsonls",
+    -- "ts_ls",
+    -- "marksman",
+    -- "sqls",
 
     -- "yq", -- :MasonInstall yq for mason-registry
     -- "pylsp",
@@ -36,39 +36,15 @@ mason_lspconfig.setup({
     ensure_installed = servers, -- ensure these servers are always installed
 })
 
-vim.lsp.config("lua_ls", {
-    cmd = { "lua-language-server" },
-    filetypes = { "lua" },
-    on_init = function(client)
-        if client.workspace_folders then
-            local path = client.workspace_folders[1].name
-            if
-                path ~= vim.fn.stdpath("config")
-                and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
-            then
-                return
-            end
-        end
-        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-            runtime = { version = "LuaJIT" },
-            workspace = {
-                checkThirdParty = false,
-                library = vim.list_extend(vim.api.nvim_get_runtime_file("lua", true), {
-                    "${3rd}/luv/library",
-                    "${3rd}/busted/library",
-                }),
-            },
-        })
-    end,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- 未使用変数は冒頭に`_`をつけていれば警告なし
-                unusedLocalExclude = { "_*" },
-            },
-        },
-    },
+vim.diagnostic.config({
+    virtual_text = true,
 })
+
+vim.lsp.config("*", {
+    root_markers = { ".git" },
+})
+
+vim.lsp.enable(servers)
 
 -- Setup lsp config
 -- mason_lspconfig.setup_handlers({
