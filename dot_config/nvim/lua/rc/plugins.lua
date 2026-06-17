@@ -326,25 +326,15 @@ require("lazy").setup({
     --------------------------------------------------------------
     -- Syntax Highlight
     {
-        "nvim-treesitter/nvim-treesitter",
-        event = "BufReadPost",
+        "romus204/tree-sitter-manager.nvim",
         dependencies = {
             { "yioneko/nvim-yati" }, -- indent
-            { "hiphish/rainbow-delimiters.nvim" }
+            { "hiphish/rainbow-delimiters.nvim" },
         },
-        build = function()
-            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-            ts_update()
-        end,
         config = function()
-            require("rc/plugins/nvim-treesitter")
+            require("rc/plugins/tree-sitter-manager")
         end,
     },
-    --{
-    --    "nvim-treesitter/playground",
-    --    cmd = "TSPlaygroundToggle",
-    --    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    --},
     --------------------------------------------------------------
     -- Git
     {
