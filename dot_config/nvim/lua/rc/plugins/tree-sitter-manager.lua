@@ -27,7 +27,7 @@ require("tree-sitter-manager").setup({
         "jsdoc",
         "json",
         "json5",
-        "jsonc",
+        -- "jsonc",
         "latex",
         "lua",
         "luadoc",
