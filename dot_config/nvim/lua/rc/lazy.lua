@@ -26,7 +26,7 @@ require("lazy").setup({
         { import = "rc.plugins.todo-comments" },
         { import = "rc.plugins.marks" },
         { import = "rc.plugins.noice" },
-        { import = "rc.plugins.dashboard-nvim" },
+        -- { import = "rc.plugins.dashboard-nvim" },
         --------------------------------------------------------------
         -- Statusline / Bufferline
         { import = "rc.plugins.lualine" },
@@ -50,6 +50,43 @@ require("lazy").setup({
         --------------------------------------------------------------
         -- Telescope
         { import = "rc.plugins.telescope" },
+        --------------------------------------------------------------
+        -- File explorer
+        { import = "rc.plugins.nvim-tree" },
+        --------------------------------------------------------------
+        -- Syntax Highlight
+        { import = "rc.plugins.tree-sitter-manager" },
+        --------------------------------------------------------------
+        -- Git
+        { import = "rc.plugins.gitsigns" },
+        { import = "rc.plugins.lazygit" },
+        { import = "rc.plugins.committia" },
+        { import = "rc.plugins.git-conflict" },
+        { import = "rc.plugins.blame" },
+        --------------------------------------------------------------
+        -- UI
+        { import = "rc.plugins.toggleterm" },
+        { "numToStr/Comment.nvim" },
+        { import = "rc.plugins.trouble" },
+        { import = "rc.plugins.nvim-bqf" },
+        { import = "rc.plugins.flash" },
+        { "nacro90/numb.nvim" },
+        { "tpope/vim-surround" },
+        { import = "rc.plugins.JABS" },
+        { import = "rc.plugins.which-key" },
+        { import = "rc.plugins.bufresize" },
+        { import = "rc.plugins.nvim-scrollbar" },
+        { import = "rc.plugins.nvim-scrollbar" },
+        { import = "rc.plugins.SmoothCursor" },
+        --------------------------------------------------------------
+        -- Search
+        { import = "rc.plugins.vim-asterisk" },
+        --------------------------------------------------------------
+        -- Markdown Previewer
+        { import = "rc.plugins.peek" },
+        --------------------------------------------------------------
+        -- For Japanese plugin
+        { "deton/jasegment.vim" },
     },
     checker = { enabled = true },
 })
