@@ -26,7 +26,6 @@ require("lazy").setup({
         { import = "rc.plugins.todo-comments" },
         { import = "rc.plugins.marks" },
         { import = "rc.plugins.noice" },
-        -- { import = "rc.plugins.dashboard-nvim" },
         --------------------------------------------------------------
         -- Statusline / Bufferline
         { import = "rc.plugins.lualine" },
