@@ -159,7 +159,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 
         io.close(f)
 
-        vim.cmd [[let g:current_buf_file_path = expand('%:p')]]
+        vim.cmd([[let g:current_buf_file_path = expand('%:p')]])
         vim.cmd("TransferUpload " .. vim.g.current_buf_file_path)
     end,
 })

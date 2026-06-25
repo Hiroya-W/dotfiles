@@ -20,22 +20,22 @@ require("lazy").setup({
                 config = function()
                     vim.fn["skkeleton#config"]({
                         globalDictionaries = {
-                            "~/.local/share/skk/SKK-JISYO.L"
-                        }
+                            "~/.local/share/skk/SKK-JISYO.L",
+                        },
                     })
-                end
+                end,
             },
             {
                 "delphinus/skkeleton_indicator.nvim",
                 config = function()
                     require("skkeleton_indicator").setup()
-                end
-            }
-        }
+                end,
+            },
+        },
     },
     {
         "nvim-tree/nvim-web-devicons",
-        lazy = true
+        lazy = true,
     },
     --------------------------------------------------------------
     -- Appearance
@@ -107,7 +107,7 @@ require("lazy").setup({
     },
     {
         "nvimdev/dashboard-nvim",
-        event = 'VimEnter',
+        event = "VimEnter",
         config = function()
             require("dashboard").setup({
                 config = {
@@ -119,7 +119,7 @@ require("lazy").setup({
                 },
             })
         end,
-        dependencies = { { "nvim-tree/nvim-web-devicons" } }
+        dependencies = { { "nvim-tree/nvim-web-devicons" } },
     },
     --------------------------------------------------------------
     -- Statusline / Bufferline
@@ -149,16 +149,17 @@ require("lazy").setup({
     },
     -- Breadcrumbs
     {
-        'Bekaboo/dropbar.nvim',
+        "Bekaboo/dropbar.nvim",
         dependencies = {
-            'nvim-telescope/telescope-fzf-native.nvim'
-        }
+            "nvim-telescope/telescope-fzf-native.nvim",
+        },
     },
     --------------------------------------------------------------
     -- Completion
     {
-        "Hiroya-W/nvim-cmp",
-        branch = "v0.0.1", -- 最新だとコマンドラインからの補完が壊れてる
+        "hrsh7th/nvim-cmp",
+        -- "Hiroya-W/nvim-cmp",
+        -- branch = "v0.0.1", -- 最新だとコマンドラインからの補完が壊れてる
         event = "InsertEnter",
         dependencies = {
             { "hrsh7th/cmp-buffer" },
@@ -248,7 +249,7 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
             "williamboman/mason.nvim",
-            "nvimtools/none-ls.nvim",        -- Use non LSP sources
+            "nvimtools/none-ls.nvim", -- Use non LSP sources
             "nvimtools/none-ls-extras.nvim", -- Extra sources
             "lukas-reineke/lsp-format.nvim", -- format on save
             "gbprod/none-ls-ecs.nvim", -- PHP formatter source
@@ -260,14 +261,14 @@ require("lazy").setup({
     -- for editing neovim configs
     {
         "folke/neodev.nvim",
-        opts = {}
+        opts = {},
     },
     {
         "lukas-reineke/lsp-format.nvim",
         lazy = true,
         config = function()
             require("rc/lsp/lsp-format")
-        end
+        end,
     },
     --------------------------------------------------------------
     -- Telescope
@@ -359,13 +360,13 @@ require("lazy").setup({
         "akinsho/git-conflict.nvim",
         version = "v1.3.0",
         event = "BufReadPre",
-        config = true
+        config = true,
     },
     {
         "FabijanZulj/blame.nvim",
         config = function()
             require("rc/plugins/blame")
-        end
+        end,
     },
     {
         "harrisoncramer/gitlab.nvim",
@@ -583,33 +584,33 @@ require("lazy").setup({
     },
     --------------------------------------------------------------
     -- Debugger
-    {
-        "mfussenegger/nvim-dap",
-        lazy = true,
-        dependencies = {
-            "rcarriga/nvim-dap-ui",
-            {
-                "theHamsta/nvim-dap-virtual-text",
-                dependencies = {
-                    "nvim-treesitter/nvim-treesitter",
-                },
-                config = function()
-                    require("nvim-dap-virtual-text").setup()
-                end,
-            },
-            { "jbyuki/one-small-step-for-vimkind" },
-        },
-        config = function()
-            require("rc/dap")
-        end,
-    },
-    {
-        "leoluz/nvim-dap-go",
-        ft = "go",
-        config = function()
-            require("dap-go").setup()
-        end,
-    },
+    -- {
+    --     "mfussenegger/nvim-dap",
+    --     lazy = true,
+    --     dependencies = {
+    --         "rcarriga/nvim-dap-ui",
+    --         {
+    --             "theHamsta/nvim-dap-virtual-text",
+    --             dependencies = {
+    --                 "nvim-treesitter/nvim-treesitter",
+    --             },
+    --             config = function()
+    --                 require("nvim-dap-virtual-text").setup()
+    --             end,
+    --         },
+    --         { "jbyuki/one-small-step-for-vimkind" },
+    --     },
+    --     config = function()
+    --         require("rc/dap")
+    --     end,
+    -- },
+    -- {
+    --     "leoluz/nvim-dap-go",
+    --     ft = "go",
+    --     config = function()
+    --         require("dap-go").setup()
+    --     end,
+    -- },
     --------------------------------------------------------------
     -- Markdown Previewer
     {
@@ -630,7 +631,14 @@ require("lazy").setup({
     {
         "coffebar/transfer.nvim",
         lazy = true,
-        cmd = { "TransferInit", "DiffRemote", "TransferUpload", "TransferDownload", "TransferDirDiff", "TransferRepeat" },
+        cmd = {
+            "TransferInit",
+            "DiffRemote",
+            "TransferUpload",
+            "TransferDownload",
+            "TransferDirDiff",
+            "TransferRepeat",
+        },
         opts = {},
     },
     -- Remote SSH

@@ -6,14 +6,14 @@ opt.shell = "fish"
 ----------------------------------------------------------------------------
 -- Search
 opt.ignorecase = true -- 検索文字列が小文字の場合は大文字小文字を区別なく検索する
-opt.smartcase = true  -- 検索文字列に大文字が含まれている場合は区別して検索する
-opt.wrapscan = true   -- 検索時に最後まで行ったら最初に戻る
+opt.smartcase = true -- 検索文字列に大文字が含まれている場合は区別して検索する
+opt.wrapscan = true -- 検索時に最後まで行ったら最初に戻る
 
 ---------------------------------------------------------------------------
 -- Edit
-opt.expandtab = true   -- タブ入力を複数の空白入力に置き換える
-opt.tabstop = 4        -- 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-opt.shiftwidth = 4     -- 行頭でのTab文字の表示幅
+opt.expandtab = true -- タブ入力を複数の空白入力に置き換える
+opt.tabstop = 4 -- 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+opt.shiftwidth = 4 -- 行頭でのTab文字の表示幅
 opt.smartindent = true -- 改行時に前の行の構文をチェックし次の行のインデントを増減する
 
 -- Add angle brackets to the list of recognized characters in a pair
@@ -43,11 +43,11 @@ opt.termguicolors = true
 -- opt.guifontwide = "HackGenNerd Console:h11"
 opt.guifont = "PlemolJP Console NF:h16"
 opt.guifontwide = "PlemolJP Console NF:h16"
-opt.mouse = "a"            -- Enable mouse input
-opt.number = true          -- 行番号を表示
+opt.mouse = "a" -- Enable mouse input
+opt.number = true -- 行番号を表示
 opt.relativenumber = false -- 相対距離
-opt.cursorline = true      -- 現在の行を強調表示
-opt.laststatus = 3         -- ステータスバーをウィンドウ全体で1個常に表示する
+opt.cursorline = true -- 現在の行を強調表示
+opt.laststatus = 3 -- ステータスバーをウィンドウ全体で1個常に表示する
 -- Show <TAB> and <CR>
 opt.list = true
 opt.listchars:append("space:⋅")
@@ -84,4 +84,5 @@ opt.splitright = true
 
 -- localを英語にしておく
 -- JABSなど :ls などバッファの正規表現をやっているのが英語でやってるので日本語が混ざるとコケる
-vim.cmd [[language en_US.UTF-8]]
+vim.cmd([[language en_US.UTF-8]])
+
