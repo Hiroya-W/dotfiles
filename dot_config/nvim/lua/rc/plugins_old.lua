@@ -1,15 +1,15 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "--single-branch",
-        "https://github.com/folke/lazy.nvim.git",
-        lazypath,
-    })
-end
-vim.opt.runtimepath:prepend(lazypath)
+-- local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- if not vim.loop.fs_stat(lazypath) then
+--     vim.fn.system({
+--         "git",
+--         "clone",
+--         "--filter=blob:none",
+--         "--single-branch",
+--         "https://github.com/folke/lazy.nvim.git",
+--         lazypath,
+--     })
+-- end
+-- vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
     {
@@ -39,25 +39,6 @@ require("lazy").setup({
     },
     --------------------------------------------------------------
     -- Appearance
-    -- {
-    --     -- "~/Repositories/github.com/Hiroya-W/sequoia-moonlight.nvim",
-    --     "Hiroya-W/sequoia-moonlight.nvim",
-    --     config = function()
-    --         vim.cmd [[colorscheme sequoia]]
-    --     end
-    -- },
-    {
-        "Shatur/neovim-ayu",
-        config = function()
-            -- require("rc/plugins/ayu")
-        end,
-    },
-    {
-        "catppuccin/nvim",
-        config = function()
-            require("rc/plugins/catppuccin")
-        end,
-    },
     {
         "lukas-reineke/indent-blankline.nvim", -- Indent guides
         main = "ibl",

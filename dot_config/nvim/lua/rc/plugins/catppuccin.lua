@@ -1,6 +1,12 @@
-require("catppuccin").setup({
-    -- Neovideのターミナルの色に反映されないのでセットするように
-    term_colors = true,
-})
-
-vim.cmd([[colorscheme catppuccin-mocha]])
+return {
+    "catppuccin/nvim",
+    name = "catppuccin.nvim",
+    priority = 1000,
+    config = function()
+        require("catppuccin").setup({
+            -- Neovideのターミナルの色に反映されないのでセットするように
+            term_colors = true,
+        })
+        vim.cmd.colorscheme("catppuccin-mocha")
+    end,
+}
