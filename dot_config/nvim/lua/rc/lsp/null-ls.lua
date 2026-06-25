@@ -16,7 +16,7 @@ require("mason-null-ls").setup({
         "eslint_d",
         "prettierd",
         "yamllint",
-        "markdownlint",
+        -- "markdownlint",
     },
     automatic_installation = false,
     handlers = {
@@ -50,7 +50,7 @@ require("null-ls").setup({
             args = { "analyze", "--memory-limit=2G", "--error-format", "json", "--no-progress", "$FILENAME" },
         }),
         diagnostics.yamllint,
-        diagnostics.markdownlint,
+        -- diagnostics.markdownlint,
 
         -- code_actions
         -- code_actions.refactoring,
