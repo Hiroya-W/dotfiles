@@ -48,8 +48,6 @@ require("lazy").setup({
         { "folke/neodev.nvim" },
         { import = "rc.plugins.lsp-format" },
         --------------------------------------------------------------
-        -- Telescope
-        { import = "rc.plugins.telescope" },
         --------------------------------------------------------------
         -- File explorer
         { import = "rc.plugins.nvim-tree" },
