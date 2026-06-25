@@ -22,5 +22,48 @@ return {
                 { section = "startup" },
             },
         },
+        picker = {
+            enabled = true,
+            sources = {
+                files = {
+                    hidden = true,
+                    cmd = "fd",
+                },
+                grep = {
+                    hidden = true,
+                    cmd = "rg",
+                    regex = true,
+                },
+            },
+        },
+    },
+    keys = {
+        {
+            "<leader>tf",
+            function()
+                Snacks.picker.smart()
+            end,
+            desc = "Smart Find Files",
+        },
+        {
+            "<leader>tg",
+            function()
+                Snacks.picker.grep()
+            end,
+            desc = "Grep",
+        },
+        {
+            "<leader>bb",
+            function()
+                Snacks.picker.buffers({
+                    win = {
+                        list = {
+                            keys = { ["dd"] = "bufdelete" },
+                        },
+                    },
+                })
+            end,
+            desc = "Buffers",
+        },
     },
 }

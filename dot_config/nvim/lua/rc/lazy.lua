@@ -47,6 +47,8 @@ require("lazy").setup({
         { "folke/neodev.nvim" },
         { import = "rc.plugins.lsp-format" },
         --------------------------------------------------------------
+        -- Snacks
+        { import = "rc.plugins.snacks" },
         --------------------------------------------------------------
         -- File explorer
         { import = "rc.plugins.nvim-tree" },
@@ -69,7 +71,6 @@ require("lazy").setup({
         { import = "rc.plugins.flash" },
         { "nacro90/numb.nvim" },
         { "tpope/vim-surround" },
-        { import = "rc.plugins.JABS" },
         { import = "rc.plugins.which-key" },
         { import = "rc.plugins.bufresize" },
         { import = "rc.plugins.nvim-scrollbar" },
