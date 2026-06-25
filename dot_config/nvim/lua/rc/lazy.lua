@@ -32,6 +32,13 @@ require("lazy").setup({
         { import = "rc.plugins.lualine" },
         { import = "rc.plugins.bufferline" },
         { import = "rc.plugins.dropbar" },
+        --------------------------------------------------------------
+        -- Completion
+        { import = "rc.plugins.lsp_signature" },
+        { import = "rc.plugins.cmp" },
+        -- cmp dependencies
+        { import = "rc.plugins.nvim-autopairs" },
+        { import = "rc.plugins.lspkind-nvim" },
     },
     checker = { enabled = true },
 })
