@@ -17,39 +17,6 @@ require("lazy").setup({
         lazy = true,
     },
     --------------------------------------------------------------
-    -- Statusline / Bufferline
-    {
-        "nvim-lualine/lualine.nvim",
-        dependencies = {
-            {
-                -- Using SymbolInformatin support
-                "SmiteshP/nvim-navic", -- Show scope you are working inside
-                -- dependencies = {
-                --     "neovim/nvim-lspconfig",
-                -- },
-                -- config = function()
-                --     vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-                -- end
-            },
-        },
-        config = function()
-            require("rc/plugins/lualine")
-        end,
-    },
-    {
-        "akinsho/bufferline.nvim",
-        config = function()
-            require("bufferline").setup()
-        end,
-    },
-    -- Breadcrumbs
-    {
-        "Bekaboo/dropbar.nvim",
-        dependencies = {
-            "nvim-telescope/telescope-fzf-native.nvim",
-        },
-    },
-    --------------------------------------------------------------
     -- Completion
     {
         "hrsh7th/nvim-cmp",

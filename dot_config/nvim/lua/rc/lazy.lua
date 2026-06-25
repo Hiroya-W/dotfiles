@@ -27,6 +27,11 @@ require("lazy").setup({
         { import = "rc.plugins.marks" },
         { import = "rc.plugins.noice" },
         { import = "rc.plugins.dashboard-nvim" },
+        --------------------------------------------------------------
+        -- Statusline / Bufferline
+        { import = "rc.plugins.lualine" },
+        { import = "rc.plugins.bufferline" },
+        { import = "rc.plugins.dropbar" },
     },
     checker = { enabled = true },
 })
