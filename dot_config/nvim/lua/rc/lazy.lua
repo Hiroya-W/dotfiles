@@ -39,6 +39,14 @@ require("lazy").setup({
         -- cmp dependencies
         { import = "rc.plugins.nvim-autopairs" },
         { import = "rc.plugins.lspkind-nvim" },
+        --------------------------------------------------------------
+        -- LSP
+        { import = "rc.plugins.nvim-lspconfig" },
+        { import = "rc.plugins.lspsaga" },
+        { import = "rc.plugins.fidget" },
+        { import = "rc.plugins.mason-null-ls" },
+        { "folke/neodev.nvim" },
+        { import = "rc.plugins.lsp-format" },
     },
     checker = { enabled = true },
 })
