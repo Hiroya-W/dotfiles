@@ -47,6 +47,9 @@ require("lazy").setup({
         { import = "rc.plugins.mason-null-ls" },
         { "folke/neodev.nvim" },
         { import = "rc.plugins.lsp-format" },
+        --------------------------------------------------------------
+        -- Telescope
+        { import = "rc.plugins.telescope" },
     },
     checker = { enabled = true },
 })
