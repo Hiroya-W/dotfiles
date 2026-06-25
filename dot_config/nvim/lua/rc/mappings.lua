@@ -49,52 +49,6 @@ vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true, desc = "Open 
 -- blame.nvim
 vim.keymap.set("n", "<leader>gb", ":BlameToggle<CR>", { silent = true, desc = "Open blame pane" })
 
--- hop.nvim
-vim.api.nvim_set_keymap(
-    "n",
-    "f",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-    { desc = "Hop hint after cursor" }
-)
-vim.api.nvim_set_keymap(
-    "n",
-    "F",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
-    { desc = "Hop hint before cursor" }
-)
-vim.api.nvim_set_keymap(
-    "o",
-    "f",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
-    {}
-)
-vim.api.nvim_set_keymap(
-    "o",
-    "F",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>",
-    {}
-)
-vim.api.nvim_set_keymap(
-    "",
-    "t",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>",
-    {}
-)
-vim.api.nvim_set_keymap(
-    "",
-    "T",
-    "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>",
-    {}
-)
--- vim.api.nvim_set_keymap('n', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
--- vim.api.nvim_set_keymap('v', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>", {})
--- vim.api.nvim_set_keymap('o', '<leader>e', "<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END, inclusive_jump = true })<cr>", {})
-
--- :HopChar1
-vim.api.nvim_set_keymap("n", "<space><space>s", "<cmd>lua require'hop'.hint_char1()<cr>", {})
--- :HopWord
-vim.api.nvim_set_keymap("n", "<space><space>w", "<cmd>lua require'hop'.hint_words()<cr>", {})
-
 -- vim-asterisk
 -- カーソル下にある単語を検索する
 -- *: 順方向検索, #: 逆方向検索
@@ -192,7 +146,6 @@ vim.keymap.set("i", "<C-j>", "<Plug>(skkeleton-enable)", {
     silent = true,
     desc = "Evaluate",
 })
-
 
 vim.api.nvim_create_autocmd("BufWritePost", {
     -- group = "transfer",
