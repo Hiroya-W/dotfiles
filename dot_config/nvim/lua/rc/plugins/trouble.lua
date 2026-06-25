@@ -1,5 +1,6 @@
 return {
     "folke/trouble.nvim", -- UI for diagnostics, references,...
+    opts = {},
     cmd = { "Trouble" },
     dependencies = {
         "kyazdani42/nvim-web-devicons",
