@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
+        { import = "rc.plugins.denops" },
         --------------------------------------------------------------
         -- Appearance
         -- { import = "rc.plugins.ayu" },
