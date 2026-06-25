@@ -21,6 +21,12 @@ require("lazy").setup({
         -- Appearance
         -- { import = "rc.plugins.ayu" },
         { import = "rc.plugins.catppuccin" },
+        { import = "rc.plugins.indent-blankline" },
+        { import = "rc.plugins.modes" },
+        { import = "rc.plugins.todo-comments" },
+        { import = "rc.plugins.marks" },
+        { import = "rc.plugins.noice" },
+        { import = "rc.plugins.dashboard-nvim" },
     },
     checker = { enabled = true },
 })
